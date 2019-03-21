@@ -1,0 +1,11 @@
+@import 'components/utils/colors.scss';
+
+.light {
+  background: $c_clouds;
+  color: $black;
+}
+
+.dark {
+  background: $c_wet_asphalt;
+  color: $white;
+}

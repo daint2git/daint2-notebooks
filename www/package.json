@@ -1,0 +1,39 @@
+{
+  "name": "daint2-notebooks",
+  "version": "1.0.0",
+  "description": "daint2 notebooks",
+  "main": "index.js",
+  "keywords": [],
+  "author": "daint2@fsoft.com",
+  "license": "ISC",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "prod": "NODE_ENV=production node server.js",
+    "storybook": "start-storybook -p 6167 --quiet"
+  },
+  "dependencies": {
+    "@storybook/react": "^5.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "common-tags": "^1.8.0",
+    "express": "^4.16.4",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-nested": "^4.1.2",
+    "postcss-nesting": "^7.0.0",
+    "postcss-partial-import": "^4.1.0",
+    "postcss-selector-not": "^4.0.0",
+    "postcss-simple-vars": "^5.0.2",
+    "url-loader": "^1.1.2"
+  }
+}
