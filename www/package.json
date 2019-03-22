@@ -6,12 +6,6 @@
   "keywords": [],
   "author": "daint2@fsoft.com",
   "license": "ISC",
-  "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
-    "prod": "NODE_ENV=production node server.js",
-    "storybook": "start-storybook -p 6167 --quiet"
-  },
   "dependencies": {
     "@storybook/react": "^5.0.1",
     "@zeit/next-sass": "^1.0.1",
@@ -25,6 +19,7 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
+    "@storybook/addon-backgrounds": "^5.0.3",
     "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -35,5 +30,11 @@
     "postcss-selector-not": "^4.0.0",
     "postcss-simple-vars": "^5.0.2",
     "url-loader": "^1.1.2"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "prod": "NODE_ENV=production node server.js",
+    "storybook": "start-storybook -p 6167 --quiet"
   }
 }

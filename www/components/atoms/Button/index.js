@@ -21,8 +21,7 @@ const Button = ({
   return (
     <button
       type="button"
-      className={cssModules`root ${color} ${classes}`}
-      data-size={size}
+      className={cssModules`root ${color} ${size} ${classes}`}
       data-variant={variant}
       {...other}
     />
@@ -38,6 +37,8 @@ Button.propTypes = {
     'success',
     'warning',
     'inverse',
+    'light',
+    'dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   variant: PropTypes.oneOf(['outline', 'text']),

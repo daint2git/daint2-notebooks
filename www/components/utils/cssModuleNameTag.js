@@ -12,9 +12,9 @@ const cssModuleNameTag = styles => {
       return endResult.length === 0
         ? null
         : endResult
-            .trim()
             .split(' ')
             .reduce((result, key) => `${result} ${className(key)}`, '')
+            .trim()
     },
   })
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import ThemeContext from './'
 
@@ -8,9 +8,9 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const ThemeProvider = ({ children, initialTheme = 'light' }) => {
-  const [theme, changeTheme] = React.useState(initialTheme)
+  const [theme, setTheme] = useState(initialTheme)
   return (
-    <ThemeContext.Provider value={{ theme, changeTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={cssModules`${theme}`}>{children}</div>
     </ThemeContext.Provider>
   )

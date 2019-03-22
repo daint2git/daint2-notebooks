@@ -1,0 +1,21 @@
+.content {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &.row {
+    flex-direction: row;
+
+    > img:first-child {
+      padding-right: 5px
+    }
+  }
+
+  &.column {
+    flex-direction: column;
+
+    > img:first-child {
+      padding-bottom: 5px
+    }
+  }
+}

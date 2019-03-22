@@ -1,0 +1,39 @@
+@import 'components/utils/colors.scss';
+@import 'components/utils/variables.scss';
+
+.root {
+  padding: 0.75rem 1.25rem;
+  border-left-style: solid;
+  border-left-width: 6px;
+  color: $white;
+
+  &.primary {
+    border-left-color: $primary_hover;
+    background-color: $primary;
+  }
+
+  &.info {
+    border-left-color: $info_hover;
+    background-color: $info;
+  }
+
+  &.danger {
+    border-left-color: $danger_hover;
+    background-color: $danger;
+  }
+
+  &.success {
+    border-left-color: $success_hover;
+    background-color: $success;
+  }
+
+  &.warning {
+    border-left-color: $warning_hover;
+    background-color: $warning;
+  }
+
+  &.inverse {
+    border-left-color: $inverse_hover;
+    background-color: $inverse;
+  }
+}

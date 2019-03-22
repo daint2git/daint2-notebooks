@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { Admin, Editor, Viewer, Pen, Calendar } from '../'
-import { Search, Alert, Comment, Help } from '../'
+import { Admin, Editor, Viewer, Pen, Calendar } from '..'
+import { Search, Alert, Comment, Help } from '..'
 
 const Wrapper = ({ children }) => {
   return React.Children.map(children, icon => (

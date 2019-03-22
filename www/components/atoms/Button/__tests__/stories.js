@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import FlexWrapper from 'components/molecules/FlexWrapper'
 import Spacer from 'components/atoms/Spacer'
-import Button from '../'
+import Button from '..'
 
 storiesOf('Button', module)
   .add('default', () => <Button />)
@@ -21,9 +21,13 @@ storiesOf('Button', module)
       <Button color="warning">warning</Button>
       <Spacer />
       <Button color="inverse">inverse</Button>
+      <Spacer />
+      <Button color="light">light</Button>
+      <Spacer />
+      <Button color="dark">dark</Button>
     </FlexWrapper>
   ))
-  .add('with type + variant="outline"', () => (
+  .add('with color + variant="outline"', () => (
     <FlexWrapper direction="column">
       <Button color="primary" variant="outline">
         primary
@@ -47,6 +51,14 @@ storiesOf('Button', module)
       <Spacer />
       <Button color="inverse" variant="outline">
         inverse
+      </Button>
+      <Spacer />
+      <Button color="light" variant="outline">
+        light
+      </Button>
+      <Spacer />
+      <Button color="dark" variant="outline">
+        dark
       </Button>
     </FlexWrapper>
   ))

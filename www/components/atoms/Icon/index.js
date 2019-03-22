@@ -17,13 +17,13 @@ import help from './svg/20/help.svg'
 
 const Icon = props => <img alt="icon" {...props} />
 
-const withInjectSrc = svg => {
+export default Icon
+
+export const withInjectSrc = svg => {
   const WithInjectSrc = props => <Icon {...props} src={svg} />
   WithInjectSrc.displayName = `withInjectSrc(${getDisplayName(Icon)})`
   return WithInjectSrc
 }
-
-export default withInjectSrc
 
 // 14
 export const Admin = withInjectSrc(admin)

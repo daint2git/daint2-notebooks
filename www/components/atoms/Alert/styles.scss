@@ -1,0 +1,68 @@
+@import 'components/utils/colors.scss';
+@import 'components/utils/variables.scss';
+
+.root {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  color: $white;
+
+  &.primary {
+    border-color: $primary;
+    background-color: $primary;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+
+  &.info {
+    border-color: $info;
+    background-color: $info;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $info;
+    }
+  }
+
+  &.danger {
+    border-color: $danger;
+    background-color: $danger;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $danger;
+    }
+  }
+
+  &.success {
+    border-color: $success;
+    background-color: $success;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $success;
+    }
+  }
+
+  &.warning {
+    border-color: $warning;
+    background-color: $warning;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $warning;
+    }
+  }
+
+  &.inverse {
+    border-color: $inverse;
+    background-color: $inverse;
+
+    &[data-variant='outline'] {
+      background-color: transparent;
+      color: $inverse;
+    }
+  }
+}
