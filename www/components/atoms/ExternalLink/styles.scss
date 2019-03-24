@@ -1,11 +1,12 @@
+@import 'components/utils/classes.scss';
+
 .root {
   display: inline-block;
   text-decoration: underline;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  @extend .ellipsis;
 
-  &:hover {
+  &:hover,
+  &:active {
     text-decoration: none;
   }
 }

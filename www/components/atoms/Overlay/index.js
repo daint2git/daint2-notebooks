@@ -6,12 +6,12 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const ExternalLink = ({ className, ...other }) => (
-  <a className={cssModules`root ${className}`} target="_blank" {...other} />
+const Overlay = ({ className, ...other }) => (
+  <div className={cssModules`root ${className}`} {...other} />
 )
 
-ExternalLink.propTypes = {
+Overlay.propTypes = {
   className: PropTypes.string,
 }
 
-export default ExternalLink
+export default Overlay

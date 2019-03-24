@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from 'components/atoms/Button'
 
@@ -7,22 +8,24 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Content = ({ direction, children }) => (
-  <div className={cssModules`content ${direction}`}>{children}</div>
-)
-
-const IconButton = ({
-  Icon = () => null,
-  children,
-  direction = 'row',
-  ...other
-}) => (
+const IconButton = ({ children, icon, direction, ...other }) => (
   <Button {...other}>
-    <Content direction={direction}>
-      <Icon />
+    <div className={cssModules`content ${direction}`}>
+      {icon}
       {children}
-    </Content>
+    </div>
   </Button>
 )
+
+IconButton.propTypes = {
+  children: PropTypes.node,
+  icon: PropTypes.element,
+  direction: PropTypes.oneOf(['row', 'column']),
+}
+
+IconButton.defaultProps = {
+  icon: null,
+  direction: 'row',
+}
 
 export default IconButton

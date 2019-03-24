@@ -18,12 +18,12 @@
       background-color: #000;
     }
 
-    @media (--tablet-viewport) {
+    @media (--medium-viewport) {
       padding: 1.2rem;
       font-size: 18px;
     }
 
-    @media (--desktop-viewport) {
+    @media (--large-viewport) {
       padding: 1.4rem;
       font-size: 20px;
     }

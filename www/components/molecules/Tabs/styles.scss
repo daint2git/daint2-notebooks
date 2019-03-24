@@ -1,0 +1,67 @@
+@import 'components/utils/colors.scss';
+@import 'components/utils/variables.scss';
+
+.root {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &[data-full-width='true'] {
+    display: block;
+  }
+
+  &.primary {
+    background-color: $white;
+    color: rgba(0, 0, 0, 0.54);
+
+    .tab[data-active='true'] {
+      color: $primary;
+      background-color: $col_alpha_08;
+    }
+  }
+
+  &.light {
+    background-color: $primary;
+    color: $white;
+
+    .tab[data-active='true'] {
+      background-color: $primary_hover;
+    }
+  }
+
+  .tab-list {
+    display: flex;
+
+    &.row {
+      flex-direction: row;
+    }
+
+    &.column {
+      flex-direction: column;
+    }
+
+    .tab {
+      display: inline-flex;
+      min-height: 48px;
+      min-width: 96px;
+      justify-content: center;
+      align-items: center;
+      transition: 300ms;
+      flex-grow: 1;
+    }
+  }
+
+  .indicator {
+    height: 2px;
+    position: absolute;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &.primary {
+      background-color: $primary;
+    }
+
+    &.light {
+      background-color: $white;
+    }
+  }
+}

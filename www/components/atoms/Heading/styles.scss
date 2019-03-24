@@ -1,0 +1,45 @@
+@import 'components/utils/colors.scss';
+@import 'components/utils/variables.scss';
+@import 'components/utils/classes.scss';
+
+.root {
+  line-height: 4rem;
+  text-indent: 0.5rem;
+  user-select: none;
+  @extend .ellipsis;
+
+  /* component */
+  &.h1 {
+    font-size: $fs_xxxx_large;
+    font-weight: 500;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &.h2 {
+    font-size: $fs_xxx_large;
+    font-weight: 400;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &.h3 {
+    font-size: $fs_xx_large;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* color */
+  &.light {
+    color: $white;
+  }
+
+  &.dark {
+    color: $black;
+  }
+
+  &.primary {
+    color: $primary;
+  }
+}

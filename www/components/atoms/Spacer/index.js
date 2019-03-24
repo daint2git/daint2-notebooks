@@ -6,12 +6,16 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Spacer = ({ size = 'small', ...other }) => (
+const Spacer = ({ size, ...other }) => (
   <div className={cssModules`${size}`} {...other} />
 )
 
 Spacer.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+}
+
+Spacer.defaultProps = {
+  size: 'medium',
 }
 
 export default Spacer

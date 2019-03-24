@@ -8,6 +8,7 @@
   transition: $transition_duration_1;
   border: 1px solid transparent;
   color: $white;
+  cursor: pointer;
 
   &.primary {
     border-color: $primary;
@@ -266,5 +267,9 @@
     font-size: $fs_large;
     padding: 0.5rem 1rem;
     line-height: 1.5;
+  }
+
+  &[data-full-width='true'] {
+    width: 100%;
   }
 }

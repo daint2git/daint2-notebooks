@@ -6,12 +6,15 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const ExternalLink = ({ className, ...other }) => (
-  <a className={cssModules`root ${className}`} target="_blank" {...other} />
+const ToolBar = ({ children, className, ...other }) => (
+  <div className={cssModules`root ${className}`} {...other}>
+    {children}
+  </div>
 )
 
-ExternalLink.propTypes = {
+ToolBar.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
 }
 
-export default ExternalLink
+export default ToolBar

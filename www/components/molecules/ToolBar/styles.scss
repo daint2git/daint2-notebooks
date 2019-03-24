@@ -1,0 +1,25 @@
+@import 'components/utils/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  width: inherit;
+
+  @media (--small-viewport) {
+    min-height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @media (--medium-viewport) {
+    min-height: 56px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (--large-viewport) {
+    min-height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

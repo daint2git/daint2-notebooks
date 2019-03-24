@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { Admin, Editor, Viewer, Pen, Calendar } from '..'
-import { Search, Alert, Comment, Help } from '..'
+import { AdminIcon, EditorIcon, ViewerIcon, PenIcon, CalendarIcon } from '..'
+import { SearchIcon, AlertIcon, CommentIcon, HelpIcon } from '..'
 
 const Wrapper = ({ children }) => {
   return React.Children.map(children, icon => (
@@ -32,18 +32,18 @@ const Wrapper = ({ children }) => {
 storiesOf('Icon', module)
   .add('Icon size=14', () => (
     <Wrapper>
-      <Admin alt="admin" />
-      <Editor alt="editor" />
-      <Viewer alt="viewer" />
-      <Pen alt="pen" />
-      <Calendar alt="calendar" />
+      <AdminIcon alt="admin" />
+      <EditorIcon alt="editor" />
+      <ViewerIcon alt="viewer" />
+      <PenIcon alt="pen" />
+      <CalendarIcon alt="calendar" />
     </Wrapper>
   ))
   .add('Icon size=20', () => (
     <Wrapper>
-      <Search alt="search" />
-      <Alert alt="alert" />
-      <Comment alt="comment" />
-      <Help alt="help" />
+      <SearchIcon alt="search" />
+      <AlertIcon alt="alert" />
+      <CommentIcon alt="comment" />
+      <HelpIcon alt="help" />
     </Wrapper>
   ))

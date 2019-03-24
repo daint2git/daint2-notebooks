@@ -26,14 +26,14 @@ export const withInjectSrc = svg => {
 }
 
 // 14
-export const Admin = withInjectSrc(admin)
-export const Editor = withInjectSrc(editor)
-export const Viewer = withInjectSrc(viewer)
-export const Pen = withInjectSrc(pen)
-export const Calendar = withInjectSrc(calendar)
+export const AdminIcon = withInjectSrc(admin)
+export const EditorIcon = withInjectSrc(editor)
+export const ViewerIcon = withInjectSrc(viewer)
+export const PenIcon = withInjectSrc(pen)
+export const CalendarIcon = withInjectSrc(calendar)
 
 // 20
-export const Search = withInjectSrc(search)
-export const Alert = withInjectSrc(alert)
-export const Comment = withInjectSrc(comment)
-export const Help = withInjectSrc(help)
+export const SearchIcon = withInjectSrc(search)
+export const AlertIcon = withInjectSrc(alert)
+export const CommentIcon = withInjectSrc(comment)
+export const HelpIcon = withInjectSrc(help)

@@ -7,10 +7,13 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const Button = ({
-  classes,
-  color = 'primary',
-  size = 'medium',
+  component: Component,
+  children,
+  className,
+  color,
+  size,
   variant,
+  isFullWidth,
   hidden,
   ...other
 }) => {
@@ -19,17 +22,21 @@ const Button = ({
   }
 
   return (
-    <button
-      type="button"
-      className={cssModules`root ${color} ${size} ${classes}`}
+    <Component
+      className={cssModules`root ${color} ${size} ${className}`}
       data-variant={variant}
+      data-full-width={isFullWidth}
       {...other}
-    />
+    >
+      {children}
+    </Component>
   )
 }
 
 Button.propTypes = {
-  classes: PropTypes.string,
+  component: PropTypes.elementType,
+  children: PropTypes.node,
+  className: PropTypes.string,
   color: PropTypes.oneOf([
     'primary',
     'info',
@@ -42,6 +49,17 @@ Button.propTypes = {
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   variant: PropTypes.oneOf(['outline', 'text']),
+  isFullWidth: PropTypes.bool,
+  hidden: PropTypes.bool,
+}
+
+Button.defaultProps = {
+  component: 'button',
+  type: 'button',
+  color: 'primary',
+  size: 'medium',
+  isFullWidth: false,
+  hidden: false,
 }
 
 export default Button

@@ -144,12 +144,12 @@
       background-color: #ffac33;
     }
 
-    @media (--tablet-viewport) {
+    @media (--medium-viewport) {
       flex: 50%;
       max-width: 50%;
     }
 
-    @media (--desktop-viewport) {
+    @media (--large-viewport) {
       flex: 25%;
       max-width: 25%;
     }

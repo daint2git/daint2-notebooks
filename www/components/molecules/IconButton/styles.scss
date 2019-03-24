@@ -6,16 +6,20 @@
   &.row {
     flex-direction: row;
 
-    > img:first-child {
-      padding-right: 5px
+    &:not(:only-child) {
+      >img:first-child {
+        padding-right: 5px;
+      }
     }
   }
 
   &.column {
     flex-direction: column;
 
-    > img:first-child {
-      padding-bottom: 5px
+    &:not(:only-child) {
+      >img:first-child {
+        padding-bottom: 5px;
+      }
     }
   }
 }
