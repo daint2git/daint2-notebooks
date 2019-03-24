@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { SIZES } from 'constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -11,7 +12,7 @@ const Spacer = ({ size, ...other }) => (
 )
 
 Spacer.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(SIZES),
 }
 
 Spacer.defaultProps = {

@@ -2,7 +2,7 @@
 @import 'components/utils/variables.scss';
 
 .root {
-  padding: 0.75rem 1.25rem;
+  padding: 1.5rem 2rem;
   border: 1px solid transparent;
   color: $white;
 
@@ -49,6 +49,7 @@
   &.warning {
     border-color: $warning;
     background-color: $warning;
+    color: $black;
 
     &[data-variant='outline'] {
       background-color: transparent;

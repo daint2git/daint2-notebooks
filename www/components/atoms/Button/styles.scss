@@ -9,6 +9,7 @@
   border: 1px solid transparent;
   color: $white;
   cursor: pointer;
+  user-select: none;
 
   &.primary {
     border-color: $primary;
@@ -36,7 +37,7 @@
       color: $primary;
 
       &:hover {
-        background-color: $primary_hover;
+        background-color: $primary;
         color: $white;
       }
     }
@@ -68,7 +69,7 @@
       color: $info;
 
       &:hover {
-        background-color: $info_hover;
+        background-color: $info;
         color: $white;
       }
     }
@@ -100,7 +101,7 @@
       color: $danger;
 
       &:hover {
-        background-color: $danger_hover;
+        background-color: $danger;
         color: $white;
       }
     }
@@ -132,7 +133,7 @@
       color: $success;
 
       &:hover {
-        background-color: $success_hover;
+        background-color: $success;
         color: $white;
       }
     }
@@ -141,6 +142,7 @@
   &.warning {
     border-color: $warning;
     background-color: $warning;
+    color: $black;
 
     &:hover {
       border-color: $warning_hover;
@@ -154,7 +156,7 @@
 
       &:hover {
         background-color: $warning;
-        color: $white;
+        color: $black;
       }
     }
 
@@ -164,8 +166,8 @@
       color: $warning;
 
       &:hover {
-        background-color: $warning_hover;
-        color: $white;
+        background-color: $warning;
+        color: $black;
       }
     }
   }
@@ -196,7 +198,7 @@
       color: $inverse;
 
       &:hover {
-        background-color: $inverse_hover;
+        background-color: $inverse;
         color: $white;
       }
     }

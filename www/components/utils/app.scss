@@ -5,6 +5,7 @@
 
 :global {
   html {
+    box-sizing: border-box;
     width: 100%;
     font-size: $fs_html_base;
     scroll-behavior: smooth;
@@ -15,6 +16,12 @@
     font-size: $fs_medium;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     background-color: $c_clouds;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
   button {
@@ -65,10 +72,6 @@
   select {
     outline: none;
     border: none;
-  }
-
-  * {
-    box-sizing: border-box;
   }
 
   #root {
