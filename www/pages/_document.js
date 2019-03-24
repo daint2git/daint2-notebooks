@@ -10,14 +10,13 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="static/css/__reset.css" rel="stylesheet" />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
           <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           />
         </Head>
         <body>

@@ -24,6 +24,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.2.0",
     "postcss-custom-media": "^7.0.7",
+    "postcss-extend": "^1.0.5",
     "postcss-nested": "^4.1.2",
     "postcss-nesting": "^7.0.0",
     "postcss-partial-import": "^4.1.0",
