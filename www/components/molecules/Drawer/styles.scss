@@ -1,26 +1,13 @@
 @import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
 
 .root {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 50%;
   max-width: 240px;
   height: 100%;
   background-color: $white;
-  z-index: $drawer_layer;
   transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   border-right: 1px solid $col_alpha_1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-
-  &[data-open='true'] {
-    transform: translate(0px, 0px);
-  }
-
-  &[data-open='false'] {
-    transform: translateX(-250px);
-  }
 }
