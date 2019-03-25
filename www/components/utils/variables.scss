@@ -2,28 +2,19 @@
  * Font Size
  */
 $fs_html_base: 10px;
-$fs_small: 1.3rem;
-$fs_medium: 1.6rem;
-$fs_large: 1.8rem;
-$fs_x_large: 2rem;
-$fs_xx_large: 2.6rem;
-$fs_xxx_large: 3.2rem;
-$fs_xxxx_large: 4rem;
+$fs_small: 1.2rem;
+$fs_medium: 1.3rem;
+$fs_large: 1.6rem;
+$fs_x_large: 1.8rem;
+$fs_xx_large: 2.4rem;
+$fs_xxx_large: 2.6rem;
+$fs_xxxx_large: 3.2rem;
 
 /**
  * Animation Time
  */
 $transition_duration_1: 0.25s;
 $transition_duration_2: 0.5s;
-
-/**
- * Broder Alpha
- */
-$col_alpha_01: rgba(0, 0, 0, 0.01);
-$col_alpha_08: rgba(0, 0, 0, 0.08);
-$col_alpha_1: rgba(0, 0, 0, 0.1);
-$col_alpha_5: rgba(0, 0, 0, 0.5);
-$col_alpha_9: rgba(0, 0, 0, 0.9);
 
 /**
  * CSS Media Queries for Desktop, Tablet, Mobile
@@ -35,8 +26,7 @@ $col_alpha_9: rgba(0, 0, 0, 0.9);
 /**
  * Layer (z-indexes)
  */
-$overlay_layer: 1000;
+$portal_layer: 1000;
 $appbar_layer: 1100;
-$drawer_layer: 1200;
 $top_overlay_layer: 2000;
 $top_content_layer: 2001;

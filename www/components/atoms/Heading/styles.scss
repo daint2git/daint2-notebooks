@@ -3,7 +3,7 @@
 @import 'components/utils/classes.scss';
 
 .root {
-  line-height: 4rem;
+  line-height: 1.2;
   text-indent: 0.5rem;
   user-select: none;
   @extend .ellipsis;
@@ -12,15 +12,15 @@
   &.h1 {
     font-size: $fs_xxxx_large;
     font-weight: 500;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   &.h2 {
     font-size: $fs_xxx_large;
-    font-weight: 400;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    font-weight: 500;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   &.h3 {
@@ -28,6 +28,27 @@
     font-weight: 400;
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  &.h4 {
+    font-size: $fs_x_large;
+    font-weight: 400;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  &.h5 {
+    font-size: $fs_large;
+    font-weight: 300;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &.h6 {
+    font-size: $fs_medium;
+    font-weight: 300;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   /* color */

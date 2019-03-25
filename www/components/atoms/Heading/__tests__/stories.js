@@ -10,6 +10,9 @@ storiesOf('Heading', module)
       <Heading component="h1">h1. Heading</Heading>
       <Heading component="h2">h2. Heading</Heading>
       <Heading component="h3">h3. Heading</Heading>
+      <Heading component="h4">h4. Heading</Heading>
+      <Heading component="h5">h5. Heading</Heading>
+      <Heading component="h6">h6. Heading</Heading>
     </>
   ))
   .add('with color', () => (

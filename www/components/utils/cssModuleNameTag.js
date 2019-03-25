@@ -1,4 +1,4 @@
-import { TemplateTag } from 'common-tags'
+import TemplateTag from 'common-tags/lib/TemplateTag'
 
 const cssModuleNameTag = styles => {
   const className = (key = '') => styles[key] || key

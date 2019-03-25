@@ -5,9 +5,9 @@
 
 :global {
   html {
-    box-sizing: border-box;
     width: 100%;
     font-size: $fs_html_base;
+    box-sizing: border-box;
     scroll-behavior: smooth;
   }
 
@@ -15,7 +15,8 @@
     width: 100%;
     font-size: $fs_medium;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-    background-color: $c_clouds;
+    color: $app_color;
+    background-color: $app_background-color;
   }
 
   *,

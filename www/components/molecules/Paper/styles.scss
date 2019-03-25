@@ -1,0 +1,20 @@
+@import 'components/utils/colors.scss';
+@import 'components/utils/variables.scss';
+
+.root {
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  background-color: $white;
+
+  @media (--medium-viewport) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (--large-viewport) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

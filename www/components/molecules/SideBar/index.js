@@ -6,12 +6,15 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Overlay = ({ className, ...other }) => (
-  <div className={cssModules`root ${className}`} {...other} />
+const SideBar = ({ children, className, ...other }) => (
+  <aside className={cssModules`root ${className}`} {...other}>
+    {children}
+  </aside>
 )
 
-Overlay.propTypes = {
+SideBar.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
 }
 
-export default Overlay
+export default SideBar

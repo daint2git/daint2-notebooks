@@ -14,7 +14,7 @@ const Heading = ({ component: Component, className, color, ...other }) => (
 )
 
 Heading.propTypes = {
-  component: PropTypes.oneOf(['h1', 'h2', 'h3']),
+  component: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   className: PropTypes.string,
   color: PropTypes.oneOf(['light', 'dark', 'primary']),
 }
