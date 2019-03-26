@@ -18,9 +18,7 @@ storiesOf('Tooltip', module)
     <Tooltip title={<Alert>default heading</Alert>}><Button style={{ margin: '50px' }}>Click me</Button></Tooltip>
   ))
   .add('with icon', () => (
-    <Tooltip title={<Alert>default heading</Alert>}>
-      <CommentIcon style={{ margin: '50px' }} />
-    </Tooltip>
+    <Tooltip title={<Alert>default heading</Alert>}><CommentIcon style={{ margin: '50px' }} /></Tooltip>
   ))
   .add('with icon button', () => (
     <Tooltip title={<Alert>default heading</Alert>}>
