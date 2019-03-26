@@ -40,7 +40,7 @@ const Tooltip = props => {
     ref: childrenRef,
     onMouseEnter: handleEnter,
     onMouseLeave: handleLeave,
-    ...other,
+    ...other
   }
 
   return (
