@@ -4,7 +4,6 @@
 .root {
   position: relative;
   display: inline-block;
-  cursor: pointer;
 
   &[data-full-width='true'] {
     display: block;
@@ -12,7 +11,7 @@
 
   &.primary {
     background-color: $white;
-    color: rgba(0, 0, 0, 0.54);
+    color: $col_alpha_5;
 
     .tab[data-active='true'] {
       color: $primary;
@@ -41,19 +40,20 @@
     }
 
     .tab {
-      display: inline-flex;
       min-height: 48px;
       min-width: 96px;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
-      transition: 300ms;
       flex-grow: 1;
+      transition: $transition_duration_2;
+      cursor: pointer;
     }
   }
 
   .indicator {
-    height: 2px;
     position: absolute;
+    height: 2px;
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
     &.primary {

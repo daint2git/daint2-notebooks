@@ -7,17 +7,10 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Tab = React.forwardRef(function Tab(
-  { children, isActive, tabRef, ...other },
-  ref,
-) {
+const Tab = React.forwardRef(function Tab(props, ref) {
+  const { children, isActived, ...other } = props
   return (
-    <div
-      className={cssModules`tab`}
-      data-active={isActive}
-      ref={ref}
-      {...other}
-    >
+    <div className={cssModules`tab`} data-active={isActived} ref={ref} {...other}>
       {children}
     </div>
   )
@@ -26,34 +19,36 @@ const Tab = React.forwardRef(function Tab(
 const tabListRef = React.createRef()
 const indicatorRef = React.createRef()
 
-function Tabs({
-  children,
-  className,
-  direction,
-  textColor,
-  indicatorColor,
-  isFullWidth,
-  value,
-  onChange,
-  ...other
-}) {
+function TabList(props) {
+  const {
+    children,
+    className,
+    direction,
+    textColor,
+    indicatorColor,
+    isFullWidth,
+    value,
+    onChange,
+    ...other
+  } = props
   const tabsRef = []
+
   React.useEffect(() => {
-    const { tabRef } = tabsRef.find(tabRef => tabRef.index === value)
+    const { ref: tabRef } = tabsRef.find(tabRef => tabRef.index === value)
     const rectOfTab = tabRef.current.getBoundingClientRect()
     const rectOfTabList = tabListRef.current.getBoundingClientRect()
+    const styleOfIndicator = indicatorRef.current.style
 
-    indicatorRef.current.style.left = `${rectOfTab.left - rectOfTabList.left}px`
-    indicatorRef.current.style.width = `${rectOfTab.width}px`
-
-    indicatorRef.current.style.bottom =
+    styleOfIndicator.left = `${rectOfTab.left - rectOfTabList.left}px`
+    styleOfIndicator.bottom =
       direction === 'column'
         ? `${rectOfTabList.bottom - rectOfTab.bottom}px`
         : `${rectOfTab.bottom - rectOfTabList.bottom}px`
+    styleOfIndicator.width = `${rectOfTab.width}px`
   }, [value])
 
   return (
-    <>
+    <React.Fragment>
       <div
         className={cssModules`root ${textColor} ${className}`}
         data-full-width={isFullWidth}
@@ -62,24 +57,21 @@ function Tabs({
         <div className={cssModules`tab-list ${direction}`} ref={tabListRef}>
           {React.Children.map(children, (child, index) => {
             const ref = React.createRef()
-            tabsRef.push({ index, tabRef: ref })
+            tabsRef.push({ index, ref })
             return React.cloneElement(child, {
-              isActive: index === value,
+              isActived: index === value,
               onClick: () => onChange(index),
               ref,
             })
           })}
         </div>
-        <span
-          className={cssModules`indicator ${indicatorColor}`}
-          ref={indicatorRef}
-        />
+        <span className={cssModules`indicator ${indicatorColor}`} ref={indicatorRef} />
       </div>
-    </>
+    </React.Fragment>
   )
 }
 
-Tabs.propTypes = {
+TabList.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
@@ -90,13 +82,14 @@ Tabs.propTypes = {
   onChange: PropTypes.func,
 }
 
-Tabs.defaultProps = {
+TabList.defaultProps = {
   direction: 'row',
   textColor: 'light',
   indicatorColor: 'light',
+  isFullWidth: false,
   value: 0,
   onChange: noop,
 }
 
 export { Tab }
-export default Tabs
+export default TabList

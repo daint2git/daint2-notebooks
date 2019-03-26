@@ -26,6 +26,7 @@ class Portal extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.disabledPortal !== this.props.disabledPortal) {
       this.setMountNode()
+
       if (!this.props.disabledPortal) {
         this.forceUpdate()
       }
@@ -40,31 +41,23 @@ class Portal extends React.Component {
     if (this.props.disabledPortal) {
       return
     }
+
     this.mountNode = document.body
     return
   }
 
   render() {
-    const { children, disabledPortal, role, ...other } = this.props
+    const { children, disabledPortal } = this.props
 
     if (disabledPortal) {
-      return (
-        <PortalWrapper role={role} {...other}>
-          {children}
-        </PortalWrapper>
-      )
+      return children
     }
 
     if (!this.mountNode) {
       return null
     }
 
-    return ReactDOM.createPortal(
-      <PortalWrapper role={role} {...other}>
-        {children}
-      </PortalWrapper>,
-      this.mountNode,
-    )
+    return ReactDOM.createPortal(children, this.mountNode)
   }
 }
 
@@ -75,7 +68,7 @@ Portal.propTypes = {
    * The children stay within it's parent DOM hierarchy.
    */
   disabledPortal: PropTypes.bool,
-  role: PropTypes.string,
 }
 
+export { PortalWrapper }
 export default Portal

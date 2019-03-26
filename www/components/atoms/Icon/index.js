@@ -15,12 +15,16 @@ import alert from './svg/20/alert.svg'
 import comment from './svg/20/comment.svg'
 import help from './svg/20/help.svg'
 
-const Icon = props => <img alt="icon" {...props} />
+const Icon = React.forwardRef(function Icon(props, ref) {
+  return <img alt="icon" {...props} ref={ref} />
+})
 
 export default Icon
 
 export const withInjectSrc = svg => {
-  const WithInjectSrc = props => <Icon {...props} src={svg} />
+  const WithInjectSrc = React.forwardRef(function WithInjectSrc(props, ref) {
+    return <Icon {...props} src={svg} ref={ref} />
+  })
   WithInjectSrc.displayName = `withInjectSrc(${getDisplayName(Icon)})`
   return WithInjectSrc
 }

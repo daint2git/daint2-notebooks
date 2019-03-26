@@ -4,10 +4,9 @@
   width: 50%;
   max-width: 240px;
   height: 100%;
-  background-color: $white;
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  border-right: 1px solid $col_alpha_1;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  background-color: $white;
+  border-right: 1px solid $col_alpha_1;
 }

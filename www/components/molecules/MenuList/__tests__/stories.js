@@ -7,21 +7,13 @@ import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from '..'
 
 const StateContext = React.createContext()
 
-const menus = Array.from({ length: 30 }, (v, k) => k)
-  .map(k => k)
-  .map(value => <MenuItem>MenuItem 1</MenuItem>)
+const menus = Array.from({ length: 30 }, (v, k) => k).map(value => <MenuItem>MenuItem 1</MenuItem>)
 
-const StateComponent = ({
-  children,
-  initialOpen = false,
-  initialShowSubMenu = false,
-}) => {
+const StateComponent = ({ children, initialOpen = false, initialShowSubMenu = false }) => {
   const [open, setOpen] = React.useState(initialOpen)
   const [isShow, showSubMenu] = React.useState(initialShowSubMenu)
   return (
-    <StateContext.Provider
-      value={{ isOpen: open, onOpen: setOpen, isShow, showSubMenu }}
-    >
+    <StateContext.Provider value={{ isOpened: open, onOpen: setOpen, isShow, showSubMenu }}>
       {children}
     </StateContext.Provider>
   )
@@ -31,8 +23,8 @@ storiesOf('MenuList', module)
   .add('default', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen }) => (
-          <MenuList isOpen={isOpen} onClose={() => onOpen(false)}>
+        {({ isOpened, onOpen }) => (
+          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
             <MenuItem>Item 1</MenuItem>
             <MenuItem>Item 2</MenuItem>
             <MenuItem>Item 3</MenuItem>
@@ -44,8 +36,8 @@ storiesOf('MenuList', module)
   .add('with icon', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen }) => (
-          <MenuList isOpen={isOpen} onClose={() => onOpen(false)}>
+        {({ isOpened, onOpen }) => (
+          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
             <MenuItem>
               <Javascript width={20} height={20} />
               Javascript
@@ -70,8 +62,8 @@ storiesOf('MenuList', module)
   .add('with icon2', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen }) => (
-          <MenuList isOpen={isOpen} onClose={() => onOpen(false)}>
+        {({ isOpened, onOpen }) => (
+          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
             <MenuItem>
               <MenuItemIcon>
                 <Javascript width={20} height={20} />
@@ -104,8 +96,8 @@ storiesOf('MenuList', module)
   // .add('with menu in menu (1)', () => (
   //   <StateComponent>
   //     <StateContext.Consumer>
-  //       {({ isOpen, onOpen }) => (
-  //         <MenuList isOpen={isOpen} onClose={() => onOpen(false)}>
+  //       {({ isOpened, onOpen }) => (
+  //         <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
   //           <MenuItem>Item 1</MenuItem>
   //           <MenuItem>Item 2</MenuItem>
   //           <MenuItem>
@@ -124,8 +116,8 @@ storiesOf('MenuList', module)
   .add('with menu in menu (2)', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen, isShow, showSubMenu }) => (
-          <MenuList isOpen={isOpen} onClose={() => onOpen(false)}>
+        {({ isOpened, onOpen, isShow, showSubMenu }) => (
+          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
             <MenuItem>
               <MenuItemIcon>
                 <Javascript width={20} height={20} />
@@ -145,10 +137,7 @@ storiesOf('MenuList', module)
               <MenuItemText>Css</MenuItemText>
             </MenuItem>
             <MenuItem {...(isShow ? { style: { display: 'block' } } : {})}>
-              <div
-                style={{ display: 'flex', width: '100%' }}
-                onClick={() => showSubMenu(!isShow)}
-              >
+              <div style={{ display: 'flex', width: '100%' }} onClick={() => showSubMenu(!isShow)}>
                 <MenuItemIcon>
                   <File width={20} height={20} />
                 </MenuItemIcon>

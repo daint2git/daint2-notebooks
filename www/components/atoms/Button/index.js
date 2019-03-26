@@ -7,17 +7,19 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Button = ({
-  component: Component,
-  children,
-  className,
-  color,
-  size,
-  variant,
-  isFullWidth,
-  hidden,
-  ...other
-}) => {
+const Button = React.forwardRef(function Button(props, ref) {
+  const {
+    component: Component,
+    children,
+    className,
+    color,
+    size,
+    variant,
+    isFullWidth,
+    hidden,
+    ...other
+  } = props
+
   if (hidden) {
     return null
   }
@@ -27,12 +29,13 @@ const Button = ({
       className={cssModules`root ${color} ${size} ${className}`}
       data-variant={variant}
       data-full-width={isFullWidth}
+      ref={ref}
       {...other}
     >
       {children}
     </Component>
   )
-}
+})
 
 Button.propTypes = {
   component: PropTypes.elementType,

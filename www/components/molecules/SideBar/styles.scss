@@ -5,13 +5,13 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  overflow-y: auto;
   width: 150px;
   height: 100%;
-  padding: 16px;
+  overflow-y: auto;
   display: block;
-  border-left: 1px solid $col_alpha_1;
+  padding: 16px;
   background-color: $white;
+  border-left: 1px solid $col_alpha_1;
 
   @media (--small-viewport) {
     display: none;

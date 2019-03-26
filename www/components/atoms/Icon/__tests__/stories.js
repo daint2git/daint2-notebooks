@@ -3,9 +3,11 @@ import { storiesOf } from '@storybook/react'
 
 import { AdminIcon, EditorIcon, ViewerIcon, PenIcon, CalendarIcon } from '..'
 import { SearchIcon, AlertIcon, CommentIcon, HelpIcon } from '..'
+import Icon from '..'
+import mail from './../svg/20/mail.svg'
 
-const Wrapper = ({ children }) => {
-  return React.Children.map(children, icon => (
+const Wrapper = ({ children }) =>
+  React.Children.map(children, icon => (
     <div
       style={{
         display: 'inline-flex',
@@ -27,9 +29,9 @@ const Wrapper = ({ children }) => {
       <span style={{ color: '#666' }}>{icon.props.alt}</span>
     </div>
   ))
-}
 
 storiesOf('Icon', module)
+  .add('default', () => <Icon src={mail} />)
   .add('Icon size=14', () => (
     <Wrapper>
       <AdminIcon alt="admin" />

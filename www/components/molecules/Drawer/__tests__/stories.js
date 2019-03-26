@@ -11,7 +11,7 @@ const StateContext = React.createContext()
 const StateComponent = ({ children, initialOpen = false }) => {
   const [open, setOpen] = React.useState(initialOpen)
   return (
-    <StateContext.Provider value={{ isOpen: open, onOpen: setOpen }}>
+    <StateContext.Provider value={{ isOpened: open, onOpen: setOpen }}>
       {children}
     </StateContext.Provider>
   )
@@ -21,17 +21,15 @@ storiesOf('Drawer', module)
   .add('default', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen }) => (
+        {({ isOpened, onOpen }) => (
           <>
-            <Drawer isOpen={isOpen} onClose={() => onOpen(false)}>
+            <Button onClick={() => onOpen(!isOpened)}>Toggle Drawer</Button>
+            <Drawer isOpened={isOpened} onClose={() => onOpen(false)}>
               <Button>Button 1</Button>
               <Spacer />
               <Button>Button 2</Button>
               <Button>Button 3</Button>
             </Drawer>
-            <div>
-              <Button onClick={() => onOpen(!isOpen)}>Toggle Drawer</Button>
-            </div>
           </>
         )}
       </StateContext.Consumer>
@@ -40,20 +38,14 @@ storiesOf('Drawer', module)
   .add('with scroll', () => (
     <StateComponent>
       <StateContext.Consumer>
-        {({ isOpen, onOpen }) => (
+        {({ isOpened, onOpen }) => (
           <>
-            <Drawer isOpen={isOpen} onClose={() => onOpen(false)}>
-              {Array.from({ length: 30 }, (v, k) => k)
-                .map(k => k)
-                .map(value => (
-                  <Button key={value} isFullWidth>
-                    Button {value}
-                  </Button>
-                ))}
+            <Button onClick={() => onOpen(!isOpened)}>Toggle Drawer</Button>
+            <Drawer isOpened={isOpened} onClose={() => onOpen(false)}>
+              {Array.from({ length: 30 }, (v, k) => k).map(value => (
+                <Button key={value}>Button {value}</Button>
+              ))}
             </Drawer>
-            <div>
-              <Button onClick={() => onOpen(!isOpen)}>Toggle Drawer</Button>
-            </div>
           </>
         )}
       </StateContext.Consumer>

@@ -14,16 +14,14 @@ const StateComponent = ({ children, initialTabIndex = 0 }) => {
   )
 }
 
-const TabContainer = ({ children }) => (
-  <div style={{ padding: '24px' }}>{children}</div>
-)
+const TabContainer = ({ children }) => <div style={{ padding: '24px' }}>{children}</div>
 
-storiesOf('Tabs', module)
+storiesOf('TabList', module)
   .add('default', () => (
     <StateComponent>
       <StateContext.Consumer>
         {({ tabIndex, onTabIndexChange }) => (
-          <>
+          <div style={{ margin: '50px' }}>
             <Tabs value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
@@ -32,7 +30,7 @@ storiesOf('Tabs', module)
             {tabIndex === 0 && <TabContainer>Item One</TabContainer>}
             {tabIndex === 1 && <TabContainer>Item Two</TabContainer>}
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
-          </>
+          </div>
         )}
       </StateContext.Consumer>
     </StateComponent>
@@ -42,11 +40,7 @@ storiesOf('Tabs', module)
       <StateContext.Consumer>
         {({ tabIndex, onTabIndexChange }) => (
           <div style={{ display: 'flex' }}>
-            <Tabs
-              direction="column"
-              value={tabIndex}
-              onChange={value => onTabIndexChange(value)}
-            >
+            <Tabs direction="column" value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>
@@ -64,11 +58,7 @@ storiesOf('Tabs', module)
       <StateContext.Consumer>
         {({ tabIndex, onTabIndexChange }) => (
           <>
-            <Tabs
-              isFullWidth
-              value={tabIndex}
-              onChange={value => onTabIndexChange(value)}
-            >
+            <Tabs isFullWidth value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>

@@ -8,14 +8,17 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const IconButton = ({ children, icon, direction, ...other }) => (
-  <Button {...other}>
-    <div className={cssModules`content ${direction}`}>
-      {icon}
-      {children}
-    </div>
-  </Button>
-)
+const IconButton = React.forwardRef(function IconButton(props, ref) {
+  const { children, icon, direction, ...other } = props
+  return (
+    <Button ref={ref} {...other}>
+      <div className={cssModules`content ${direction}`}>
+        {icon}
+        {children}
+      </div>
+    </Button>
+  )
+})
 
 IconButton.propTypes = {
   children: PropTypes.node,
@@ -24,6 +27,7 @@ IconButton.propTypes = {
 }
 
 IconButton.defaultProps = {
+  children: null,
   icon: null,
   direction: 'row',
 }
