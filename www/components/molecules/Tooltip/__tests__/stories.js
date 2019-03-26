@@ -10,12 +10,12 @@ import Tooltip from '..'
 
 storiesOf('Tooltip', module)
   .add('default', () => (
-    <Tooltip title={<div id="abc">default heading</div>}><Button style={{ margin: '50px' }}>Click me</Button></Tooltip>
-  ))
-  .add('with Button', () => (
-    <Tooltip title={<Alert>default heading</Alert>}>
+    <Tooltip title={<div id="abc">default heading</div>}>
       <Button style={{ margin: '50px' }}>Click me</Button>
     </Tooltip>
+  ))
+  .add('with Button', () => (
+    <Tooltip title={<Alert>default heading</Alert>}><Button style={{ margin: '50px' }}>Click me</Button></Tooltip>
   ))
   .add('with icon', () => (
     <Tooltip title={<Alert>default heading</Alert>}>
