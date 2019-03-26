@@ -8,7 +8,7 @@ import IconButton from 'components/molecules/IconButton'
 
 import Tooltip from '..'
 
-storiesOf('Tooltip', module)
+storiesOf("Tooltip", module)
   .add('default', () => (
     <Tooltip title={<div id="abc">default heading</div>}>
       <Button style={{ margin: '50px' }}>Click me</Button>
