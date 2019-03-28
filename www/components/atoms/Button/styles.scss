@@ -1,5 +1,22 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+
+@mixin btnColor($initialColor, $hoverColor, $textColor: $white) {
+  border-color: $initialColor;
+  background-color: $initialColor;
+  color: $textColor;
+
+  &:hover {
+    border-color: $hoverColor;
+    background-color: $hoverColor;
+  }
+}
+
+@mixin btnSize($size, $padding, $lineHeight) {
+  font-size: $size;
+  padding: $padding;
+  line-height: $lineHeight;
+}
 
 .root {
   display: inline-flex;
@@ -7,18 +24,12 @@
   justify-content: center;
   transition: $transition_duration_1;
   border: 1px solid transparent;
-  color: $white;
   cursor: pointer;
   user-select: none;
 
+  /* colors */
   &.primary {
-    border-color: $primary;
-    background-color: $primary;
-
-    &:hover {
-      border-color: $primary_hover;
-      background-color: $primary_hover;
-    }
+    @include btnColor($primary, $primary_hover);
 
     &[data-variant='outline'] {
       border-color: $primary;
@@ -44,13 +55,7 @@
   }
 
   &.info {
-    border-color: $info;
-    background-color: $info;
-
-    &:hover {
-      border-color: $info_hover;
-      background-color: $info_hover;
-    }
+    @include btnColor($info, $info_hover);
 
     &[data-variant='outline'] {
       border-color: $info;
@@ -76,13 +81,7 @@
   }
 
   &.danger {
-    border-color: $danger;
-    background-color: $danger;
-
-    &:hover {
-      border-color: $danger_hover;
-      background-color: $danger_hover;
-    }
+    @include btnColor($danger, $danger_hover);
 
     &[data-variant='outline'] {
       border-color: $danger;
@@ -108,13 +107,7 @@
   }
 
   &.success {
-    border-color: $success;
-    background-color: $success;
-
-    &:hover {
-      border-color: $success_hover;
-      background-color: $success_hover;
-    }
+    @include btnColor($success, $success_hover);
 
     &[data-variant='outline'] {
       border-color: $success;
@@ -140,14 +133,7 @@
   }
 
   &.warning {
-    border-color: $warning;
-    background-color: $warning;
-    color: $black;
-
-    &:hover {
-      border-color: $warning_hover;
-      background-color: $warning_hover;
-    }
+    @include btnColor($warning, $warning_hover, $black);
 
     &[data-variant='outline'] {
       border-color: $warning;
@@ -173,13 +159,7 @@
   }
 
   &.inverse {
-    border-color: $inverse;
-    background-color: $inverse;
-
-    &:hover {
-      border-color: $inverse_hover;
-      background-color: $inverse_hover;
-    }
+    @include btnColor($inverse, $inverse_hover);
 
     &[data-variant='outline'] {
       border-color: $inverse;
@@ -205,14 +185,7 @@
   }
 
   &.light {
-    border-color: $white;
-    background-color: $white;
-    color: $black;
-
-    &:hover {
-      border-color: $col_alpha_08;
-      background-color: $col_alpha_08;
-    }
+    @include btnColor($white, $col_alpha_08, $black);
 
     &[data-variant='outline'] {
       border-color: $white;
@@ -226,14 +199,7 @@
   }
 
   &.dark {
-    border-color: $black;
-    background-color: $black;
-    color: $white;
-
-    &:hover {
-      border-color: $col_alpha_5;
-      background-color: $col_alpha_5;
-    }
+    @include btnColor($black, $col_alpha_5);
 
     &[data-variant='outline'] {
       border-color: $black;
@@ -246,29 +212,24 @@
     }
   }
 
+  /* sizes */
+  &.small {
+    @include btnSize($fs_small, 0.25rem 0.5rem, 1.5);
+  }
+
+  &.medium {
+    @include btnSize($fs_medium, 0.5rem 0.75rem, 1.5);
+  }
+
+  &.large {
+    @include btnSize($fs_large, 0.75rem 1rem, 1.5);
+  }
+
   &[disabled] {
     cursor: default;
     pointer-events: none;
     border-color: $disabled;
     background-color: $disabled;
-  }
-
-  &.small {
-    font-size: $fs_small;
-    padding: 0.25rem 0.5rem;
-    line-height: 1.5;
-  }
-
-  &.medium {
-    font-size: $fs_medium;
-    padding: 0.375rem 0.75rem;
-    line-height: 1.5;
-  }
-
-  &.large {
-    font-size: $fs_large;
-    padding: 0.5rem 1rem;
-    line-height: 1.5;
   }
 
   &[data-full-width='true'] {

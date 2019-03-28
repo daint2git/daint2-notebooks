@@ -5,8 +5,8 @@ import './styles.scss'
 
 addParameters({
   backgrounds: [
-    { name: 'white', value: '#FFF', default: true },
-    { name: 'blue', value: '#EFF7FF' },
+    { name: 'white', value: '#FFF' },
+    { name: 'blue', value: '#EFF7FF', default: true },
     { name: 'black', value: '#000' },
   ],
 })

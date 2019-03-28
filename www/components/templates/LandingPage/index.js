@@ -15,9 +15,9 @@ const LandingPage = () => (
       <div className={cssModules`information`}>
         <h1>DaiNT2 notebooks</h1>
         <p>
-          My name is Nguyen Tran Dai. I am a Front-end Web Developer. I have a
-          passion with front-end technologies. When I have free time, I often
-          read, study and share my knowledge for everyone.
+          My name is Nguyen Tran Dai. I am a Front-end Web Developer. I have a passion with
+          front-end technologies. When I have free time, I often read, study and share my knowledge
+          for everyone.
         </p>
         <a href="#content">Get Started</a>
       </div>

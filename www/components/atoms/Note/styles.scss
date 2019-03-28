@@ -1,40 +1,41 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+
+@mixin color($borderColor, $backgroundColor, $textColor: $white) {
+  border-left-color: $borderColor;
+  background-color: $backgroundColor;
+  color: $textColor;
+}
 
 .root {
+  font-size: $fs_large;
+  line-height: 1.5;
   padding: 1.5rem 2rem 1.5rem 1.5rem;
   border-left-style: solid;
   border-left-width: 6px;
-  color: $white;
 
+  /* colors */
   &.primary {
-    border-left-color: $primary_hover;
-    background-color: $primary;
+    @include color($primary_hover, $primary);
   }
 
   &.info {
-    border-left-color: $info_hover;
-    background-color: $info;
+    @include color($info_hover, $info);
   }
 
   &.danger {
-    border-left-color: $danger_hover;
-    background-color: $danger;
+    @include color($danger_hover, $danger);
   }
 
   &.success {
-    border-left-color: $success_hover;
-    background-color: $success;
+    @include color($success_hover, $success);
   }
 
   &.warning {
-    border-left-color: $warning_hover;
-    background-color: $warning;
-    color: $black;
+    @include color($warning_hover, $warning, $black);
   }
 
   &.inverse {
-    border-left-color: $inverse_hover;
-    background-color: $inverse;
+    @include color($inverse_hover, $inverse);
   }
 }

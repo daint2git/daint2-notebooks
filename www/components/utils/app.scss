@@ -1,7 +1,7 @@
 @charset 'utf-8';
-@import './__reset.scss';
-@import './colors.scss';
-@import './variables.scss';
+@import 'reset';
+@import './colors';
+@import './variables';
 
 :global {
   html {

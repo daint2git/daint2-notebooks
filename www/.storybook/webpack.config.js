@@ -1,5 +1,5 @@
 module.exports = ({ config }) => {
-  // create new rules loader for .scss file
+  // create new rule loader for .scss file
   config.module.rules.push({
     test: /\.scss$/,
     loaders: [
@@ -8,11 +8,12 @@ module.exports = ({ config }) => {
         loader: 'css-loader',
         options: {
           modules: true,
-          importLoaders: 1,
+          importLoaders: 2,
           localIdentName: '[path][name]__[local]--[hash:base64:5]',
         },
       },
       'postcss-loader',
+      'sass-loader',
     ],
   })
 
