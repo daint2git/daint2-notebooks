@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 import { Javascript, Html, Css, File } from 'components/atoms/Icon/languages'
 import StickySocialBar from 'components/molecules/StickySocialBar'
-
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)

@@ -1,69 +1,45 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+
+@mixin color($mainColor, $textColor: $white) {
+  border-color: $mainColor;
+  background-color: $mainColor;
+  color: $textColor;
+
+  &[data-variant='outline'] {
+    background-color: transparent;
+    color: $mainColor;
+  }
+}
 
 .root {
   padding: 1.5rem 2rem;
   border: 1px solid transparent;
-  color: $white;
+  font-size: $fs_large;
+  line-height: 1.2;
 
+  /* colors */
   &.primary {
-    border-color: $primary;
-    background-color: $primary;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $primary;
-    }
+    @include color($primary);
   }
 
   &.info {
-    border-color: $info;
-    background-color: $info;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $info;
-    }
+    @include color($info);
   }
 
   &.danger {
-    border-color: $danger;
-    background-color: $danger;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $danger;
-    }
+    @include color($danger);
   }
 
   &.success {
-    border-color: $success;
-    background-color: $success;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $success;
-    }
+    @include color($success);
   }
 
   &.warning {
-    border-color: $warning;
-    background-color: $warning;
-    color: $black;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $warning;
-    }
+    @include color($warning, $black);
   }
 
   &.inverse {
-    border-color: $inverse;
-    background-color: $inverse;
-
-    &[data-variant='outline'] {
-      background-color: transparent;
-      color: $inverse;
-    }
+    @include color($inverse);
   }
 }

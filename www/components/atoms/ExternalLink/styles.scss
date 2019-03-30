@@ -1,9 +1,9 @@
-@import 'components/utils/classes.scss';
+@import 'components/utils/mixins';
 
 .root {
   display: inline-block;
   text-decoration: underline;
-  @extend .ellipsis;
+  @include ellipsis;
 
   &:hover,
   &:active {

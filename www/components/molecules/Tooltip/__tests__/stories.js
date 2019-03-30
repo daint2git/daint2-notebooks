@@ -10,16 +10,22 @@ import Tooltip from '..'
 
 storiesOf('Tooltip', module)
   .add('default', () => (
-    <Tooltip title={<div id="abc">default heading</div>}><Button style={{ margin: '50px' }}>Click me</Button></Tooltip>
+    <Tooltip title={<div id="abc">default value</div>}>
+      <Button style={{ margin: '50px' }}>Click me</Button>
+    </Tooltip>
   ))
   .add('with Button', () => (
-    <Tooltip title={<Alert>default heading</Alert>}><Button style={{ margin: '50px' }}>Click me</Button></Tooltip>
+    <Tooltip title={<Alert>default value</Alert>}>
+      <Button style={{ margin: '50px' }}>Click me</Button>
+    </Tooltip>
   ))
   .add('with icon', () => (
-    <Tooltip title={<Alert>default heading</Alert>}><CommentIcon style={{ margin: '50px' }} /></Tooltip>
+    <Tooltip title={<Alert>default value</Alert>}>
+      <CommentIcon style={{ margin: '50px' }} />
+    </Tooltip>
   ))
   .add('with icon button', () => (
-    <Tooltip title={<Alert>default heading</Alert>}>
+    <Tooltip title={<Alert>default value</Alert>}>
       <IconButton style={{ margin: '50px' }} icon={<CommentIcon />} />
     </Tooltip>
   ))
@@ -27,7 +33,7 @@ storiesOf('Tooltip', module)
     <Tooltip
       onOpen={e => console.log('onOpen', e)}
       onClose={e => console.log('onClose', e)}
-      title={<Alert>default heading</Alert>}
+      title={<Alert>default value</Alert>}
     >
       <IconButton style={{ margin: '50px' }} icon={<CommentIcon />} />
     </Tooltip>

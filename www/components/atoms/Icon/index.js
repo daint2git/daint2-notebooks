@@ -13,7 +13,7 @@ import alert from './svg/20/alert.svg'
 import comment from './svg/20/comment.svg'
 import help from './svg/20/help.svg'
 
-const Icon = React.forwardRef((props, ref) => <img alt="icon" ref={ref} {...props} />)
+const Icon = React.forwardRef((props, ref) => <img alt="icon" {...props} ref={ref} />)
 
 export default Icon
 

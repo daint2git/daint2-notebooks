@@ -1,12 +1,15 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
 
 .root {
   padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
   padding-bottom: 16px;
   background-color: $white;
+
+  @media (--small-viewport) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
   @media (--medium-viewport) {
     padding-left: 20px;

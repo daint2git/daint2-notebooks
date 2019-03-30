@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Portal, { PortalWrapper } from 'components/atoms/Portal'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+import noop from 'components/utils/noop'
 
 import styles from './styles.scss'
 
@@ -29,9 +30,10 @@ const Tooltip = props => {
       const rectRootRef = childrenRef.current.getBoundingClientRect()
       const rectTooltipRef = element.getBoundingClientRect()
 
-      element.style.top = `${rectRootRef.top + rectRootRef.height / 2}px`
+      element.style.top = `${rectRootRef.top +
+        rectRootRef.height / 2 -
+        rectTooltipRef.height / 2}px`
       element.style.left = `${rectRootRef.right + 15}px`
-      element.style.transform = `translateY(-${rectTooltipRef.height / 2}px)`
     }
   }
 
@@ -68,6 +70,11 @@ Tooltip.propTypes = {
   title: PropTypes.node,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
+}
+
+Tooltip.defaultProps = {
+  onOpen: noop,
+  onClose: noop,
 }
 
 export default Tooltip

@@ -1,23 +1,23 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
 
 .root {
   width: 100%;
   display: flex;
   z-index: $appbar_layer;
 
-  @media (--large-viewport)  {
+  @media (--large-viewport) {
     width: calc(100% - 240px);
   }
 
-  /* color */
-  &.inverse {
-    background-color: $inverse;
+  /* colors */
+  &.primary {
+    background-color: $primary;
     color: $white;
   }
 
-  &.primary {
-    background-color: $primary;
+  &.inverse {
+    background-color: $inverse;
     color: $white;
   }
 
@@ -28,8 +28,6 @@
 
   &.fixed {
     position: fixed;
-    top: 0;
-    right: 0;
   }
 
   &.relative {

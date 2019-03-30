@@ -1,12 +1,12 @@
-@import 'components/utils/colors.scss';
-@import 'components/utils/variables.scss';
-@import 'components/utils/classes.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+@import 'components/utils/mixins';
 
 .root {
   line-height: 1.2;
   text-indent: 0.5rem;
   user-select: none;
-  @extend .ellipsis;
+  @include ellipsis;
 
   /* component */
   &.h1 {
@@ -25,7 +25,7 @@
 
   &.h3 {
     font-size: $fs_xx_large;
-    font-weight: 400;
+    font-weight: 500;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -39,14 +39,14 @@
 
   &.h5 {
     font-size: $fs_large;
-    font-weight: 300;
+    font-weight: 400;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
 
   &.h6 {
     font-size: $fs_medium;
-    font-weight: 300;
+    font-weight: 400;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
