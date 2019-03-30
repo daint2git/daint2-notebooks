@@ -1,31 +1,35 @@
-@import 'components/utils/variables.scss';
+@import 'components/utils/colors';
+@import 'components/utils/variables';
 
 .root {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1000;
+  z-index: $socialbar_layer;
 
-  a {
+  .social-item {
     display: block;
     text-align: center;
     transition: $transition_duration_2;
-    color: white;
-    padding: 1rem;
-    font-size: 16px;
+    color: $white;
 
     &:hover {
-      background-color: #000;
+      background-color: $black;
+    }
+
+    @media (--small-viewport) {
+      padding: 1rem;
+      font-size: 16px;
     }
 
     @media (--medium-viewport) {
-      padding: 1.2rem;
-      font-size: 18px;
+      padding: 1.1rem;
+      font-size: 17px;
     }
 
     @media (--large-viewport) {
-      padding: 1.4rem;
-      font-size: 20px;
+      padding: 1.2rem;
+      font-size: 18px;
     }
   }
 
