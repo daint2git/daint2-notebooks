@@ -1,0 +1,15 @@
+@import 'components/utils/colors';
+
+.icon {
+  position: relative;
+  margin-right: 10px;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 13px;
+    height: 10px;
+    border-left: 1px solid $col_alpha_5;
+    border-bottom: 1px solid $col_alpha_5;
+  }
+}

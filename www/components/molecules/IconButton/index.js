@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Button from 'components/atoms/Button'
-
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const IconButton = React.forwardRef(function IconButton(props, ref) {
+const IconButton = React.forwardRef((props, ref) => {
   const { children, icon, direction, ...other } = props
   return (
     <Button ref={ref} {...other}>

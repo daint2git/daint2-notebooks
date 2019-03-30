@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 
 import noop from 'components/utils/noop'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Tab = React.forwardRef(function Tab(props, ref) {
+const Tab = React.forwardRef((props, ref) => {
   const { children, isActived, ...other } = props
   return (
     <div className={cssModules`tab`} data-active={isActived} ref={ref} {...other}>
@@ -15,6 +16,11 @@ const Tab = React.forwardRef(function Tab(props, ref) {
     </div>
   )
 })
+
+Tab.propTypes = {
+  children: PropTypes.node,
+  isActived: PropTypes.bool,
+}
 
 const tabListRef = React.createRef()
 const indicatorRef = React.createRef()
@@ -45,7 +51,7 @@ function TabList(props) {
         ? `${rectOfTabList.bottom - rectOfTab.bottom}px`
         : `${rectOfTab.bottom - rectOfTabList.bottom}px`
     styleOfIndicator.width = `${rectOfTab.width}px`
-  }, [value])
+  }, [direction, tabsRef, value])
 
   return (
     <React.Fragment>

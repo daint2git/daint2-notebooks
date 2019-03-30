@@ -6,6 +6,10 @@
   display: flex;
   z-index: $appbar_layer;
 
+  @media (--large-viewport)  {
+    width: calc(100% - 240px);
+  }
+
   /* color */
   &.inverse {
     background-color: $inverse;
@@ -25,7 +29,7 @@
   &.fixed {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
   }
 
   &.relative {

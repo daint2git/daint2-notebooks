@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
@@ -19,17 +20,15 @@ const MenuItemIcon = ({ children, ...other }) => (
 )
 
 const MenuItemText = ({ children, ...other }) => (
-  <div className={cssModules`menu-item-text`} {...other}>
+  <span className={cssModules`menu-item-text`} {...other}>
     {children}
-  </div>
+  </span>
 )
 
-const MenuList = ({ children, className, style, ...other }) => (
-  <div className={cssModules`root`} style={style}>
-    <ul className={cssModules`menu-list ${className}`} {...other}>
-      {children}
-    </ul>
-  </div>
+const MenuList = ({ children, className, ...other }) => (
+  <ul className={cssModules`menu-list ${className}`} {...other}>
+    {children}
+  </ul>
 )
 
 MenuItem.propTypes = {
@@ -45,12 +44,11 @@ MenuItemText.propTypes = {
   children: PropTypes.node,
 }
 
-export { MenuItem, MenuItemIcon, MenuItemText }
-
 MenuList.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
 }
+
+export { MenuItem, MenuItemIcon, MenuItemText }
 
 export default MenuList

@@ -1,10 +1,19 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { AdminIcon, EditorIcon, ViewerIcon, PenIcon, CalendarIcon } from '..'
-import { SearchIcon, AlertIcon, CommentIcon, HelpIcon } from '..'
-import Icon from '..'
-import mail from './../svg/20/mail.svg'
+import Icon, {
+  AdminIcon,
+  EditorIcon,
+  ViewerIcon,
+  PenIcon,
+  CalendarIcon,
+  SearchIcon,
+  AlertIcon,
+  CommentIcon,
+  HelpIcon,
+} from '..'
+
+import mail from '../svg/20/mail.svg'
 
 const Wrapper = ({ children }) =>
   React.Children.map(children, icon => (

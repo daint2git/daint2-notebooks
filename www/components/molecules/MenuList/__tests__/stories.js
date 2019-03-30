@@ -1,164 +1,117 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { Javascript, Html, Css, File } from 'components/atoms/Icon/languages'
+import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { JavaScriptIcon, HtmlIcon, CssIcon, OtherFileIcon } from 'components/atoms/Icon/languages'
 
 import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from '..'
 
-const StateContext = React.createContext()
-
-const menus = Array.from({ length: 30 }, (v, k) => k).map(value => <MenuItem>MenuItem 1</MenuItem>)
-
-const StateComponent = ({ children, initialOpen = false, initialShowSubMenu = false }) => {
-  const [open, setOpen] = React.useState(initialOpen)
-  const [isShow, showSubMenu] = React.useState(initialShowSubMenu)
-  return (
-    <StateContext.Provider value={{ isOpened: open, onOpen: setOpen, isShow, showSubMenu }}>
-      {children}
-    </StateContext.Provider>
-  )
-}
+const menus = Array.from({ length: 10 }, (v, k) => k).map(value => (
+  <MenuItem key={value}>MenuItem {value}</MenuItem>
+))
 
 storiesOf('MenuList', module)
   .add('default', () => (
-    <StateComponent>
-      <StateContext.Consumer>
-        {({ isOpened, onOpen }) => (
-          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
-            <MenuItem>Item 1</MenuItem>
-            <MenuItem>Item 2</MenuItem>
-            <MenuItem>Item 3</MenuItem>
-          </MenuList>
-        )}
-      </StateContext.Consumer>
-    </StateComponent>
+    <MenuList>
+      <MenuItem>Item 1</MenuItem>
+      <MenuItem>Item 2</MenuItem>
+      <MenuItem>Item 3</MenuItem>
+    </MenuList>
   ))
   .add('with icon', () => (
-    <StateComponent>
-      <StateContext.Consumer>
-        {({ isOpened, onOpen }) => (
-          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
-            <MenuItem>
-              <Javascript width={20} height={20} />
-              Javascript
-            </MenuItem>
-            <MenuItem>
-              <Html width={20} height={20} />
-              Html
-            </MenuItem>
-            <MenuItem>
-              <Css width={20} height={20} />
-              Css
-            </MenuItem>
-            <MenuItem>
-              <File width={20} height={20} />
-              Other
-            </MenuItem>
-          </MenuList>
-        )}
-      </StateContext.Consumer>
-    </StateComponent>
+    <MenuList>
+      <MenuItem>
+        <JavaScriptIcon width={20} height={20} />
+        Javascript
+      </MenuItem>
+      <MenuItem>
+        <HtmlIcon width={20} height={20} />
+        Html
+      </MenuItem>
+      <MenuItem>
+        <CssIcon width={20} height={20} />
+        Css
+      </MenuItem>
+      <MenuItem>
+        <OtherFileIcon width={20} height={20} />
+        Other
+      </MenuItem>
+    </MenuList>
   ))
-  .add('with icon2', () => (
-    <StateComponent>
-      <StateContext.Consumer>
-        {({ isOpened, onOpen }) => (
-          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
+  .add('with icon (2)', () => (
+    <MenuList>
+      <MenuItem>
+        <MenuItemIcon>
+          <JavaScriptIcon width={20} height={20} />
+        </MenuItemIcon>
+        <MenuItemText>Javascript</MenuItemText>
+      </MenuItem>
+      <MenuItem>
+        <MenuItemIcon>
+          <HtmlIcon width={20} height={20} />
+        </MenuItemIcon>
+        <MenuItemText>Html</MenuItemText>
+      </MenuItem>
+      <MenuItem>
+        <MenuItemIcon>
+          <CssIcon width={20} height={20} />
+        </MenuItemIcon>
+        <MenuItemText>Css</MenuItemText>
+      </MenuItem>
+      <MenuItem>
+        <MenuItemIcon>
+          <OtherFileIcon width={20} height={20} />
+        </MenuItemIcon>
+        <MenuItemText>Other</MenuItemText>
+      </MenuItem>
+    </MenuList>
+  ))
+  .add('with menu in menu', () => (
+    <LocalStateProvider initialValue={false}>
+      <LocalStateConsumer>
+        {({ value: hasSubMenu, setValue: showSubMenu }) => (
+          <MenuList>
             <MenuItem>
               <MenuItemIcon>
-                <Javascript width={20} height={20} />
+                <JavaScriptIcon width={20} height={20} />
               </MenuItemIcon>
               <MenuItemText>Javascript</MenuItemText>
             </MenuItem>
             <MenuItem>
               <MenuItemIcon>
-                <Html width={20} height={20} />
+                <HtmlIcon width={20} height={20} />
               </MenuItemIcon>
               <MenuItemText>Html</MenuItemText>
             </MenuItem>
             <MenuItem>
               <MenuItemIcon>
-                <Css width={20} height={20} />
+                <CssIcon width={20} height={20} />
               </MenuItemIcon>
               <MenuItemText>Css</MenuItemText>
             </MenuItem>
-            <MenuItem>
-              <MenuItemIcon>
-                <File width={20} height={20} />
-              </MenuItemIcon>
-              <MenuItemText>Other</MenuItemText>
-            </MenuItem>
-          </MenuList>
-        )}
-      </StateContext.Consumer>
-    </StateComponent>
-  ))
-  // .add('with menu in menu (1)', () => (
-  //   <StateComponent>
-  //     <StateContext.Consumer>
-  //       {({ isOpened, onOpen }) => (
-  //         <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
-  //           <MenuItem>Item 1</MenuItem>
-  //           <MenuItem>Item 2</MenuItem>
-  //           <MenuItem>
-  //             Item 3
-  //             <MenuList>
-  //               <MenuItem>Item 1</MenuItem>
-  //               <MenuItem>Item 2</MenuItem>
-  //               <MenuItem>Item 3</MenuItem>
-  //             </MenuList>
-  //           </MenuItem>
-  //         </MenuList>
-  //       )}
-  //     </StateContext.Consumer>
-  //   </StateComponent>
-  // ))
-  .add('with menu in menu (2)', () => (
-    <StateComponent>
-      <StateContext.Consumer>
-        {({ isOpened, onOpen, isShow, showSubMenu }) => (
-          <MenuList isOpened={isOpened} onClose={() => onOpen(false)}>
-            <MenuItem>
-              <MenuItemIcon>
-                <Javascript width={20} height={20} />
-              </MenuItemIcon>
-              <MenuItemText>Javascript</MenuItemText>
-            </MenuItem>
-            <MenuItem>
-              <MenuItemIcon>
-                <Html width={20} height={20} />
-              </MenuItemIcon>
-              <MenuItemText>Html</MenuItemText>
-            </MenuItem>
-            <MenuItem>
-              <MenuItemIcon>
-                <Css width={20} height={20} />
-              </MenuItemIcon>
-              <MenuItemText>Css</MenuItemText>
-            </MenuItem>
-            <MenuItem {...(isShow ? { style: { display: 'block' } } : {})}>
-              <div style={{ display: 'flex', width: '100%' }} onClick={() => showSubMenu(!isShow)}>
+            <MenuItem style={{ display: 'block' }}>
+              <div onClick={() => showSubMenu(!hasSubMenu)} style={{ display: 'flex' }}>
                 <MenuItemIcon>
-                  <File width={20} height={20} />
+                  <OtherFileIcon width={20} height={20} />
                 </MenuItemIcon>
                 <MenuItemText>Other</MenuItemText>
               </div>
               <MenuList>
                 <MenuItem>
                   <MenuItemIcon>
-                    <Javascript width={20} height={20} />
+                    <JavaScriptIcon width={20} height={20} />
                   </MenuItemIcon>
                   <MenuItemText>Javascript</MenuItemText>
                 </MenuItem>
                 <MenuItem>
                   <MenuItemIcon>
-                    <Html width={20} height={20} />
+                    <HtmlIcon width={20} height={20} />
                   </MenuItemIcon>
                   <MenuItemText>Html</MenuItemText>
                 </MenuItem>
                 <MenuItem>
                   <MenuItemIcon>
-                    <Css width={20} height={20} />
+                    <CssIcon width={20} height={20} />
                   </MenuItemIcon>
                   <MenuItemText>
                     <p>Css 1</p>
@@ -166,18 +119,10 @@ storiesOf('MenuList', module)
                   </MenuItemText>
                 </MenuItem>
               </MenuList>
-            </MenuItem>
-            <MenuItem>
-              <div>
-                <MenuItemIcon>
-                  <Css width={20} height={20} />
-                </MenuItemIcon>
-                <MenuItemText>Css</MenuItemText>
-              </div>
               <MenuList>{menus}</MenuList>
             </MenuItem>
           </MenuList>
         )}
-      </StateContext.Consumer>
-    </StateComponent>
+      </LocalStateConsumer>
+    </LocalStateProvider>
   ))

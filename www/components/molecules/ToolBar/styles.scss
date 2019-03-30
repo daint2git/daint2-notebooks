@@ -3,7 +3,7 @@
 .root {
   display: flex;
   align-items: center;
-  width: inherit;
+  width: 100%;
 
   @media (--small-viewport) {
     min-height: 48px;

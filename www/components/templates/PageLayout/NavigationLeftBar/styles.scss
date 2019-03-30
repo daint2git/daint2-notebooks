@@ -1,0 +1,7 @@
+@import 'components/utils/variables';
+
+.root {
+  @media (--large-viewport) {
+    width: 240px;
+  }
+}

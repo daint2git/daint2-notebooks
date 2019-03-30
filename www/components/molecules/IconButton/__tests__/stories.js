@@ -2,13 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Spacer from 'components/atoms/Spacer'
-import {
-  PenIcon,
-  CalendarIcon,
-  AlertIcon,
-  CommentIcon,
-} from 'components/atoms/Icon'
+import { PenIcon, CalendarIcon, AlertIcon, CommentIcon } from 'components/atoms/Icon'
 import FlexWrapper from 'components/molecules/FlexWrapper'
+
 import IconButton from '..'
 
 storiesOf('IconButton', module)

@@ -9,8 +9,6 @@ storiesOf('ExternalLink', module).add('default', () => (
       bootstrap-4.0.0-dist.zip
     </ExternalLink>
     <br />
-    <ExternalLink href="https://www.w3schools.com/js/default.asp">
-      js tutorial
-    </ExternalLink>
+    <ExternalLink href="https://www.w3schools.com/js/default.asp">js tutorial</ExternalLink>
   </>
 ))

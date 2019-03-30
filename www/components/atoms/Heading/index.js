@@ -7,10 +7,7 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const Heading = ({ component: Component, className, color, ...other }) => (
-  <Component
-    className={cssModules`root ${Component} ${color} ${className}`}
-    {...other}
-  />
+  <Component className={cssModules`root ${Component} ${color} ${className}`} {...other} />
 )
 
 Heading.propTypes = {

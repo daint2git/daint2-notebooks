@@ -23,13 +23,16 @@ const LandingPage = () => (
       </div>
     </div>
     <div id="content" className={cssModules`content`}>
-      <div className={cssModules`box`}>
-        <div className={cssModules`box-content`}>
-          <Javascript width={75} height={75} />
-          <h3>JavaScript</h3>
-          <a href="#">Read More</a>
+      <Link href="/javascript">
+        <div className={cssModules`box`}>
+          <div className={cssModules`box-content`}>
+            <Javascript width={75} height={75} />
+            <h3>JavaScript</h3>
+
+            <a>Read More</a>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className={cssModules`box`}>
         <div className={cssModules`box-content`}>

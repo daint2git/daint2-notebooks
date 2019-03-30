@@ -6,10 +6,12 @@ const MultipleLinesOfText = ({ children }) => {
   return (
     <>
       {lines.map((line, index) => (
+        /* eslint-disable react/no-array-index-key */
         <React.Fragment key={`line-${index}`}>
           {line}
           {lines.length - 1 !== index && <br />}
         </React.Fragment>
+        /* eslint-enable react/no-array-index-key */
       ))}
     </>
   )

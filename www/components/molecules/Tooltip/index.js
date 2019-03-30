@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Portal, { PortalWrapper } from 'components/atoms/Portal'
-
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
@@ -66,6 +66,8 @@ Tooltip.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   title: PropTypes.node,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
 }
 
 export default Tooltip

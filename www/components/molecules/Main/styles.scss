@@ -1,0 +1,20 @@
+@import 'components/utils/variables';
+
+.root {
+  flex: 1 1 100%;
+  padding-top: 90px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (--medium-viewport) {
+    max-width: calc(100% - 150px);
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (--large-viewport) {
+    max-width: calc(100% - 240px - 150px);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

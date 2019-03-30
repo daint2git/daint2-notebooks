@@ -6,11 +6,14 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const ExternalLink = ({ className, ...other }) => (
-  <a className={cssModules`root ${className}`} target="_blank" {...other} />
+const ExternalLink = ({ children, className, ...other }) => (
+  <a className={cssModules`root ${className}`} target="_blank" {...other}>
+    {children}
+  </a>
 )
 
 ExternalLink.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
 }
 

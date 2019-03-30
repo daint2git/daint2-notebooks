@@ -1,0 +1,15 @@
+@import 'components/utils/colors';
+
+.link {
+  display: flex;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding: 4px;
+
+  &[data-active='true'] {
+    color: $primary;
+  }
+
+  &:hover {
+    background-color: $col_alpha_08;
+  }
+}

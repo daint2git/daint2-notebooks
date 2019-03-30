@@ -1,18 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { COLORS } from 'constants/global'
+import { COLORS } from 'components/constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
 const Alert = ({ children, className, color, variant, ...other }) => (
-  <div
-    className={cssModules`root ${color} ${className}`}
-    data-variant={variant}
-    {...other}
-  >
+  <div className={cssModules`root ${color} ${className}`} data-variant={variant} {...other}>
     {children}
   </div>
 )

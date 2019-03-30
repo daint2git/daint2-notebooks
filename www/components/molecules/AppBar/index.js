@@ -2,15 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
 const AppBar = ({ children, className, position, color, ...other }) => (
-  <header
-    className={cssModules`root ${position} ${color} ${className}`}
-    {...other}
-  >
+  <header className={cssModules`root ${position} ${color} ${className}`} {...other}>
     {children}
   </header>
 )

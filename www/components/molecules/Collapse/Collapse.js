@@ -4,6 +4,7 @@ import Transition from 'react-transition-group/Transition'
 
 import getFullHeightOfElement from 'components/utils/getFullHeightOfElement'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)

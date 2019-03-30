@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { COLORS, SIZES } from 'constants/global'
+import { COLORS, SIZES } from 'components/constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Button = React.forwardRef(function Button(props, ref) {
+const Button = React.forwardRef((props, ref) => {
   const {
     component: Component,
     children,
@@ -39,6 +40,7 @@ const Button = React.forwardRef(function Button(props, ref) {
 
 Button.propTypes = {
   component: PropTypes.elementType,
+  type: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
   color: PropTypes.oneOf([...COLORS, 'light', 'dark']),

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
@@ -13,21 +14,28 @@ const PortalWrapper = ({ children, ...other }) => (
   </div>
 )
 
+PortalWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
 class Portal extends React.Component {
   componentDidMount() {
     this.setMountNode()
 
+    const { disabledPortal } = this.props
     // Only rerender if needed
-    if (!this.props.disabledPortal) {
+    if (!disabledPortal) {
       this.forceUpdate()
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.disabledPortal !== this.props.disabledPortal) {
+    const { disabledPortal } = this.props
+
+    if (prevProps.disabledPortal !== disabledPortal) {
       this.setMountNode()
 
-      if (!this.props.disabledPortal) {
+      if (!disabledPortal) {
         this.forceUpdate()
       }
     }
@@ -38,12 +46,13 @@ class Portal extends React.Component {
   }
 
   setMountNode() {
-    if (this.props.disabledPortal) {
+    const { disabledPortal } = this.props
+
+    if (disabledPortal) {
       return
     }
 
     this.mountNode = document.body
-    return
   }
 
   render() {
