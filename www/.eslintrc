@@ -1,0 +1,140 @@
+{
+  "parser": "babel-eslint",
+
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+
+  "plugins": [
+    "import",
+    "prettier",
+    "react",
+    "jsx-a11y",
+    "react-hooks"
+  ],
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "root": ["./"]
+      }
+    }
+  },
+
+  "rules": {
+    "prettier/prettier": [1, {
+      "printWidth": 100,
+      "semi": false,
+      "singleQuote": true,
+      "trailingComma": "all"
+    }],
+
+    "react/boolean-prop-naming": [1, {
+      "rule": "^(is|has|disabled)[A-Z]([A-Za-z0-9]?)+|hidden|disabled|in"
+    }],
+    "react/destructuring-assignment": 1,
+    "react/forbid-prop-types": 0,
+    "react/jsx-boolean-value": 0,
+    "react/jsx-curly-brace-presence": [1, {
+      "props": "never",
+      "children": "never"
+    }],
+    "react/jsx-first-prop-new-line": [1, "multiline"],
+    "react/jsx-handler-names": [1, {
+      "eventHandlerPrefix": "handle",
+      "eventHandlerPropPrefix": "on"
+    }],
+    "react/jsx-key": 2,
+    "react/jsx-no-bind": [2, {
+      "allowArrowFunctions": true
+    }],
+    "react/jsx-uses-vars": 2,
+    "react/no-access-state-in-setstate": 2,
+    "react/no-children-prop": 2,
+    "react/no-deprecated": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-multi-comp": [2, {
+      "ignoreStateless": true
+    }],
+    "react/no-string-refs": 2,
+    "react/no-unknown-property": 2,
+    "react/no-unsafe": 2,
+    "react/no-unused-prop-types": 2,
+    "react/no-unused-state": 2,
+    "react/prefer-stateless-function": 2,
+    "react/react-in-jsx-scope": 0,
+    "react/require-render-return": 1,
+    "react/sort-comp": 1,
+    "react/style-prop-object": 1,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".js", ".jsx"]
+    }],
+    "react/require-default-props": 0,
+    "react/no-unescaped-entities": [1, {
+      "forbid": [">", "}"]
+    }],
+
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/label-has-associated-control": [2, {
+      "controlComponents": ["Input"]
+    }],
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/aria-role": [2, {
+      "ignoreNonDOM": true
+    }],
+
+    "import/prefer-default-export": 2,
+    "import/order": [2, {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "newlines-between": "always"
+    }],
+    "import/newline-after-import": 1,
+    "import/no-dynamic-require": 1,
+    "import/no-unresolved": 2,
+    "import/first": 1,
+
+    "prefer-arrow-callback": 2,
+    "prefer-spread": 2,
+    "prefer-template": 2,
+    "prefer-destructuring": 2,
+    "prefer-rest-params": 2,
+    "prefer-const": 2,
+
+    "no-unused-vars": [2, {
+      "argsIgnorePattern": "^_"
+    }],
+    "no-use-before-define": [2, "nofunc"],
+    "no-alert": 1,
+    "no-console": 1,
+    "no-param-reassign": 0,
+    "no-unexpected-multiline": 2,
+    "no-undef-init": 2,
+    "no-underscore-dangle": 2,
+    "no-unused-expressions": [2, {
+      "allowShortCircuit": true,
+      "allowTernary": true
+    }],
+    "no-empty-function": [2, {
+      "allow": ["arrowFunctions"]
+    }],
+    "no-shadow": 0
+  }
+}

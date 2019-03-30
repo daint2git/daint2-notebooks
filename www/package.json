@@ -6,6 +6,11 @@
   "keywords": [],
   "author": "daint2@fsoft.com",
   "license": "ISC",
+  "private": true,
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0"
+  },
   "dependencies": {
     "@storybook/react": "^5.0.1",
     "@zeit/next-sass": "^1.0.1",
@@ -22,9 +27,20 @@
   "devDependencies": {
     "@storybook/addon-backgrounds": "^5.0.3",
     "autoprefixer": "^9.5.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "postcss-custom-media": "^7.0.7",
+    "prettier": "^1.16.4",
     "url-loader": "^1.1.2"
   },
   "scripts": {
