@@ -207,8 +207,17 @@
       color: $black;
 
       &:hover {
-        background-color: $col_alpha_5;
+        background-color: $col_alpha_08;
       }
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $col_alpha_08;
     }
   }
 

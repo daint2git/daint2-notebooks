@@ -1,9 +1,18 @@
 @import 'components/utils/colors';
+@import 'components/utils/variables';
 
 .link {
   display: flex;
+  width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   padding: 4px;
+  font-weight: 400;
+  color: $deep_gray;
+
+  &.level1 {
+    font-weight: 500;
+    color: $black;
+  }
 
   &[data-active='true'] {
     color: $primary;

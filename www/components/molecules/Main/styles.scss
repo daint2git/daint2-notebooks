@@ -1,10 +1,12 @@
 @import 'components/utils/variables';
 
 .root {
-  flex: 1 1 100%;
+  flex: 1;
+  margin: 0 auto;
   padding-top: 90px;
   padding-left: 16px;
   padding-right: 16px;
+  max-width: 100%;
 
   @media (--medium-viewport) {
     max-width: calc(100% - 150px);
@@ -13,7 +15,7 @@
   }
 
   @media (--large-viewport) {
-    max-width: calc(100% - 240px - 150px);
+    max-width: calc(100% - 150px);
     padding-left: 32px;
     padding-right: 32px;
   }

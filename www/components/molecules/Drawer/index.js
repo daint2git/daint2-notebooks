@@ -19,7 +19,7 @@ const Drawer = props => {
 
   return (
     <Portal disabledPortal={disabledPortal}>
-      <PortalWrapper role="drawer">
+      <PortalWrapper role="drawer" hidden={disabledPortal}>
         {hasBackdrop && <Backdrop onClick={onClose} />}
         <div className={cssModules`root ${className}`} {...other}>
           {children}

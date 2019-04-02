@@ -12,6 +12,8 @@ import search from './svg/20/search.svg'
 import alert from './svg/20/alert.svg'
 import comment from './svg/20/comment.svg'
 import help from './svg/20/help.svg'
+// 24
+import menu from './svg/24/menu.svg'
 
 const Icon = React.forwardRef((props, ref) => <img alt="icon" {...props} ref={ref} />)
 
@@ -29,3 +31,6 @@ export const SearchIcon = withInjectSrc(search)(Icon)
 export const AlertIcon = withInjectSrc(alert)(Icon)
 export const CommentIcon = withInjectSrc(comment)(Icon)
 export const HelpIcon = withInjectSrc(help)(Icon)
+
+// 24
+export const MenuIcon = withInjectSrc(menu)(Icon)

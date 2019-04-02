@@ -2,9 +2,9 @@
 @import 'components/utils/variables';
 
 .root {
-  position: fixed;
+  position: sticky;
+  top: 64px;
   right: 0;
-  bottom: 0;
   width: 150px;
   height: 100%;
   overflow-y: auto;
@@ -12,8 +12,16 @@
   padding: 16px;
   background-color: $white;
   border-left: 1px solid $col_alpha_1;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
 
   @media (--small-viewport) {
     display: none;
+  }
+
+  @media (--medium-viewport) {
+    top: 56px;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
   }
 }

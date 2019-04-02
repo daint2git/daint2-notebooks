@@ -16,14 +16,15 @@ const cssModules = cssModuleNameTag(styles)
 const MenuItemLink = props => {
   const { path, icon, icon: Icon = () => null, label, level, children, currentPath } = props
   const [open, setOpen] = React.useState(false)
+  const isLevel1 = level === 1
 
   return (
     <>
       <MenuItem style={{ display: 'block' }}>
-        <Link href={path}>
-          <a
-            href={path}
-            className={cssModules`link`}
+        {isLevel1 ? (
+          <button
+            type="button"
+            className={cssModules`link level1`}
             data-active={path === currentPath}
             onClick={() => setOpen(!open)}
           >
@@ -33,8 +34,24 @@ const MenuItemLink = props => {
               </MenuItemIcon>
             )}
             <MenuItemText>{label}</MenuItemText>
-          </a>
-        </Link>
+          </button>
+        ) : (
+          <Link href={path}>
+            <a
+              href={path}
+              className={cssModules`link`}
+              data-active={path === currentPath}
+              onClick={() => setOpen(!open)}
+            >
+              {icon && (
+                <MenuItemIcon>
+                  <Icon width={16} height={16} />
+                </MenuItemIcon>
+              )}
+              <MenuItemText>{label}</MenuItemText>
+            </a>
+          </Link>
+        )}
         {children && (
           <Collapse in={open}>
             <MenuList>
@@ -43,7 +60,7 @@ const MenuItemLink = props => {
           </Collapse>
         )}
       </MenuItem>
-      {level === 1 && (
+      {isLevel1 && (
         <>
           <Spacer />
           <Divider />

@@ -8,14 +8,21 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const PortalWrapper = ({ children, ...other }) => (
-  <div className={cssModules`root`} {...other}>
-    {children}
-  </div>
-)
+const PortalWrapper = ({ children, hidden, ...other }) => {
+  if (hidden) {
+    return children
+  }
+
+  return (
+    <div className={cssModules`root`} {...other}>
+      {children}
+    </div>
+  )
+}
 
 PortalWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  hidden: PropTypes.bool,
 }
 
 class Portal extends React.Component {

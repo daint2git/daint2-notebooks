@@ -26,6 +26,7 @@ storiesOf('Button', module)
       <Button color="light">light</Button>
       <Spacer />
       <Button color="dark">dark</Button>
+      <Button color="transparent">transparent</Button>
     </FlexWrapper>
   ))
   .add('with color + variant="outline"', () => (

@@ -43,7 +43,7 @@ Button.propTypes = {
   type: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  color: PropTypes.oneOf([...COLORS, 'light', 'dark']),
+  color: PropTypes.oneOf([...COLORS, 'light', 'dark', 'transparent']),
   size: PropTypes.oneOf(SIZES),
   variant: PropTypes.oneOf(['outline', 'text']),
   isFullWidth: PropTypes.bool,
