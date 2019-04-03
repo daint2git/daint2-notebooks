@@ -2,26 +2,27 @@
 @import 'components/utils/variables';
 
 .root {
-  position: sticky;
-  top: 64px;
-  right: 0;
   width: 150px;
-  height: 100%;
+  height: 100vh;
   overflow-y: auto;
-  display: block;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
   background-color: $white;
-  border-left: 1px solid $col_alpha_1;
-  height: calc(100vh - 64px);
-  margin-top: 64px;
+  transition: transition_duration_1;
 
   @media (--small-viewport) {
     display: none;
   }
 
   @media (--medium-viewport) {
-    top: 56px;
     height: calc(100vh - 56px);
     margin-top: 56px;
+    width: 140px;
+  }
+
+  @media (--large-viewport) {
+    height: calc(100vh - 64px);
+    margin-top: 64px;
   }
 }

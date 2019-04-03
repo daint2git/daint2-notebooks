@@ -1,21 +1,21 @@
 @import 'components/utils/variables';
 
 .root {
-  flex: 1;
+  flex: 1 1 auto;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: 60px;
   padding-left: 16px;
   padding-right: 16px;
-  max-width: 100%;
+  transition: transition_duration_1;
 
   @media (--medium-viewport) {
-    max-width: calc(100% - 150px);
+    padding-top: 70px;
     padding-left: 24px;
     padding-right: 24px;
   }
 
   @media (--large-viewport) {
-    max-width: calc(100% - 150px);
+    padding-top: 80px;
     padding-left: 32px;
     padding-right: 32px;
   }

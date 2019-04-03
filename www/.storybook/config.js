@@ -2,6 +2,7 @@ import { configure, addParameters } from '@storybook/react'
 
 import 'components/utils/app.scss'
 import './styles.scss'
+import '../static/css/prism.css'
 
 addParameters({
   backgrounds: [

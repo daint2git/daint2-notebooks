@@ -2,28 +2,8 @@
 
 .root {
 
-  @media (--large-viewport) {
-    width: 240px;
-  }
-
   .drawer {
-    width: 240px;
     justify-content: space-between;
-
-    @media (--small-viewport) {
-      height: calc(100% - 48px);
-      margin-top: 48px;
-    }
-
-    @media (--medium-viewport) {
-      height: calc(100% - 56px);
-      margin-top: 56px;
-    }
-
-    @media (--large-viewport) {
-      height: calc(100% - 64px);
-      margin-top: 64px;
-    }
   }
 
   .buttons {

@@ -15,7 +15,7 @@ const cssModules = cssModuleNameTag(styles)
 const PageLayout = props => {
   const { children } = props
   return (
-    <DrawerProvider initialValue={true}>
+    <DrawerProvider initialOpenDrawer={true}>
       <Header />
       <div className={cssModules`root`}>
         <NavigationLeftBar />

@@ -11,10 +11,10 @@ storiesOf('Drawer', module)
   .add('default', () => (
     <LocalStateProvider initialValue={false}>
       <LocalStateConsumer>
-        {({ value: isOpened, setValue: onOpen }) => (
+        {({ value: opened, setValue: onOpen }) => (
           <>
-            <Button onClick={() => onOpen(!isOpened)}>Toggle Drawer</Button>
-            <Drawer isOpened={isOpened} onClose={() => onOpen(false)}>
+            <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
+            <Drawer opened={opened} onClose={() => onOpen(false)}>
               <Button>Button 1</Button>
               <Spacer />
               <Button>Button 2</Button>
@@ -28,10 +28,10 @@ storiesOf('Drawer', module)
   .add('with scroll', () => (
     <LocalStateProvider initialValue={false}>
       <LocalStateConsumer>
-        {({ value: isOpened, setValue: onOpen }) => (
+        {({ value: opened, setValue: onOpen }) => (
           <>
-            <Button onClick={() => onOpen(!isOpened)}>Toggle Drawer</Button>
-            <Drawer isOpened={isOpened} onClose={() => onOpen(false)}>
+            <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
+            <Drawer opened={opened} onClose={() => onOpen(false)}>
               {Array.from({ length: 30 }, (v, k) => k).map(value => (
                 <Button key={value}>Button {value}</Button>
               ))}
@@ -44,10 +44,10 @@ storiesOf('Drawer', module)
   .add('with Backdrop', () => (
     <LocalStateProvider initialValue={false}>
       <LocalStateConsumer>
-        {({ value: isOpened, setValue: onOpen }) => (
+        {({ value: opened, setValue: onOpen }) => (
           <>
-            <Button onClick={() => onOpen(!isOpened)}>Toggle Drawer</Button>
-            <Drawer isOpened={isOpened} hasBackdrop onClose={() => onOpen(false)}>
+            <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
+            <Drawer opened={opened} hasBackdrop onClose={() => onOpen(false)}>
               {Array.from({ length: 30 }, (v, k) => k).map(value => (
                 <Button key={value}>Button {value}</Button>
               ))}

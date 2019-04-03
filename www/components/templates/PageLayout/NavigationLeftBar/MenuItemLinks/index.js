@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
+import PageContext from 'context/PageContext'
 import Divider from 'components/atoms/Divider'
 import Spacer from 'components/atoms/Spacer'
+import { DropDownArrowIcon } from 'components/atoms/Icon'
 import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from 'components/molecules/MenuList'
 import Collapse from 'components/molecules/Collapse'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
@@ -14,26 +16,38 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const MenuItemLink = props => {
-  const { path, icon, icon: Icon = () => null, label, level, children, currentPath } = props
-  const [open, setOpen] = React.useState(false)
+  const { path, icon: Icon = () => null, label, level, children } = props
+
   const isLevel1 = level === 1
+  const {
+    pageInfo: { currentPath },
+  } = useContext(PageContext)
+
+  let initialOpen = false
+  if (currentPath.includes(path) && currentPath.length > path.length) {
+    initialOpen = true
+  }
+
+  const [open, setOpen] = useState(initialOpen)
 
   return (
     <>
       <MenuItem style={{ display: 'block' }}>
-        {isLevel1 ? (
+        {isLevel1 && children ? (
           <button
             type="button"
             className={cssModules`link level1`}
             data-active={path === currentPath}
             onClick={() => setOpen(!open)}
           >
-            {icon && (
-              <MenuItemIcon>
-                <Icon width={16} height={16} />
-              </MenuItemIcon>
-            )}
+            <MenuItemIcon>
+              <Icon width={20} height={20} />
+            </MenuItemIcon>
             <MenuItemText>{label}</MenuItemText>
+
+            <div className={cssModules`arrow-icon`}>
+              <DropDownArrowIcon style={{ transform: `rotate(${open ? '180' : '0'}deg)` }} />
+            </div>
           </button>
         ) : (
           <Link href={path}>
@@ -43,18 +57,16 @@ const MenuItemLink = props => {
               data-active={path === currentPath}
               onClick={() => setOpen(!open)}
             >
-              {icon && (
-                <MenuItemIcon>
-                  <Icon width={16} height={16} />
-                </MenuItemIcon>
-              )}
+              <MenuItemIcon>
+                <Icon width={20} height={20} />
+              </MenuItemIcon>
               <MenuItemText>{label}</MenuItemText>
             </a>
           </Link>
         )}
         {children && (
           <Collapse in={open}>
-            <MenuList>
+            <MenuList style={{ padding: 0 }}>
               <MenuItemLinks list={children} />
             </MenuList>
           </Collapse>
@@ -77,7 +89,6 @@ MenuItemLink.propTypes = {
   label: PropTypes.string,
   level: PropTypes.number,
   children: PropTypes.array,
-  currentPath: PropTypes.string,
 }
 
 const MenuItemLinks = withRepeater(MenuItemLink)

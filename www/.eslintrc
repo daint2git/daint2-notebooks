@@ -43,7 +43,7 @@
     }],
 
     "react/boolean-prop-naming": [1, {
-      "rule": "^(is|has|disabled)[A-Z]([A-Za-z0-9]?)+|hidden|disabled|in"
+      "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+|hidden|disabled|checked|in|opened"
     }],
     "react/destructuring-assignment": 1,
     "react/forbid-prop-types": 0,

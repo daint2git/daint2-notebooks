@@ -41,17 +41,27 @@ function TabList(props) {
 
   React.useEffect(() => {
     const { ref: tabRef } = tabsRef.find(tabRef => tabRef.index === value)
-    const rectOfTab = tabRef.current.getBoundingClientRect()
-    const rectOfTabList = tabListRef.current.getBoundingClientRect()
-    const styleOfIndicator = indicatorRef.current.style
+    const tabElement = tabRef.current
+    const tabListElement = tabListRef.current
+    const indicatorElement = indicatorRef.current
 
-    styleOfIndicator.left = `${rectOfTab.left - rectOfTabList.left}px`
-    styleOfIndicator.bottom =
-      direction === 'column'
-        ? `${rectOfTabList.bottom - rectOfTab.bottom}px`
-        : `${rectOfTab.bottom - rectOfTabList.bottom}px`
-    styleOfIndicator.width = `${rectOfTab.width}px`
+    if (tabElement && tabListElement && indicatorElement) {
+      const rectOfTab = tabElement.getBoundingClientRect()
+      const rectOfTabList = tabListElement.getBoundingClientRect()
+      const styleOfIndicator = indicatorElement.style
+
+      styleOfIndicator.left = `${rectOfTab.left - rectOfTabList.left}px`
+      styleOfIndicator.bottom =
+        direction === 'column'
+          ? `${rectOfTabList.bottom - rectOfTab.bottom}px`
+          : `${rectOfTab.bottom - rectOfTabList.bottom}px`
+      styleOfIndicator.width = `${rectOfTab.width}px`
+    }
   }, [direction, tabsRef, value])
+
+  if (!children) {
+    return null
+  }
 
   return (
     <React.Fragment>
@@ -81,8 +91,8 @@ TabList.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
-  textColor: PropTypes.oneOf(['primary', 'light']),
-  indicatorColor: PropTypes.oneOf(['primary', 'light']),
+  textColor: PropTypes.oneOf(['primary', 'light', 'inverse']),
+  indicatorColor: PropTypes.oneOf(['primary', 'light', 'inverse']),
   isFullWidth: PropTypes.bool,
   value: PropTypes.number,
   onChange: PropTypes.func,

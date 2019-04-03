@@ -22,6 +22,7 @@ const Collapse = props => {
   }
 
   // const handleEntered = element => {
+
   // }
 
   const handleExit = element => {
@@ -35,6 +36,7 @@ const Collapse = props => {
   return (
     <Transition
       {...props}
+      appear
       in={inProp}
       timeout={timeout}
       onEnter={handleEnter}
@@ -45,7 +47,11 @@ const Collapse = props => {
       unmountOnExit
     >
       {(state, props) =>
-        React.cloneElement(children, { ...props, className: cssModules`collapse ${className}` })
+        React.cloneElement(children, {
+          ...props,
+          className: cssModules`collapse ${className}`,
+          'data-show': inProp,
+        })
       }
     </Transition>
   )

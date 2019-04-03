@@ -4,7 +4,7 @@ import getDisplayName from 'components/utils/getDisplayName'
 
 const withInjectSrc = svg => WrappedComponent => {
   const WithInjectSrc = React.forwardRef((props, ref) => (
-    <WrappedComponent {...props} src={svg} ref={ref} />
+    <WrappedComponent src={svg} ref={ref} {...props} />
   ))
   WithInjectSrc.displayName = `withInjectSrc(${getDisplayName(WrappedComponent)})`
   return WithInjectSrc

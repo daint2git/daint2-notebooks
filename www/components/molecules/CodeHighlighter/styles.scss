@@ -1,0 +1,18 @@
+@import 'components/utils/variables';
+
+.root {
+  font-size: $fs_base_large;
+  padding: 1rem;
+
+  @media (--small-viewport) {
+    margin: 1rem 0;
+  }
+
+  @media (--medium-viewport) {
+    margin: 1.1rem 0;
+  }
+
+  @media (--large-viewport) {
+    margin: 1.2rem 0;
+  }
+}

@@ -28,6 +28,16 @@
     }
   }
 
+  &.inverse {
+    background-color: $white;
+    color: $col_alpha_5;
+
+    .tab[data-active='true'] {
+      font-weight: 500;
+      color: $inverse;
+    }
+  }
+
   .tab-list {
     display: flex;
 
@@ -62,6 +72,10 @@
 
     &.light {
       background-color: $white;
+    }
+
+    &.inverse {
+      background-color: $inverse;
     }
   }
 }

@@ -1,12 +1,28 @@
 @import 'components/utils/colors';
+@import 'components/utils/variables';
 
 .root {
-  width: 50%;
-  max-width: 240px;
-  height: 100%;
+  width: 240px;
+  height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: $white;
-  border-right: 1px solid $col_alpha_1;
+  transition: transition_duration_1;
+
+  @media (--small-viewport) {
+    height: calc(100vh - 48px);
+    margin-top: 48px;
+  }
+
+  @media (--medium-viewport) {
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+  }
+
+  @media (--large-viewport) {
+    height: calc(100vh - 64px);
+    margin-top: 64px;
+    width: 240px;
+  }
 }

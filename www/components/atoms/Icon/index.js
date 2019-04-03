@@ -1,6 +1,9 @@
 import React from 'react'
 
+import compose from 'components/utils/compose'
+
 import withInjectSrc from './withInjectSrc'
+import withInjectDimension from './withInjectDimension'
 // 14
 import admin from './svg/14/admin.svg'
 import editor from './svg/14/editor.svg'
@@ -12,8 +15,12 @@ import search from './svg/20/search.svg'
 import alert from './svg/20/alert.svg'
 import comment from './svg/20/comment.svg'
 import help from './svg/20/help.svg'
-// 24
-import menu from './svg/24/menu.svg'
+// other
+import menu from './svg/other/menu.svg'
+import settings from './svg/other/settings.svg'
+import notification from './svg/other/notification.svg'
+import develop from './svg/other/develop.svg'
+import dropDownArrow from './svg/other/drop-down-arrow.svg'
 
 const Icon = React.forwardRef((props, ref) => <img alt="icon" {...props} ref={ref} />)
 
@@ -32,5 +39,24 @@ export const AlertIcon = withInjectSrc(alert)(Icon)
 export const CommentIcon = withInjectSrc(comment)(Icon)
 export const HelpIcon = withInjectSrc(help)(Icon)
 
-// 24
-export const MenuIcon = withInjectSrc(menu)(Icon)
+export const MenuIcon = compose(
+  withInjectDimension(20, 20),
+  withInjectSrc(menu),
+)(Icon)
+
+export const SettingsIcon = compose(
+  withInjectDimension(20, 20),
+  withInjectSrc(settings),
+)(Icon)
+
+export const NotificationIcon = compose(
+  withInjectDimension(20, 20),
+  withInjectSrc(notification),
+)(Icon)
+
+export const DevelopIcon = withInjectSrc(develop)(Icon)
+
+export const DropDownArrowIcon = compose(
+  withInjectDimension(14, 14),
+  withInjectSrc(dropDownArrow),
+)(Icon)

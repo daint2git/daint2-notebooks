@@ -7,6 +7,8 @@ import javascriptSolid from './svg/languages/javascript_solid.svg'
 import htmlSolid from './svg/languages/html_solid.svg'
 import cssSolid from './svg/languages/css_solid.svg'
 import otherFileSolid from './svg/languages/other_file_solid.svg'
+import git from './svg/languages/git.svg'
+import docker from './svg/languages/docker.svg'
 
 import Icon from '.'
 
@@ -18,4 +20,6 @@ export const File = withInjectSrc(file)(Icon)
 export const JavaScriptIcon = withInjectSrc(javascriptSolid)(Icon)
 export const HtmlIcon = withInjectSrc(htmlSolid)(Icon)
 export const CssIcon = withInjectSrc(cssSolid)(Icon)
+export const GitIcon = withInjectSrc(git)(Icon)
+export const DockerIcon = withInjectSrc(docker)(Icon)
 export const OtherFileIcon = withInjectSrc(otherFileSolid)(Icon)

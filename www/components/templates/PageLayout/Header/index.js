@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { MenuIcon, AlertIcon, CommentIcon, HelpIcon } from 'components/atoms/Icon'
+import {
+  MenuIcon,
+  SettingsIcon,
+  AlertIcon,
+  NotificationIcon,
+  HelpIcon,
+} from 'components/atoms/Icon'
 import SpacerColumn from 'components/atoms/SpacerColumn'
-import IconButton from 'components/molecules/IconButton'
-import ToolBar from 'components/molecules/ToolBar'
 import AppBar from 'components/molecules/AppBar'
+import ToolBar from 'components/molecules/ToolBar'
+import IconButton from 'components/molecules/IconButton'
 
 import DrawerContext from '../DrawerContext'
 
 const Header = () => {
-  const { isVisibleDrawer, setVisibleDrawer } = React.useContext(DrawerContext)
+  const { opened, onDrawerToggle } = useContext(DrawerContext)
   return (
-    <AppBar>
+    <AppBar color="inverse">
       <ToolBar>
-        <IconButton
-          icon={<MenuIcon width={18} height={18} />}
-          onClick={() => setVisibleDrawer(!isVisibleDrawer)}
-        />
+        <IconButton color="inverse" icon={<MenuIcon />} onClick={() => onDrawerToggle(!opened)} />
         <SpacerColumn />
-        <IconButton icon={<AlertIcon />} />
-        <IconButton icon={<CommentIcon />} />
-        <IconButton icon={<HelpIcon />} />
+        <IconButton color="inverse" icon={<AlertIcon />} />
+        <IconButton color="inverse" icon={<NotificationIcon />} />
+        <IconButton color="inverse" icon={<SettingsIcon />} />
+        <IconButton color="inverse" icon={<HelpIcon />} />
       </ToolBar>
     </AppBar>
   )

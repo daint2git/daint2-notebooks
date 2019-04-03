@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
 
-import Tabs, { Tab } from '..'
+import TabList, { Tab } from '..'
 
 const TabContainer = props => <div style={{ padding: '24px' }} {...props} />
 
@@ -13,11 +13,11 @@ storiesOf('TabList', module)
       <LocalStateConsumer>
         {({ value: tabIndex, setValue: onTabIndexChange }) => (
           <div style={{ margin: '50px' }}>
-            <Tabs value={tabIndex} onChange={value => onTabIndexChange(value)}>
+            <TabList value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>
-            </Tabs>
+            </TabList>
             {tabIndex === 0 && <TabContainer>Item One</TabContainer>}
             {tabIndex === 1 && <TabContainer>Item Two</TabContainer>}
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
@@ -31,11 +31,15 @@ storiesOf('TabList', module)
       <LocalStateConsumer>
         {({ value: tabIndex, setValue: onTabIndexChange }) => (
           <div style={{ display: 'flex' }}>
-            <Tabs direction="column" value={tabIndex} onChange={value => onTabIndexChange(value)}>
+            <TabList
+              direction="column"
+              value={tabIndex}
+              onChange={value => onTabIndexChange(value)}
+            >
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>
-            </Tabs>
+            </TabList>
             {tabIndex === 0 && <TabContainer>Item One</TabContainer>}
             {tabIndex === 1 && <TabContainer>Item Two</TabContainer>}
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
@@ -49,11 +53,11 @@ storiesOf('TabList', module)
       <LocalStateConsumer>
         {({ value: tabIndex, setValue: onTabIndexChange }) => (
           <>
-            <Tabs isFullWidth value={tabIndex} onChange={value => onTabIndexChange(value)}>
+            <TabList isFullWidth value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>
-            </Tabs>
+            </TabList>
             {tabIndex === 0 && <TabContainer>Item One</TabContainer>}
             {tabIndex === 1 && <TabContainer>Item Two</TabContainer>}
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
@@ -67,7 +71,7 @@ storiesOf('TabList', module)
       <LocalStateConsumer>
         {({ value: tabIndex, setValue: onTabIndexChange }) => (
           <>
-            <Tabs
+            <TabList
               textColor="primary"
               indicatorColor="primary"
               value={tabIndex}
@@ -76,7 +80,7 @@ storiesOf('TabList', module)
               <Tab>Tab 1</Tab>
               <Tab>Tab 2</Tab>
               <Tab>Tab 3</Tab>
-            </Tabs>
+            </TabList>
             {tabIndex === 0 && <TabContainer>Item One</TabContainer>}
             {tabIndex === 1 && <TabContainer>Item Two</TabContainer>}
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}

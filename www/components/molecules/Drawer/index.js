@@ -11,9 +11,9 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const Drawer = props => {
-  const { children, className, isOpened, disabledPortal, hasBackdrop, onClose, ...other } = props
+  const { children, className, opened, disabledPortal, hasBackdrop, onClose, ...other } = props
 
-  if (!isOpened) {
+  if (!opened) {
     return null
   }
 
@@ -32,14 +32,14 @@ const Drawer = props => {
 Drawer.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  isOpened: PropTypes.bool,
+  opened: PropTypes.bool,
   disabledPortal: PropTypes.bool,
   hasBackdrop: PropTypes.bool,
   onClose: PropTypes.func,
 }
 
 Drawer.defaultProps = {
-  isOpened: false,
+  opened: false,
   hasBackdrop: false,
   onClose: noop,
 }

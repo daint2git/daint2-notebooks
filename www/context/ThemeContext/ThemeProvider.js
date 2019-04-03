@@ -9,9 +9,9 @@ import styles from './styles.scss'
 const cssModules = cssModuleNameTag(styles)
 
 const ThemeProvider = ({ children, initialTheme }) => {
-  const [theme, setTheme] = useState(initialTheme)
+  const [theme, onThemeToggle] = useState(initialTheme)
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, onThemeToggle }}>
       <div className={cssModules`${theme}`}>{children}</div>
     </ThemeContext.Provider>
   )

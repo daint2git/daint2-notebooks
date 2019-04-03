@@ -1,4 +1,12 @@
-import { JavaScriptIcon, HtmlIcon, CssIcon, OtherFileIcon } from 'components/atoms/Icon/languages'
+import {
+  JavaScriptIcon,
+  HtmlIcon,
+  CssIcon,
+  GitIcon,
+  DockerIcon,
+  OtherFileIcon,
+} from 'components/atoms/Icon/languages'
+import { DevelopIcon } from 'components/atoms/Icon'
 
 import PrefixBorderIcon from './PrefixBorderIcon'
 
@@ -7,7 +15,7 @@ const menus = [
     id: 'javascript',
     path: '/javascript',
     icon: JavaScriptIcon,
-    label: 'JavaScript (JS)',
+    label: 'JavaScript (Js)',
     level: 1,
     children: [
       {
@@ -45,10 +53,34 @@ const menus = [
     children: null,
   },
   {
+    id: 'git',
+    path: '/git',
+    icon: GitIcon,
+    label: 'Git',
+    level: 1,
+    children: null,
+  },
+  {
+    id: 'docker',
+    path: '/docker',
+    icon: DockerIcon,
+    label: 'Docker',
+    level: 1,
+    children: null,
+  },
+  {
     id: 'other',
     path: '/other',
     icon: OtherFileIcon,
     label: 'Other',
+    level: 1,
+    children: null,
+  },
+  {
+    id: 'about',
+    path: '/about',
+    icon: DevelopIcon,
+    label: 'About',
     level: 1,
     children: null,
   },

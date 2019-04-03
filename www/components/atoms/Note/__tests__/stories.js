@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import FlexWrapper from 'components/molecules/FlexWrapper'
 import Spacer from 'components/atoms/Spacer'
+
 import Note from '..'
 
 storiesOf('Note', module)

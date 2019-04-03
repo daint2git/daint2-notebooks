@@ -2,56 +2,45 @@
 @import 'components/utils/variables';
 @import 'components/utils/mixins';
 
+@mixin component($fontSize, $fontWeight, $padding) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
 .root {
+  letter-spacing: 0.4px;
   line-height: 1.2;
-  text-indent: 0.5rem;
   user-select: none;
   @include ellipsis;
 
-  /* component */
+  /* components */
   &.h1 {
-    font-size: $fs_xxxx_large;
-    font-weight: 500;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    @include component($fs_xxxx_large, 500, 1.5rem);
   }
 
   &.h2 {
-    font-size: $fs_xxx_large;
-    font-weight: 500;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    @include component($fs_xxx_large, 500, 1.25rem);
   }
 
   &.h3 {
-    font-size: $fs_xx_large;
-    font-weight: 500;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    @include component($fs_xx_large, 500, 1rem);
   }
 
   &.h4 {
-    font-size: $fs_x_large;
-    font-weight: 400;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    @include component($fs_x_large, 400, 0.75rem);
   }
 
   &.h5 {
-    font-size: $fs_large;
-    font-weight: 400;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    @include component($fs_large, 400, 0.5rem);
   }
 
   &.h6 {
-    font-size: $fs_medium;
-    font-weight: 400;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    @include component($fs_base_large, 400, 0.5rem);
   }
 
-  /* color */
+  /* colors */
   &.light {
     color: $white;
   }

@@ -12,10 +12,10 @@ storiesOf('Collapse', module)
   .add('default', () => (
     <LocalStateProvider initialValue={false}>
       <LocalStateConsumer>
-        {({ value: isOpened, setValue: onOpen }) => (
+        {({ value: opened, setValue: onOpen }) => (
           <>
-            <Button onClick={() => onOpen(!isOpened)}>Toggle Collapse</Button>
-            <Collapse in={isOpened} style={{ marginTop: '30px', marginLeft: '20px' }}>
+            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Collapse in={opened} style={{ marginTop: '30px', marginLeft: '20px' }}>
               <div>
                 <Button>Button 1</Button>
                 <Spacer />
@@ -34,10 +34,30 @@ storiesOf('Collapse', module)
   .add('with menu list', () => (
     <LocalStateProvider initialValue={false}>
       <LocalStateConsumer>
-        {({ value: isOpened, setValue: onOpen }) => (
+        {({ value: opened, setValue: onOpen }) => (
           <>
-            <Button onClick={() => onOpen(!isOpened)}>Toggle Collapse</Button>
-            <Collapse in={isOpened} style={{ marginTop: '30px', marginLeft: '20px' }}>
+            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Collapse in={opened} style={{ marginTop: '10px', marginLeft: '10px' }}>
+              <MenuList>
+                <MenuItem>Item 1</MenuItem>
+                <MenuItem>Item 2</MenuItem>
+                <MenuItem>Item 3</MenuItem>
+              </MenuList>
+            </Collapse>
+            <Spacer />
+            <Button color="warning">abc</Button>
+          </>
+        )}
+      </LocalStateConsumer>
+    </LocalStateProvider>
+  ))
+  .add('with menu list (default value is true)', () => (
+    <LocalStateProvider initialValue={true}>
+      <LocalStateConsumer>
+        {({ value: opened, setValue: onOpen }) => (
+          <>
+            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Collapse in={opened} style={{ marginTop: '30px', marginLeft: '20px' }}>
               <MenuList>
                 <MenuItem>Item 1</MenuItem>
                 <MenuItem>Item 2</MenuItem>

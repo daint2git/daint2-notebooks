@@ -3,6 +3,7 @@
 
 .link {
   display: flex;
+  align-items: center;
   width: 100%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   padding: 4px;
@@ -20,5 +21,17 @@
 
   &:hover {
     background-color: $col_alpha_08;
+  }
+
+  .arrow-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    img {
+      position: absolute;
+      transition: $transition_duration_1;
+    }
   }
 }

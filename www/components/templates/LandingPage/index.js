@@ -23,7 +23,7 @@ const LandingPage = () => (
       </div>
     </div>
     <div id="content" className={cssModules`content`}>
-      <Link href="/javascript">
+      <Link href="/javascript/array">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <Javascript width={75} height={75} />

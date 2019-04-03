@@ -19,6 +19,7 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   component: 'h2',
+  color: 'dark',
 }
 
 export default Heading

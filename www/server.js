@@ -17,6 +17,14 @@ app.prepare().then(() => {
     return app.render(req, res, '/about', req.query)
   })
 
+  server.get('/javascript/array', (req, res) => {
+    return app.render(req, res, '/javascript/array', req.query)
+  })
+
+  server.get('/javascript/object', (req, res) => {
+    return app.render(req, res, '/javascript/object', req.query)
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res)
   })
