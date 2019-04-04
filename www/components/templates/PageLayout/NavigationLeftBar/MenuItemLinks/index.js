@@ -44,10 +44,10 @@ const MenuItemLink = props => {
               <Icon width={20} height={20} />
             </MenuItemIcon>
             <MenuItemText>{label}</MenuItemText>
-
-            <div className={cssModules`arrow-icon`}>
-              <DropDownArrowIcon style={{ transform: `rotate(${open ? '180' : '0'}deg)` }} />
-            </div>
+            <DropDownArrowIcon
+              className={cssModules`arrow-icon`}
+              style={{ transform: `rotate(${open ? '180' : '0'}deg)` }}
+            />
           </button>
         ) : (
           <Link href={path}>

@@ -1,0 +1,120 @@
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+@import 'components/utils/mixins';
+
+.root {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: inherit;
+
+  &[data-ellipsis='true'] {
+    @include ellipsis;
+  }
+
+  /* align */
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.justify {
+    text-align: justify;
+  }
+
+  /* weight */
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.lighter {
+    font-weight: lighter;
+  }
+
+  &.bolder {
+    font-weight: bolder;
+  }
+
+  /* transform */
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.capitalize {
+    text-transform: capitalize;
+  }
+
+  /* decoration */
+  &.overline {
+    text-decoration: overline;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.line-through {
+    text-decoration: line-through;
+  }
+
+  /* sizes */
+  &.small {
+    font-size: $fs_small;
+  }
+
+  &.medium {
+    font-size: $fs_medium;
+  }
+
+  &.large {
+    font-size: $fs_large;
+  }
+
+  &.x_large {
+    font-size: $fs_x_large;
+  }
+
+  /* colors */
+  &.primary {
+    color: $primary;
+  }
+
+  &.info {
+    color: $info;
+  }
+
+  &.danger {
+    color: $danger;
+  }
+
+  &.success {
+    color: $success;
+  }
+
+  &.warning {
+    color: $warning;
+  }
+
+  &.inverse {
+    color: $inverse;
+  }
+
+  &.light {
+    color: $white;
+  }
+
+  &.dark {
+    color: $black;
+  }
+}

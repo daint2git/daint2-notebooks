@@ -9,20 +9,16 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-  server.get('/home', (req, res) => {
-    return app.render(req, res, '/home', req.query)
+  server.get('/js', (req, res) => {
+    return app.render(req, res, '/js', req.query)
   })
 
-  server.get('/about', (req, res) => {
-    return app.render(req, res, '/about', req.query)
+  server.get('/html', (req, res) => {
+    return app.render(req, res, '/html', req.query)
   })
 
-  server.get('/javascript/array', (req, res) => {
-    return app.render(req, res, '/javascript/array', req.query)
-  })
-
-  server.get('/javascript/object', (req, res) => {
-    return app.render(req, res, '/javascript/object', req.query)
+  server.get('/css', (req, res) => {
+    return app.render(req, res, '/css', req.query)
   })
 
   server.get('*', (req, res) => {

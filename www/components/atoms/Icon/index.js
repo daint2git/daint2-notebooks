@@ -21,6 +21,8 @@ import settings from './svg/other/settings.svg'
 import notification from './svg/other/notification.svg'
 import develop from './svg/other/develop.svg'
 import dropDownArrow from './svg/other/drop-down-arrow.svg'
+import aboutMe from './svg/other/about-me.svg'
+import more from './svg/other/more.svg'
 
 const Icon = React.forwardRef((props, ref) => <img alt="icon" {...props} ref={ref} />)
 
@@ -57,6 +59,10 @@ export const NotificationIcon = compose(
 export const DevelopIcon = withInjectSrc(develop)(Icon)
 
 export const DropDownArrowIcon = compose(
-  withInjectDimension(14, 14),
+  withInjectDimension(12, 12),
   withInjectSrc(dropDownArrow),
 )(Icon)
+
+export const AboutMeIcon = withInjectSrc(aboutMe)(Icon)
+
+export const MoreIcon = withInjectSrc(more)(Icon)

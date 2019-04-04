@@ -2,24 +2,21 @@ import withInjectSrc from './withInjectSrc'
 import javascript from './svg/languages/javascript.svg'
 import html from './svg/languages/html.svg'
 import css from './svg/languages/css.svg'
-import file from './svg/languages/file.svg'
-import javascriptSolid from './svg/languages/javascript_solid.svg'
-import htmlSolid from './svg/languages/html_solid.svg'
-import cssSolid from './svg/languages/css_solid.svg'
-import otherFileSolid from './svg/languages/other_file_solid.svg'
 import git from './svg/languages/git.svg'
 import docker from './svg/languages/docker.svg'
+import react from './svg/languages/react.svg'
+import redux from './svg/languages/redux.svg'
+import code from './svg/languages/code.svg'
+import webProgramming from './svg/languages/web-programming.svg'
 
 import Icon from '.'
 
-export const Javascript = withInjectSrc(javascript)(Icon)
-export const Html = withInjectSrc(html)(Icon)
-export const Css = withInjectSrc(css)(Icon)
-export const File = withInjectSrc(file)(Icon)
-
-export const JavaScriptIcon = withInjectSrc(javascriptSolid)(Icon)
-export const HtmlIcon = withInjectSrc(htmlSolid)(Icon)
-export const CssIcon = withInjectSrc(cssSolid)(Icon)
+export const JsIcon = withInjectSrc(javascript)(Icon)
+export const HtmlIcon = withInjectSrc(html)(Icon)
+export const CssIcon = withInjectSrc(css)(Icon)
+export const ReactIcon = withInjectSrc(react)(Icon)
+export const ReduxIcon = withInjectSrc(redux)(Icon)
 export const GitIcon = withInjectSrc(git)(Icon)
 export const DockerIcon = withInjectSrc(docker)(Icon)
-export const OtherFileIcon = withInjectSrc(otherFileSolid)(Icon)
+export const CodeIcon = withInjectSrc(code)(Icon)
+export const WebProgrammingIcon = withInjectSrc(webProgramming)(Icon)

@@ -2,6 +2,8 @@
 @import 'components/utils/variables';
 
 .root {
+  position: sticky;
+  top: 48px;
   width: 150px;
   height: 100vh;
   overflow-y: auto;
@@ -10,18 +12,21 @@
   padding: 1.6rem;
   background-color: $white;
   transition: transition_duration_1;
+  margin-top: 48px;
 
   @media (--small-viewport) {
     display: none;
   }
 
   @media (--medium-viewport) {
+    top: 56px;
     height: calc(100vh - 56px);
     margin-top: 56px;
     width: 140px;
   }
 
   @media (--large-viewport) {
+    top: 64px;
     height: calc(100vh - 64px);
     margin-top: 64px;
   }

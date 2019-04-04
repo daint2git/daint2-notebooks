@@ -1,0 +1,32 @@
+@import 'components/utils/colors';
+@import 'components/utils/mixins';
+
+.root {
+  display: inline-block;
+  @include ellipsis;
+
+  &[data-variant='external'] {
+    text-decoration: underline;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  &[data-variant='internal'] {
+    text-decoration: none;
+    width: 100%;
+
+    &:hover,
+    &:active {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+
+  &[data-variant='anchor'] {
+    position: absolute;
+    margin-top: -70px;
+  }
+}

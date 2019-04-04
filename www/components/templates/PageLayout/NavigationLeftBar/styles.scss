@@ -1,6 +1,25 @@
 @import 'components/utils/variables';
 
 .root {
+  position: sticky;
+
+  @media (--small-viewport) {
+    top: 48px;
+    height: calc(100vh - 48px);
+    margin-top: 48px;
+  }
+
+  @media (--medium-viewport) {
+    top: 56px;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+  }
+
+  @media (--large-viewport) {
+    top: 64px;
+    height: calc(100vh - 64px);
+    margin-top: 64px;
+  }
 
   .drawer {
     justify-content: space-between;

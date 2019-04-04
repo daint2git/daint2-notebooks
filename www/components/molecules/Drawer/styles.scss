@@ -3,26 +3,10 @@
 
 .root {
   width: 240px;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: $white;
   transition: transition_duration_1;
-
-  @media (--small-viewport) {
-    height: calc(100vh - 48px);
-    margin-top: 48px;
-  }
-
-  @media (--medium-viewport) {
-    height: calc(100vh - 56px);
-    margin-top: 56px;
-  }
-
-  @media (--large-viewport) {
-    height: calc(100vh - 64px);
-    margin-top: 64px;
-    width: 240px;
-  }
 }

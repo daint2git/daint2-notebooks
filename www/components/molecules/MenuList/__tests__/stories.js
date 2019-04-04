@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
-import { JavaScriptIcon, HtmlIcon, CssIcon, OtherFileIcon } from 'components/atoms/Icon/languages'
+import { JsIcon, HtmlIcon, CssIcon, CodeIcon } from 'components/atoms/Icon/languages'
 
 import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from '..'
 
@@ -21,7 +21,7 @@ storiesOf('MenuList', module)
   .add('with icon', () => (
     <MenuList>
       <MenuItem>
-        <JavaScriptIcon width={20} height={20} />
+        <JsIcon width={20} height={20} />
         Javascript
       </MenuItem>
       <MenuItem>
@@ -33,7 +33,7 @@ storiesOf('MenuList', module)
         Css
       </MenuItem>
       <MenuItem>
-        <OtherFileIcon width={20} height={20} />
+        <CodeIcon width={20} height={20} />
         Other
       </MenuItem>
     </MenuList>
@@ -42,7 +42,7 @@ storiesOf('MenuList', module)
     <MenuList>
       <MenuItem>
         <MenuItemIcon>
-          <JavaScriptIcon width={20} height={20} />
+          <JsIcon width={20} height={20} />
         </MenuItemIcon>
         <MenuItemText>Javascript</MenuItemText>
       </MenuItem>
@@ -60,7 +60,7 @@ storiesOf('MenuList', module)
       </MenuItem>
       <MenuItem>
         <MenuItemIcon>
-          <OtherFileIcon width={20} height={20} />
+          <CodeIcon width={20} height={20} />
         </MenuItemIcon>
         <MenuItemText>Other</MenuItemText>
       </MenuItem>
@@ -73,7 +73,7 @@ storiesOf('MenuList', module)
           <MenuList>
             <MenuItem>
               <MenuItemIcon>
-                <JavaScriptIcon width={20} height={20} />
+                <JsIcon width={20} height={20} />
               </MenuItemIcon>
               <MenuItemText>Javascript</MenuItemText>
             </MenuItem>
@@ -92,14 +92,14 @@ storiesOf('MenuList', module)
             <MenuItem style={{ display: 'block' }}>
               <div onClick={() => showSubMenu(!hasSubMenu)} style={{ display: 'flex' }}>
                 <MenuItemIcon>
-                  <OtherFileIcon width={20} height={20} />
+                  <CodeIcon width={20} height={20} />
                 </MenuItemIcon>
                 <MenuItemText>Other</MenuItemText>
               </div>
               <MenuList>
                 <MenuItem>
                   <MenuItemIcon>
-                    <JavaScriptIcon width={20} height={20} />
+                    <JsIcon width={20} height={20} />
                   </MenuItemIcon>
                   <MenuItemText>Javascript</MenuItemText>
                 </MenuItem>

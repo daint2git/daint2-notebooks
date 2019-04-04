@@ -13,6 +13,13 @@
   &.level1 {
     font-weight: 500;
     color: $black;
+    position: relative;
+
+    .arrow-icon {
+      position: absolute;
+      right: 10px;
+      transition: $transition_duration_1;
+    }
   }
 
   &[data-active='true'] {
@@ -21,17 +28,5 @@
 
   &:hover {
     background-color: $col_alpha_08;
-  }
-
-  .arrow-icon {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    img {
-      position: absolute;
-      transition: $transition_duration_1;
-    }
   }
 }

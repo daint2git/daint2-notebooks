@@ -1,12 +1,6 @@
 import React, { useContext } from 'react'
 
-import {
-  MenuIcon,
-  SettingsIcon,
-  AlertIcon,
-  NotificationIcon,
-  HelpIcon,
-} from 'components/atoms/Icon'
+import { MenuIcon, SettingsIcon, NotificationIcon, HelpIcon } from 'components/atoms/Icon'
 import SpacerColumn from 'components/atoms/SpacerColumn'
 import AppBar from 'components/molecules/AppBar'
 import ToolBar from 'components/molecules/ToolBar'
@@ -20,8 +14,18 @@ const Header = () => {
     <AppBar color="inverse">
       <ToolBar>
         <IconButton color="inverse" icon={<MenuIcon />} onClick={() => onDrawerToggle(!opened)} />
+        <div
+          style={{
+            fontSize: '24px',
+            lineHeight: '1.2',
+            letterSpacing: '0.5px',
+            paddingLeft: '10px',
+            fontWeight: '600',
+          }}
+        >
+          DAINT2 NOTEBOOKS
+        </div>
         <SpacerColumn />
-        <IconButton color="inverse" icon={<AlertIcon />} />
         <IconButton color="inverse" icon={<NotificationIcon />} />
         <IconButton color="inverse" icon={<SettingsIcon />} />
         <IconButton color="inverse" icon={<HelpIcon />} />

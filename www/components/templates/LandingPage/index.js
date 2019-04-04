@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Javascript, Html, Css, File } from 'components/atoms/Icon/languages'
+import { JsIcon, HtmlIcon, CssIcon } from 'components/atoms/Icon/languages'
 import StickySocialBar from 'components/molecules/StickySocialBar'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
@@ -23,40 +23,33 @@ const LandingPage = () => (
       </div>
     </div>
     <div id="content" className={cssModules`content`}>
-      <Link href="/javascript/array">
+      <Link href="/js">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
-            <Javascript width={75} height={75} />
-            <h3>JavaScript</h3>
-
-            <a>Read More</a>
+            <JsIcon width={75} height={75} />
+            <h3>JavaScript (Js)</h3>
+            <a href="/js">Read More</a>
           </div>
         </div>
       </Link>
-
-      <div className={cssModules`box`}>
-        <div className={cssModules`box-content`}>
-          <Html width={75} height={75} />
-          <h3>Html</h3>
-          <a href="#">Read More</a>
+      <Link href="/html">
+        <div className={cssModules`box`}>
+          <div className={cssModules`box-content`}>
+            <HtmlIcon width={75} height={75} />
+            <h3>HyperText Markup Language (Html)</h3>
+            <a href="/Html">Read More</a>
+          </div>
         </div>
-      </div>
-
-      <div className={cssModules`box`}>
-        <div className={cssModules`box-content`}>
-          <Css width={75} height={75} />
-          <h3>Css</h3>
-          <a href="#">Read More</a>
+      </Link>
+      <Link href="/css">
+        <div className={cssModules`box`}>
+          <div className={cssModules`box-content`}>
+            <CssIcon width={75} height={75} />
+            <h3>Cascading Style Sheets (Css)</h3>
+            <a href="/css">Read More</a>
+          </div>
         </div>
-      </div>
-
-      <div className={cssModules`box`}>
-        <div className={cssModules`box-content`}>
-          <File width={75} height={75} />
-          <h3>Other</h3>
-          <a href="#">Read More</a>
-        </div>
-      </div>
+      </Link>
     </div>
     <StickySocialBar />
   </div>

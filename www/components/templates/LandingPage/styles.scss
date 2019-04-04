@@ -129,29 +129,28 @@
     cursor: pointer;
 
     &:nth-child(1) {
-      background-color: #af52bf;
+      background: linear-gradient(60deg, #26c6da, #00acc1);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 172, 193, .4);
     }
 
     &:nth-child(2) {
-      background-color: #35baf6;
+      background: linear-gradient(60deg, #ffa726, #fb8c00);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(255, 152, 0, .4);
     }
 
     &:nth-child(3) {
-      background-color: #a2cf6e;
-    }
-
-    &:nth-child(4) {
-      background-color: #ffac33;
+      background: linear-gradient(60deg, #ef5350, #e53935);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4);
     }
 
     @media (--medium-viewport) {
-      flex: 50%;
-      max-width: 50%;
+      flex: 33%;
+      max-width: 33%;
     }
 
     @media (--large-viewport) {
-      flex: 25%;
-      max-width: 25%;
+      flex: 33%;
+      max-width: 33%;
     }
 
     .box-content {
@@ -160,7 +159,7 @@
       transform: translateY(-50%);
       text-align: center;
       color: #fff;
-      transition: $transition_duration_2;
+      transition: $transition_duration_1;
 
       h3 {
         padding: 10px 0;
