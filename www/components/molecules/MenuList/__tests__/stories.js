@@ -67,9 +67,9 @@ storiesOf('MenuList', module)
     </MenuList>
   ))
   .add('with menu in menu', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: hasSubMenu, setValue: showSubMenu }) => (
+        {({ state: hasSubMenu, setState: showSubMenu }) => (
           <MenuList>
             <MenuItem>
               <MenuItemIcon>

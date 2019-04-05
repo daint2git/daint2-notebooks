@@ -3,14 +3,14 @@ import { storiesOf } from '@storybook/react'
 
 import Spacer from 'components/atoms/Spacer'
 import { PenIcon, CalendarIcon, AlertIcon, CommentIcon } from 'components/atoms/Icon'
-import FlexWrapper from 'components/molecules/FlexWrapper'
+import FlexContainer from 'components/atoms/FlexContainer'
 
 import IconButton from '..'
 
 storiesOf('IconButton', module)
   .add('default', () => <IconButton />)
   .add('with icon', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <IconButton icon={<PenIcon />}>Pen</IconButton>
       <Spacer />
       <IconButton icon={<CalendarIcon />}>Calendar</IconButton>
@@ -18,10 +18,10 @@ storiesOf('IconButton', module)
       <IconButton icon={<AlertIcon />}>Alert</IconButton>
       <Spacer />
       <IconButton icon={<CommentIcon />}>Comment</IconButton>
-    </FlexWrapper>
+    </FlexContainer>
   ))
   .add('with icon + direction="column"', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <IconButton icon={<PenIcon />} direction="column">
         Pen
       </IconButton>
@@ -42,5 +42,5 @@ storiesOf('IconButton', module)
         <span>Comment 1</span>
         <span>Comment 2</span>
       </IconButton>
-    </FlexWrapper>
+    </FlexContainer>
   ))

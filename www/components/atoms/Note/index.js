@@ -1,7 +1,8 @@
+import { COLORS } from 'constants/global'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { COLORS } from 'components/constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'

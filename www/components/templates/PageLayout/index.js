@@ -1,31 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { TitlesOnRightBarProvider } from 'context/TitlesOnRightBarContext'
-import ScrollButton from 'components/molecules/ScrollButton'
+import { DrawerProvider } from 'context/DrawerContext'
+import { TitleLinksProvider } from 'context/TitleLinksContext'
+import FlexContainer from 'components/atoms/FlexContainer'
 import Main from 'components/molecules/Main'
-import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+import ScrollButton from 'components/molecules/ScrollButton'
 
-import { DrawerProvider } from './DrawerContext'
 import Header from './Header'
-import NavigationLeftBar from './NavigationLeftBar'
-import NavigationRightBar from './NavigationRightBar'
-import styles from './styles.scss'
+import LeftBar from './LeftBar'
+import RightBar from './RightBar'
 
-const cssModules = cssModuleNameTag(styles)
-
-const PageLayout = props => {
+function PageLayout(props) {
   const { children } = props
   return (
-    <DrawerProvider initialOpenDrawer={true}>
+    <DrawerProvider initialOpen={true}>
       <Header />
-      <div className={cssModules`root`}>
-        <NavigationLeftBar />
-        <TitlesOnRightBarProvider>
+      <FlexContainer>
+        <LeftBar />
+        <TitleLinksProvider>
           <Main>{children}</Main>
-          <NavigationRightBar />
-        </TitlesOnRightBarProvider>
-      </div>
+          <RightBar />
+        </TitleLinksProvider>
+      </FlexContainer>
       <ScrollButton />
     </DrawerProvider>
   )

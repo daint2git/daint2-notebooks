@@ -30,7 +30,12 @@
     [
       "module-resolver",
       {
-        "root": ["./"]
+        "root": ["./"],
+        "alias": {
+          "components": "./components",
+          "constants": "./constants",
+          "context": "./context"
+        }
       }
     ]
   ]

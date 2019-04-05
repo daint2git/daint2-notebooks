@@ -5,17 +5,14 @@ import BaseLink from 'components/atoms/BaseLink'
 import Text from 'components/atoms/Text'
 import Spacer from 'components/atoms/Spacer'
 import Heading from 'components/atoms/Heading'
-import Paper from 'components/molecules/Paper'
+import Paper from 'components/atoms/Paper'
 import CodeExample from 'components/organisms/CodeExample'
-import withRepeater from 'components/utils/withRepeater'
+import withRepeater from 'components/utils/hocs/withRepeater'
 
 const Example = ({ text, input, output }) => (
   <>
     <Text size="large" innerHtml={text} />
-    <CodeExample>
-      {input}
-      {output}
-    </CodeExample>
+    <CodeExample input={input} output={output} />
     <Spacer />
   </>
 )
@@ -28,19 +25,21 @@ Example.propTypes = {
 
 const Examples = withRepeater(Example)
 
-const ItemContent = ({ header, definition, contents }) => (
-  <>
-    <Paper>
-      <Heading>
-        <BaseLink variant="anchor" id={header} />
-        {header}
-      </Heading>
-      <Text size="x_large" innerHtml={definition} />
-      <Examples list={contents} />
-    </Paper>
-    <Spacer />
-  </>
-)
+function ItemContent({ header, definition, contents }) {
+  return (
+    <>
+      <Paper>
+        <Heading>
+          <BaseLink variant="anchor" id={header} />
+          {header}
+        </Heading>
+        <Text size="x-large" innerHtml={definition} />
+        <Examples list={contents} />
+      </Paper>
+      <Spacer />
+    </>
+  )
+}
 
 ItemContent.propTypes = {
   header: PropTypes.string.isRequired,

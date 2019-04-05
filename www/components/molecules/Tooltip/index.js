@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Portal, { PortalWrapper } from 'components/atoms/Portal'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
-import noop from 'components/utils/noop'
+import noop from 'components/utils/helpers/noop'
 
 import styles from './styles.scss'
 

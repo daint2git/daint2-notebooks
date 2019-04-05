@@ -1,34 +1,30 @@
 import React, { useContext } from 'react'
 
-import { MenuIcon, SettingsIcon, NotificationIcon, HelpIcon } from 'components/atoms/Icon'
+import DrawerContext from 'context/DrawerContext'
 import SpacerColumn from 'components/atoms/SpacerColumn'
+import { MenuIcon, SettingsIcon, NotificationIcon, QuestionIcon } from 'components/atoms/Icon'
 import AppBar from 'components/molecules/AppBar'
 import ToolBar from 'components/molecules/ToolBar'
 import IconButton from 'components/molecules/IconButton'
+import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
-import DrawerContext from '../DrawerContext'
+import styles from './styles.scss'
 
-const Header = () => {
-  const { opened, onDrawerToggle } = useContext(DrawerContext)
+const cssModules = cssModuleNameTag(styles)
+
+const AppLogo = () => <div className={cssModules`app-logo`}>DAINT2 NOTEBOOKS</div>
+
+function Header() {
+  const { opened, onToggle } = useContext(DrawerContext)
   return (
     <AppBar color="inverse">
       <ToolBar>
-        <IconButton color="inverse" icon={<MenuIcon />} onClick={() => onDrawerToggle(!opened)} />
-        <div
-          style={{
-            fontSize: '24px',
-            lineHeight: '1.2',
-            letterSpacing: '0.5px',
-            paddingLeft: '10px',
-            fontWeight: '600',
-          }}
-        >
-          DAINT2 NOTEBOOKS
-        </div>
+        <IconButton color="inverse" icon={<MenuIcon />} onClick={() => onToggle(!opened)} />
+        <AppLogo />
         <SpacerColumn />
         <IconButton color="inverse" icon={<NotificationIcon />} />
         <IconButton color="inverse" icon={<SettingsIcon />} />
-        <IconButton color="inverse" icon={<HelpIcon />} />
+        <IconButton color="inverse" icon={<QuestionIcon />} />
       </ToolBar>
     </AppBar>
   )

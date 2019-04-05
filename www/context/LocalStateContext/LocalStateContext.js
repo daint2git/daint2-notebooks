@@ -1,6 +1,6 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const LocalStateContext = React.createContext()
+const LocalStateContext = createContext()
 
 const LocalStateConsumer = LocalStateContext.Consumer
 

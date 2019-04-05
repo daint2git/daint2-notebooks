@@ -9,9 +9,9 @@ const TabContainer = props => <div style={{ padding: '24px' }} {...props} />
 
 storiesOf('TabList', module)
   .add('default', () => (
-    <LocalStateProvider initialValue={0}>
+    <LocalStateProvider initialState={0}>
       <LocalStateConsumer>
-        {({ value: tabIndex, setValue: onTabIndexChange }) => (
+        {({ state: tabIndex, setState: onTabIndexChange }) => (
           <div style={{ margin: '50px' }}>
             <TabList value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
@@ -27,9 +27,9 @@ storiesOf('TabList', module)
     </LocalStateProvider>
   ))
   .add('with direction="column"', () => (
-    <LocalStateProvider initialValue={0}>
+    <LocalStateProvider initialState={0}>
       <LocalStateConsumer>
-        {({ value: tabIndex, setValue: onTabIndexChange }) => (
+        {({ state: tabIndex, setState: onTabIndexChange }) => (
           <div style={{ display: 'flex' }}>
             <TabList
               direction="column"
@@ -49,9 +49,9 @@ storiesOf('TabList', module)
     </LocalStateProvider>
   ))
   .add('with isFullWidth', () => (
-    <LocalStateProvider initialValue={0}>
+    <LocalStateProvider initialState={0}>
       <LocalStateConsumer>
-        {({ value: tabIndex, setValue: onTabIndexChange }) => (
+        {({ state: tabIndex, setState: onTabIndexChange }) => (
           <>
             <TabList isFullWidth value={tabIndex} onChange={value => onTabIndexChange(value)}>
               <Tab>Tab 1</Tab>
@@ -67,9 +67,9 @@ storiesOf('TabList', module)
     </LocalStateProvider>
   ))
   .add('with textColor="primary" && indicatorColor="primary"', () => (
-    <LocalStateProvider initialValue={0}>
+    <LocalStateProvider initialState={0}>
       <LocalStateConsumer>
-        {({ value: tabIndex, setValue: onTabIndexChange }) => (
+        {({ state: tabIndex, setState: onTabIndexChange }) => (
           <>
             <TabList
               textColor="primary"

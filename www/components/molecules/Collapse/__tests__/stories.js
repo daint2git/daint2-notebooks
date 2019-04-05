@@ -10,11 +10,11 @@ import Collapse from '..'
 
 storiesOf('Collapse', module)
   .add('default', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onToggle }) => (
           <>
-            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
             <Collapse in={opened} style={{ marginTop: '30px', marginLeft: '20px' }}>
               <div>
                 <Button>Button 1</Button>
@@ -32,11 +32,11 @@ storiesOf('Collapse', module)
     </LocalStateProvider>
   ))
   .add('with menu list', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onToggle }) => (
           <>
-            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
             <Collapse in={opened} style={{ marginTop: '10px', marginLeft: '10px' }}>
               <MenuList>
                 <MenuItem>Item 1</MenuItem>
@@ -52,11 +52,11 @@ storiesOf('Collapse', module)
     </LocalStateProvider>
   ))
   .add('with menu list (default value is true)', () => (
-    <LocalStateProvider initialValue={true}>
+    <LocalStateProvider initialState={true}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onToggle }) => (
           <>
-            <Button onClick={() => onOpen(!opened)}>Toggle Collapse</Button>
+            <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
             <Collapse in={opened} style={{ marginTop: '30px', marginLeft: '20px' }}>
               <MenuList>
                 <MenuItem>Item 1</MenuItem>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 
-import TitlesOnRightBarContext from 'context/TitlesOnRightBarContext'
-import withRepeator from 'components/utils/withRepeater'
+import TitleLinksContext from 'context/TitleLinksContext'
+import withRepeator from 'components/utils/hocs/withRepeater'
 import ItemContent from 'components/organisms/JavaScript/ItemContent'
 
 import contentPage from './contentPage'
@@ -10,7 +10,7 @@ const ItemContents = withRepeator(ItemContent)
 
 function Basic() {
   const headers = contentPage.map(example => example.header)
-  const { titles, setTitles } = useContext(TitlesOnRightBarContext)
+  const { titles, setTitles } = useContext(TitleLinksContext)
 
   useEffect(() => {
     if (

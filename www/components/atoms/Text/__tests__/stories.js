@@ -85,7 +85,8 @@ storiesOf('Text', module)
       <Text size="medium">medium - Text</Text>
       <Spacer />
       <Text size="large">large - Text</Text>
-      <Text size="x_large">x_large - Text</Text>
+      <Spacer />
+      <Text size="x-large">x-large - Text</Text>
       <Spacer />
     </>
   ))

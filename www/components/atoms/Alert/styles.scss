@@ -42,4 +42,12 @@
   &.inverse {
     @include color($inverse);
   }
+
+  &.light {
+    @include color($white, $black);
+  }
+
+  &.dark {
+    @include color($black);
+  }
 }

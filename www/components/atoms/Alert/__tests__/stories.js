@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import FlexWrapper from 'components/molecules/FlexWrapper'
+import FlexContainer from 'components/atoms/FlexContainer'
 import Spacer from 'components/atoms/Spacer'
 
 import Alert from '..'
@@ -10,7 +10,7 @@ storiesOf('Alert', module)
   .add('default', () => <Alert />)
   .add('with text', () => <Alert>Hello Alert</Alert>)
   .add('with color', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column">
       <Alert color="primary">primary</Alert>
       <Spacer />
       <Alert color="info">info</Alert>
@@ -22,10 +22,14 @@ storiesOf('Alert', module)
       <Alert color="warning">warning</Alert>
       <Spacer />
       <Alert color="inverse">inverse</Alert>
-    </FlexWrapper>
+      <Spacer />
+      <Alert color="light">light</Alert>
+      <Spacer />
+      <Alert color="dark">dark</Alert>
+    </FlexContainer>
   ))
   .add('with color + variant="outline"', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column">
       <Alert color="primary" variant="outline">
         primary
       </Alert>
@@ -49,5 +53,13 @@ storiesOf('Alert', module)
       <Alert color="inverse" variant="outline">
         inverse
       </Alert>
-    </FlexWrapper>
+      <Spacer />
+      <Alert color="light" variant="outline">
+        light
+      </Alert>
+      <Spacer />
+      <Alert color="dark" variant="outline">
+        dark
+      </Alert>
+    </FlexContainer>
   ))

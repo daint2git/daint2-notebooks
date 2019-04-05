@@ -1,7 +1,7 @@
 import React from 'react'
 import Proptypes from 'prop-types'
 
-import withRepeater from 'components/utils/withRepeater'
+import withRepeater from 'components/utils/hocs/withRepeater'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import socialList from './socialList'

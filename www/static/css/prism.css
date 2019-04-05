@@ -9,8 +9,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New',
-    Courier, monospace;
+  font-family: 'Fira Mono', 'Courier New', Courier, monospace;
   font-size: 14px;
   line-height: 1.375;
   direction: ltr;
@@ -36,12 +35,11 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: 0.5em 0;
   overflow: auto;
 }
 
 /* Inline code */
-:not(pre)>code[class*='language-'] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
@@ -127,7 +125,7 @@ pre[class*='language-'] {
   cursor: help;
 }
 
-pre>code.highlight {
+pre > code.highlight {
   outline: 0.4em solid red;
   outline-offset: 0.4em;
 }

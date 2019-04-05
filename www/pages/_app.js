@@ -1,5 +1,5 @@
 import React from 'react'
-import App, { Container } from 'next/app'
+import NextApp, { Container } from 'next/app'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 
@@ -8,13 +8,13 @@ import { PageProvider } from 'context/PageContext'
 
 import 'components/utils/app.scss'
 
-class MyApp extends App {
+class App extends NextApp {
   render() {
     const { Component, pageProps, router } = this.props
     return (
       <Container>
         <ThemeProvider>
-          <PageProvider pageInfo={{ currentPath: router.pathname }}>
+          <PageProvider activePage={{ asPath: router.asPath, pathname: router.pathname }}>
             <Component {...pageProps} />
           </PageProvider>
         </ThemeProvider>
@@ -36,4 +36,4 @@ Router.events.on('routeChangeComplete', () => {
 
 Router.events.on('routeChangeError', () => NProgress.done())
 
-export default MyApp
+export default App

@@ -1,7 +1,8 @@
+import { COLORS, SIZES } from 'constants/global'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { COLORS, SIZES } from 'components/constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
@@ -43,7 +44,7 @@ Button.propTypes = {
   type: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  color: PropTypes.oneOf([...COLORS, 'light', 'dark', 'transparent']),
+  color: PropTypes.oneOf([...COLORS, 'transparent']),
   size: PropTypes.oneOf(SIZES),
   variant: PropTypes.oneOf(['outline', 'text']),
   isFullWidth: PropTypes.bool,

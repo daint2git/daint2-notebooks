@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import noop from 'components/utils/helpers/noop'
+import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 import Backdrop from 'components/atoms/Backdrop'
 import Portal, { PortalWrapper } from 'components/atoms/Portal'
-import noop from 'components/utils/noop'
-import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
 

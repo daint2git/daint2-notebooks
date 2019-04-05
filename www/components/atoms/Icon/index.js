@@ -1,6 +1,6 @@
 import React from 'react'
 
-import compose from 'components/utils/compose'
+import compose from 'components/utils/hocs/utils/compose'
 
 import withInjectSrc from './withInjectSrc'
 import withInjectDimension from './withInjectDimension'
@@ -23,6 +23,7 @@ import develop from './svg/other/develop.svg'
 import dropDownArrow from './svg/other/drop-down-arrow.svg'
 import aboutMe from './svg/other/about-me.svg'
 import more from './svg/other/more.svg'
+import question from './svg/other/question.svg'
 
 const Icon = React.forwardRef((props, ref) => <img alt="icon" {...props} ref={ref} />)
 
@@ -46,14 +47,19 @@ export const MenuIcon = compose(
   withInjectSrc(menu),
 )(Icon)
 
+export const NotificationIcon = compose(
+  withInjectDimension(20, 20),
+  withInjectSrc(notification),
+)(Icon)
+
 export const SettingsIcon = compose(
   withInjectDimension(20, 20),
   withInjectSrc(settings),
 )(Icon)
 
-export const NotificationIcon = compose(
+export const QuestionIcon = compose(
   withInjectDimension(20, 20),
-  withInjectSrc(notification),
+  withInjectSrc(question),
 )(Icon)
 
 export const DevelopIcon = withInjectSrc(develop)(Icon)

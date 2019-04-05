@@ -1,7 +1,8 @@
+import { COLORS, SIZES } from 'constants/global'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { COLORS, SIZES } from 'components/constants/global'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
@@ -26,6 +27,7 @@ const Text = React.forwardRef((props, ref) => {
   if (innerHtml) {
     other.dangerouslySetInnerHTML = { __html: innerHtml }
   }
+
   return (
     <Component
       className={cssModules`root ${color} ${size} ${weight} ${align} ${transform} ${decoration} ${className}`}
@@ -39,8 +41,8 @@ const Text = React.forwardRef((props, ref) => {
 Text.propTypes = {
   component: PropTypes.elementType,
   className: PropTypes.string,
-  color: PropTypes.oneOf([...COLORS, 'light', 'dark']),
-  size: PropTypes.oneOf([...SIZES, 'x_large']),
+  color: PropTypes.oneOf(COLORS),
+  size: PropTypes.oneOf(SIZES),
   weight: PropTypes.oneOf(['bold', 'lighter', 'bolder']),
   align: PropTypes.oneOf(['inherit', 'left', 'center', 'right', 'justify']),
   transform: PropTypes.oneOf(['uppercase', 'lowercase', 'capitalize']),

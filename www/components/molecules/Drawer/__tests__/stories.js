@@ -9,9 +9,9 @@ import Drawer from '..'
 
 storiesOf('Drawer', module)
   .add('default', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
             <Drawer opened={opened} onClose={() => onOpen(false)}>
@@ -26,9 +26,9 @@ storiesOf('Drawer', module)
     </LocalStateProvider>
   ))
   .add('with scroll', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
             <Drawer opened={opened} onClose={() => onOpen(false)}>
@@ -42,9 +42,9 @@ storiesOf('Drawer', module)
     </LocalStateProvider>
   ))
   .add('with Backdrop', () => (
-    <LocalStateProvider initialValue={false}>
+    <LocalStateProvider initialState={false}>
       <LocalStateConsumer>
-        {({ value: opened, setValue: onOpen }) => (
+        {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
             <Drawer opened={opened} hasBackdrop onClose={() => onOpen(false)}>

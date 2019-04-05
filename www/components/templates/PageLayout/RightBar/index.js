@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import TitlesOnRightBarContext from 'context/TitlesOnRightBarContext'
+import TitleLinksContext from 'context/TitleLinksContext'
 import Heading from 'components/atoms/Heading'
 import BaseLink from 'components/atoms/BaseLink'
 import SideBar from 'components/molecules/SideBar'
@@ -13,8 +13,8 @@ const renderMenuItems = titles =>
     </MenuItem>
   ))
 
-function NavigationRightBar() {
-  const { titles } = useContext(TitlesOnRightBarContext)
+function RightBar() {
+  const { titles } = useContext(TitleLinksContext)
   return (
     <SideBar>
       <Heading component="h3">Contents</Heading>
@@ -23,4 +23,4 @@ function NavigationRightBar() {
   )
 }
 
-export default NavigationRightBar
+export default RightBar

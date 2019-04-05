@@ -1,6 +1,6 @@
 import React from 'react'
 
-import getDisplayName from 'components/utils/getDisplayName'
+import getDisplayName from 'components/utils/hocs/utils/getDisplayName'
 
 const withInjectSrc = svg => WrappedComponent => {
   const WithInjectSrc = React.forwardRef((props, ref) => (

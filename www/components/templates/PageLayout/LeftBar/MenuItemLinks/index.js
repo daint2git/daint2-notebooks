@@ -9,7 +9,7 @@ import { DropDownArrowIcon } from 'components/atoms/Icon'
 import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from 'components/molecules/MenuList'
 import Collapse from 'components/molecules/Collapse'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
-import withRepeater from 'components/utils/withRepeater'
+import withRepeater from 'components/utils/hocs/withRepeater'
 
 import styles from './styles.scss'
 
@@ -19,12 +19,10 @@ const MenuItemLink = props => {
   const { path, icon: Icon = () => null, label, level, children } = props
 
   const isLevel1 = level === 1
-  const {
-    pageInfo: { currentPath },
-  } = useContext(PageContext)
+  const { activePage } = useContext(PageContext)
 
   let initialOpen = false
-  if (currentPath.includes(path) && currentPath.length > path.length) {
+  if (activePage.pathname.includes(path) && activePage.pathname.length > path.length) {
     initialOpen = true
   }
 
@@ -37,7 +35,7 @@ const MenuItemLink = props => {
           <button
             type="button"
             className={cssModules`link level1`}
-            data-active={path === currentPath}
+            data-active={path === activePage.pathname}
             onClick={() => setOpen(!open)}
           >
             <MenuItemIcon>
@@ -54,7 +52,7 @@ const MenuItemLink = props => {
             <a
               href={path}
               className={cssModules`link`}
-              data-active={path === currentPath}
+              data-active={path === activePage.pathname}
               onClick={() => setOpen(!open)}
             >
               <MenuItemIcon>

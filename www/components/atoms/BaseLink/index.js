@@ -7,22 +7,20 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const BaseLink = ({ children, className, variant, ...other }) => {
-  let newProps = {}
+const BaseLink = React.forwardRef((props, ref) => {
+  const { children, className, variant, ...other } = props
 
   if (variant === 'external') {
-    newProps = {
-      target: '_blank',
-      rel: 'noreferrer noopener',
-    }
+    other.target = '_blank'
+    other.rel = 'noreferrer noopener'
   }
 
   return (
-    <a className={cssModules`root ${className}`} data-variant={variant} {...newProps} {...other}>
+    <a className={cssModules`root ${className}`} data-variant={variant} ref={ref} {...other}>
       {children}
     </a>
   )
-}
+})
 
 BaseLink.propTypes = {
   children: PropTypes.node,

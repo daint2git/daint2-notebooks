@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import FlexWrapper from 'components/molecules/FlexWrapper'
+import FlexContainer from 'components/atoms/FlexContainer'
 import Spacer from 'components/atoms/Spacer'
 
 import Button from '..'
@@ -10,7 +10,7 @@ storiesOf('Button', module)
   .add('default', () => <Button />)
   .add('with text', () => <Button>Hello Button</Button>)
   .add('with color', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <Button color="primary">primary</Button>
       <Spacer />
       <Button color="info">info</Button>
@@ -27,10 +27,10 @@ storiesOf('Button', module)
       <Spacer />
       <Button color="dark">dark</Button>
       <Button color="transparent">transparent</Button>
-    </FlexWrapper>
+    </FlexContainer>
   ))
   .add('with color + variant="outline"', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <Button color="primary" variant="outline">
         primary
       </Button>
@@ -62,10 +62,10 @@ storiesOf('Button', module)
       <Button color="dark" variant="outline">
         dark
       </Button>
-    </FlexWrapper>
+    </FlexContainer>
   ))
   .add('with color + variant="text"', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <Button color="primary" variant="text">
         primary
       </Button>
@@ -89,16 +89,18 @@ storiesOf('Button', module)
       <Button color="inverse" variant="text">
         inverse
       </Button>
-    </FlexWrapper>
+    </FlexContainer>
   ))
   .add('with size', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <Button size="small">small</Button>
       <Spacer />
       <Button size="medium">medium</Button>
       <Spacer />
       <Button size="large">large</Button>
-    </FlexWrapper>
+      <Spacer />
+      <Button size="x-large">x-large</Button>
+    </FlexContainer>
   ))
   .add('with disabled', () => <Button disabled>disabled</Button>)
   .add('with hidden', () => <Button hidden>hidden</Button>)

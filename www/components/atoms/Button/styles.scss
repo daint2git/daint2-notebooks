@@ -234,6 +234,10 @@
     @include btnSize($fs_large, 0.75rem 1rem, 1.5);
   }
 
+  &.x-large {
+    @include btnSize($fs_x_large, 1rem 1.25rem, 1.5);
+  }
+
   &[disabled] {
     cursor: default;
     pointer-events: none;

@@ -1,3 +1,4 @@
+@import 'components/utils/colors';
 @import 'components/utils/variables';
 
 .root {
@@ -5,45 +6,37 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  > div {
-    flex: 100%;
-    max-width: 100%;
-
-    @media (--large-viewport) {
-      flex: 49%;
-      max-width: 49%;
-    }
-
-    @media (--medium-viewport) {
-      flex: 100%;
-      max-width: 100%;
-    }
+  @media (--small-viewport) {
+    margin: 1rem 0;
+    flex-direction: column;
   }
 
+  @media (--medium-viewport) {
+    margin: 1.1rem 0;
+  }
+
+  @media (--large-viewport) {
+    margin: 1.2rem 0;
+  }
+
+  .input,
   .output {
-    @media (--small-viewport) {
-      margin: 1rem 0;
-    }
+    flex: 1;
+  }
 
-    @media (--medium-viewport) {
-      margin: 1.1rem 0;
-    }
+  .side-spacer {
+    padding: 1rem;
+  }
 
-    @media (--large-viewport) {
-      margin: 1.2rem 0;
-    }
-
-    .content {
-      height: 100%;
-      padding: 1em;
-      font-size: $fs_base_large;
-      font-family: 'Fira Mono', 'Courier New', Courier, monospace;
-      font-size: 14px;
-      line-height: 1.375;
-      direction: ltr;
-      text-align: left;
-      word-spacing: normal;
-      background-color: #f1f1f1;
-    }
+  .content {
+    height: 100%;
+    padding: 1em;
+    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+    font-size: $fs_base_large;
+    line-height: 1.375;
+    direction: ltr;
+    text-align: left;
+    word-spacing: normal;
+    background-color: $app_background-color;
   }
 }

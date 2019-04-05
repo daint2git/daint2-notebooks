@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 
 import PageContext from './PageContext'
 
-const PageProvider = ({ children, pageInfo }) => {
-  return <PageContext.Provider value={{ pageInfo }}>{children}</PageContext.Provider>
+const PageProvider = ({ children, activePage }) => {
+  return <PageContext.Provider value={{ activePage }}>{children}</PageContext.Provider>
 }
 
 PageProvider.propTypes = {
   children: PropTypes.node,
-  pageInfo: PropTypes.object,
+  activePage: PropTypes.object,
 }
 
 PageProvider.defaultProps = {
-  pageInfo: {
-    currentPath: '',
+  activePage: {
+    asPath: '',
+    pathname: '',
   },
 }
 

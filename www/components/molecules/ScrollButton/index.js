@@ -10,11 +10,11 @@ const cssModules = cssModuleNameTag(styles)
 const ScrollButton = () => {
   const [isVisibled, setVisible] = useState(false)
 
-  const check = () => {
+  function check() {
     setVisible(window.pageYOffset > window.innerHeight)
   }
 
-  const rollup = () => {
+  function rollup() {
     window.scrollTo(0, 0)
   }
 

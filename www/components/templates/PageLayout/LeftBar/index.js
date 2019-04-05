@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 
+import DrawerContext from 'context/DrawerContext'
 import Button from 'components/atoms/Button'
 import MenuList from 'components/molecules/MenuList'
 import Drawer from 'components/molecules/Drawer'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
-
-import DrawerContext from '../DrawerContext'
 
 import MenuItemLinks from './MenuItemLinks'
 import menus from './menus'
@@ -13,8 +12,8 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const NavigationLeftBar = props => {
-  const { opened, onDrawerToggle } = useContext(DrawerContext)
+function LeftBar(props) {
+  const { opened, onToggle } = useContext(DrawerContext)
   return (
     <nav className={cssModules`root`}>
       <Drawer className={cssModules`drawer`} opened={opened} disabledPortal>
@@ -22,7 +21,7 @@ const NavigationLeftBar = props => {
           <MenuItemLinks list={menus} {...props} />
         </MenuList>
         <div className={cssModules`buttons`}>
-          <Button color="inverse" onClick={() => onDrawerToggle(false)}>
+          <Button color="inverse" onClick={() => onToggle(false)}>
             Close
           </Button>
         </div>
@@ -31,4 +30,4 @@ const NavigationLeftBar = props => {
   )
 }
 
-export default NavigationLeftBar
+export default LeftBar

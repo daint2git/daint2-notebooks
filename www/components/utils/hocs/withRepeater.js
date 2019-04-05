@@ -1,13 +1,14 @@
 import React from 'react'
 
-import getDisplayName from './getDisplayName'
-import setDisplayName from './setDisplayName'
-import hash from './fnv-hash'
-import either from './either'
+import either from 'components/utils/helpers/either'
+import hash from 'components/utils/helpers/fnv-hash'
+
+import getDisplayName from './utils/getDisplayName'
+import setDisplayName from './utils/setDisplayName'
 
 const keyGenerator = (props = {}) => hash(JSON.stringify(props))
 
-const withRepeater = (WrappedComponent, propName = 'list') => {
+function withRepeater(WrappedComponent, propName = 'list') {
   const WithRepeater = props => {
     const copyProps = { ...props }
     const list = copyProps[propName]

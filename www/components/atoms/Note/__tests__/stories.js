@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import FlexWrapper from 'components/molecules/FlexWrapper'
+import FlexContainer from 'components/atoms/FlexContainer'
 import Spacer from 'components/atoms/Spacer'
 
 import Note from '..'
@@ -21,7 +21,7 @@ storiesOf('Note', module)
     </Note>
   ))
   .add('with color', () => (
-    <FlexWrapper direction="column">
+    <FlexContainer direction="column" vertical="center">
       <Note color="primary">primary</Note>
       <Spacer />
       <Note color="info">info</Note>
@@ -33,5 +33,5 @@ storiesOf('Note', module)
       <Note color="warning">warning</Note>
       <Spacer />
       <Note color="inverse">inverse</Note>
-    </FlexWrapper>
+    </FlexContainer>
   ))

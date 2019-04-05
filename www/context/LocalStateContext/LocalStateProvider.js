@@ -1,24 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import LocalStateContext from './LocalStateContext'
 
-const LocalStateProvider = ({ children, initialValue }) => {
-  const [value, setValue] = React.useState(initialValue)
+const LocalStateProvider = ({ children, initialState }) => {
+  const [state, setState] = useState(initialState)
   return (
-    <LocalStateContext.Provider value={{ value, setValue }}>{children}</LocalStateContext.Provider>
+    <LocalStateContext.Provider value={{ state, setState }}>{children}</LocalStateContext.Provider>
   )
 }
 
 LocalStateProvider.propTypes = {
   children: PropTypes.node,
-  initialValue: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.array,
-    PropTypes.object,
-  ]),
+  initialState: PropTypes.any,
 }
 
 export default LocalStateProvider

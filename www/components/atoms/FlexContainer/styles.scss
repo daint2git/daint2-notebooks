@@ -1,0 +1,94 @@
+@mixin alignItems($direction) {
+  &[data-#{$direction}='start'] {
+    align-items: flex-start;
+  }
+
+  &[data-#{$direction}='end'] {
+    align-items: flex-end;
+  }
+
+  &[data-#{$direction}='center'] {
+    align-items: center;
+  }
+
+  &[data-#{$direction}='baseline'] {
+    align-items: baseline;
+  }
+
+  &[data-#{$direction}='stretch'] {
+    align-items: stretch;
+  }
+}
+
+@mixin justifyContent($direction) {
+  &[data-#{$direction}='start'] {
+    justify-content: flex-start;
+  }
+
+  &[data-#{$direction}='end'] {
+    justify-content: flex-end;
+  }
+
+  &[data-#{$direction}='center'] {
+    justify-content: center;
+  }
+
+  &[data-#{$direction}='between'] {
+    justify-content: space-between;
+  }
+
+  &[data-#{$direction}='around'] {
+    justify-content: space-around;
+  }
+}
+
+.root {
+  display: flex;
+
+  /* inline */
+  &[data-inline='true'] {
+    display: inline-flex;
+  }
+
+  /* wrap */
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  /* direction */
+  &.row {
+    flex-direction: row;
+
+    @include justifyContent('vertical');
+    @include alignItems('horizontal');
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+
+    @include justifyContent('vertical');
+    @include alignItems('horizontal');
+  }
+
+  &.column {
+    flex-direction: column;
+
+    @include alignItems('vertical');
+    @include justifyContent('horizontal');
+  }
+
+  &.column-reverse {
+    flex-direction: column-reverse;
+
+    @include alignItems('vertical');
+    @include justifyContent('horizontal');
+  }
+}
