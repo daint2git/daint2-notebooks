@@ -5,8 +5,7 @@
 .root {
   display: inline-block;
   width: 100%;
-  vertical-align: middle;
-  text-align: inherit;
+  line-height: 1.2;
 
   &[data-ellipsis='true'] {
     @include ellipsis;
@@ -75,6 +74,10 @@
 
   &.medium {
     font-size: $fs_medium;
+  }
+
+  &.base-large {
+    font-size: $fs_base_large;
   }
 
   &.large {

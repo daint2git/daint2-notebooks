@@ -19,10 +19,10 @@ const MenuItemLink = props => {
   const { path, icon: Icon = () => null, label, level, children } = props
 
   const isLevel1 = level === 1
-  const { activePage } = useContext(PageContext)
+  const { currentPage } = useContext(PageContext)
 
   let initialOpen = false
-  if (activePage.pathname.includes(path) && activePage.pathname.length > path.length) {
+  if (currentPage.pathname.includes(path) && currentPage.pathname.length > path.length) {
     initialOpen = true
   }
 
@@ -35,7 +35,7 @@ const MenuItemLink = props => {
           <button
             type="button"
             className={cssModules`link level1`}
-            data-active={path === activePage.pathname}
+            data-active={path === currentPage.pathname}
             onClick={() => setOpen(!open)}
           >
             <MenuItemIcon>
@@ -52,7 +52,7 @@ const MenuItemLink = props => {
             <a
               href={path}
               className={cssModules`link`}
-              data-active={path === activePage.pathname}
+              data-active={path === currentPage.pathname}
               onClick={() => setOpen(!open)}
             >
               <MenuItemIcon>

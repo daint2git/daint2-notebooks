@@ -1,15 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import Heading from 'components/atoms/Heading'
-import Paper from 'components/atoms/Paper'
+import ListItemContent from 'components/organisms/JavaScript/ListItemContent'
 
-function Tips(props) {
-  return (
-    <Paper>
-      <p>Tips</p>
-    </Paper>
-  )
+import contents from './contents'
+
+function Tips() {
+  return <ListItemContent contents={contents} />
 }
 
 export default Tips

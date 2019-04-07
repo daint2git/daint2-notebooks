@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import noop from 'components/utils/helpers/noop'
@@ -22,9 +22,6 @@ Tab.propTypes = {
   isActived: PropTypes.bool,
 }
 
-const tabListRef = React.createRef()
-const indicatorRef = React.createRef()
-
 function TabList(props) {
   const {
     children,
@@ -37,9 +34,11 @@ function TabList(props) {
     onChange,
     ...other
   } = props
+  const tabListRef = useRef()
+  const indicatorRef = useRef()
   const tabsRef = []
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { ref: tabRef } = tabsRef.find(tabRef => tabRef.index === value)
     const tabElement = tabRef.current
     const tabListElement = tabListRef.current

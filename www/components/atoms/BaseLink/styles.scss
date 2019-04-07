@@ -1,10 +1,28 @@
 @import 'components/utils/colors';
+@import 'components/utils/variables';
 @import 'components/utils/mixins';
 
 .root {
   display: inline-block;
-  @include ellipsis;
 
+  /* sizes */
+  &.small {
+    font-size: $fs_small;
+  }
+
+  &.medium {
+    font-size: $fs_medium;
+  }
+
+  &.large {
+    font-size: $fs_large;
+  }
+
+  &.x-large {
+    font-size: $fs_x_large;
+  }
+
+  /* variants */
   &[data-variant='external'] {
     text-decoration: underline;
 
@@ -28,5 +46,10 @@
   &[data-variant='anchor'] {
     position: absolute;
     margin-top: -70px;
+  }
+
+  /* ellipsis */
+  &[data-ellipsis='true'] {
+    @include ellipsis;
   }
 }

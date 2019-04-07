@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react'
 
 import randomIntFromInterval from 'components/utils/math/randomIntFromInterval'
 import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import Button from 'components/atoms/Button'
 import Heading from 'components/atoms/Heading'
 import Spacer from 'components/atoms/Spacer'
-import Button from 'components/atoms/Button'
 
 import FlexContainer from '..'
 

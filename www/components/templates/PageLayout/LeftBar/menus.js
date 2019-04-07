@@ -36,6 +36,14 @@ const menus = [
         level: 2,
         children: null,
       },
+      {
+        id: 'js/json',
+        path: '/js/json',
+        icon: PrefixBorderIcon,
+        label: 'JSON',
+        level: 2,
+        children: null,
+      },
     ],
   },
   {

@@ -7,12 +7,18 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Backdrop = ({ className, ...other }) => (
-  <div className={cssModules`root ${className}`} {...other} />
-)
+function Backdrop(props) {
+  const { className, type, ...other } = props
+  return <div className={cssModules`root ${className} ${type}`} {...other} />
+}
 
 Backdrop.propTypes = {
   className: PropTypes.string,
+  type: PropTypes.oneOf(['outer', 'inner']),
+}
+
+Backdrop.defaultProps = {
+  type: 'outer',
 }
 
 export default Backdrop

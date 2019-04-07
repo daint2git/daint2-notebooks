@@ -55,7 +55,7 @@ Text.defaultProps = {
   component: 'p',
   align: 'left',
   color: 'dark',
-  size: 'medium',
+  size: 'base-large',
 }
 
 export default Text

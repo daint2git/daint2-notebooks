@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 
 import TitleLinksContext from 'context/TitleLinksContext'
-import Heading from 'components/atoms/Heading'
 import BaseLink from 'components/atoms/BaseLink'
-import SideBar from 'components/molecules/SideBar'
+import Heading from 'components/atoms/Heading'
 import MenuList, { MenuItem } from 'components/molecules/MenuList'
+import SideBar from 'components/molecules/SideBar'
 
 const renderMenuItems = titles =>
   titles.map(title => (

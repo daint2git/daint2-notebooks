@@ -14,7 +14,7 @@ class App extends NextApp {
     return (
       <Container>
         <ThemeProvider>
-          <PageProvider activePage={{ asPath: router.asPath, pathname: router.pathname }}>
+          <PageProvider currentPage={{ asPath: router.asPath, pathname: router.pathname }}>
             <Component {...pageProps} />
           </PageProvider>
         </ThemeProvider>

@@ -7,8 +7,7 @@
   width: 150px;
   height: 100vh;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  display: block;
   padding: 1.6rem;
   background-color: $white;
   transition: transition_duration_1;

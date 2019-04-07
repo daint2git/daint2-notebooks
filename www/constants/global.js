@@ -9,4 +9,4 @@ export const COLORS = [
   'dark',
 ]
 
-export const SIZES = ['small', 'medium', 'large', 'x-large']
+export const SIZES = ['small', 'medium', 'base-large', 'large', 'x-large']
