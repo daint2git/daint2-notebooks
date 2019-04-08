@@ -34,6 +34,7 @@ FlexContainer.propTypes = {
 }
 
 FlexContainer.defaultProps = {
+  direction: 'row',
   isInline: false,
 }
 

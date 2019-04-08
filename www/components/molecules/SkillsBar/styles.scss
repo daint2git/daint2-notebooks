@@ -1,0 +1,122 @@
+.skills {
+  width: 500px;
+  margin: 60px auto;
+
+  >div {
+    margin: 20px 0;
+
+    &:hover {
+      .percent {
+        opacity: 1;
+      }
+    }
+  }
+
+  .percent {
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+
+.bar {
+  background: white;
+  display: block;
+  height: 8px;
+  box-shadow: 0 0 10px #2187e7b3;
+
+  >span {
+    height: 8px;
+    float: left;
+    background: #2187e8;
+  }
+}
+
+.javascript {
+  width: 70%;
+  animation: javascript 5s infinite;
+}
+
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+
+.html {
+  width: 60%;
+  animation: html 5s infinite;
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+.css {
+  width: 60%;
+  animation: css 5s infinite;
+}
+
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+.reactjs {
+  width: 80%;
+  animation: reactjs 5s infinite;
+}
+
+@keyframes reactjs {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+.nodejs {
+  width: 30%;
+  animation: nodejs 5s infinite;
+}
+
+@keyframes nodejs {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+.docker {
+  width: 30%;
+  animation: docker 5s infinite;
+}
+
+@keyframes docker {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
