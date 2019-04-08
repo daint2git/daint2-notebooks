@@ -15,11 +15,12 @@ const Radio = React.forwardRef((props, ref) => {
     children,
     className,
     id,
-    value,
     name: nameProp,
     checked: checkedProp,
-    onChange: onChangeProp,
     disabled,
+    value,
+    onChange: onChangeProp,
+    style,
     ...other
   } = props
 
@@ -31,19 +32,21 @@ const Radio = React.forwardRef((props, ref) => {
 
   if (radioGroup) {
     if (isUndefined(name)) {
-      name = radioGroup.name
+      name = radioGroup.name || ''
     }
 
     if (isUndefined(checked)) {
       checked = radioGroup.value === value
     }
 
-    onChange = radioGroup.onChange || noop
+    if (isUndefined(onChange)) {
+      onChange = radioGroup.onChange || noop
+    }
   }
 
   return (
-    <div className={cssModules`root ${className}`}>
-      <label className={cssModules`input`} htmlFor={id} disabled={disabled} ref={ref}>
+    <div className={cssModules`root ${className}`} style={style} ref={ref}>
+      <label className={cssModules`input`} htmlFor={id} disabled={disabled}>
         <input
           type="radio"
           id={id}
@@ -68,14 +71,11 @@ Radio.propTypes = {
   className: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   name: PropTypes.string,
-  value: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
+  value: PropTypes.string,
   onChange: PropTypes.func,
-}
-
-Radio.defaultProps = {
-  onChange: noop,
+  style: PropTypes.object,
 }
 
 export default Radio

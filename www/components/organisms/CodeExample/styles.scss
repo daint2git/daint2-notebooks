@@ -5,6 +5,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
 
   @media (--small-viewport) {
     margin: 1rem 0;
@@ -24,11 +26,28 @@
     flex: 1;
   }
 
-  .side-spacer {
-    padding: 1rem;
+  .output {
+    @media (--small-viewport) {
+      flex: 100%;
+      max-width: 100%;
+    }
+
+    @media (--medium-viewport) {
+      flex: 49%;
+      max-width: 49%;
+    }
+
+    @media (--large-viewport) {
+      flex: 49%;
+      max-width: 49%;
+    }
   }
 
-  .content {
+  .side-spacer {
+    padding: 1em;
+  }
+
+  .js {
     height: 100%;
     padding: 1em;
     font-family: 'Fira Mono', 'Courier New', Courier, monospace;
@@ -38,5 +57,18 @@
     text-align: left;
     word-spacing: normal;
     background-color: $app_background-color;
+  }
+
+  .css {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    overflow: auto;
+    background-color: $app_background-color;
+
+    >div {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

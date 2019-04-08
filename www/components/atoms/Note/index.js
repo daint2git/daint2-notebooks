@@ -1,28 +1,39 @@
-import { COLORS } from 'constants/global'
+import { COLORS, SIZES } from 'constants/global'
 
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import MultilineText from 'components/atoms/MultilineText'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Note = ({ children, className, color, ...other }) => (
-  <div className={cssModules`root ${color} ${className}`} {...other}>
-    {children}
-  </div>
-)
+function Note(props) {
+  const { children, className, color, size, ...other } = props
+
+  if (!children) {
+    return null
+  }
+
+  return (
+    <div className={cssModules`root ${color} ${size} ${className}`} {...other}>
+      <MultilineText>{children}</MultilineText>
+    </div>
+  )
+}
 
 Note.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   color: PropTypes.oneOf(COLORS),
+  size: PropTypes.oneOf(SIZES),
 }
 
 Note.defaultProps = {
-  color: 'primary',
+  color: 'warning',
+  size: 'base-large',
 }
 
 export default Note

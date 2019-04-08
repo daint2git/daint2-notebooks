@@ -2,32 +2,32 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { stripIndent, stripIndents } from 'common-tags'
 
-import MultipleLinesOfText from '..'
+import MultilineText from '..'
 
-storiesOf('MultipleLinesOfText', module)
+storiesOf('MultilineText', module)
   .add('default', () => (
-    <MultipleLinesOfText>
+    <MultilineText>
       {`      Lorem Ipsum(\\n)is simply dummy text of the printing and typesetting industry.
                   <br />zzz
           PageMaker including versions of Lorem Ipsum`}
-    </MultipleLinesOfText>
+    </MultilineText>
   ))
   .add('with use stripIndent function', () => (
-    <MultipleLinesOfText>
+    <MultilineText>
       {stripIndent`      Lorem Ipsum(\\n)is simply dummy text of the printing and typesetting industry.
                   <br />zzz
           PageMaker including versions of Lorem Ipsum`}
-    </MultipleLinesOfText>
+    </MultilineText>
   ))
   .add('with use stripIndents function', () => (
-    <MultipleLinesOfText>
+    <MultilineText>
       {stripIndents`      Lorem Ipsum(\\n)is simply dummy text of the printing and typesetting industry.
                   <br />zzz
           PageMaker including versions of Lorem Ipsum`}
-    </MultipleLinesOfText>
+    </MultilineText>
   ))
   .add('with oneline', () => (
-    <MultipleLinesOfText>
+    <MultilineText>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    </MultipleLinesOfText>
+    </MultilineText>
   ))

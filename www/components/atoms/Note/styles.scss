@@ -8,7 +8,7 @@
 }
 
 .root {
-  line-height: 1.2;
+  line-height: 1.5;
   padding: 1.5rem 2rem 1.5rem 1.5rem;
   border-left-style: solid;
   border-left-width: 6px;
@@ -36,5 +36,26 @@
 
   &.inverse {
     @include color($inverse_hover, $inverse);
+  }
+
+  /* sizes */
+  &.small {
+    font-size: $fs_small;
+  }
+
+  &.medium {
+    font-size: $fs_medium;
+  }
+
+  &.base-large {
+    font-size: $fs_base_large;
+  }
+
+  &.large {
+    font-size: $fs_large;
+  }
+
+  &.x-large {
+    font-size: $fs_x_large;
   }
 }

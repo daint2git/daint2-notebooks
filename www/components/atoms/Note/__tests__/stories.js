@@ -35,3 +35,16 @@ storiesOf('Note', module)
       <Note color="inverse">inverse</Note>
     </FlexContainer>
   ))
+  .add('with size', () => (
+    <FlexContainer direction="column" vertical="center">
+      <Note size="small">small</Note>
+      <Spacer />
+      <Note size="medium">medium</Note>
+      <Spacer />
+      <Note size="base-large">base-large </Note>
+      <Spacer />
+      <Note size="large">large</Note>
+      <Spacer />
+      <Note size="x-large">x-large</Note>
+    </FlexContainer>
+  ))

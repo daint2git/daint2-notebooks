@@ -15,15 +15,15 @@ function PageLayout(props) {
   const { children } = props
   return (
     <DrawerProvider initialOpen={true}>
-      <Header />
-      <FlexContainer>
-        <LeftBar />
-        <TitleLinksProvider>
+      <TitleLinksProvider>
+        <Header />
+        <FlexContainer>
+          <LeftBar />
           <Main>{children}</Main>
           <RightBar />
-        </TitleLinksProvider>
-      </FlexContainer>
-      <ScrollButton />
+        </FlexContainer>
+        <ScrollButton />
+      </TitleLinksProvider>
     </DrawerProvider>
   )
 }

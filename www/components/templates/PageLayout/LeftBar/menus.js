@@ -60,7 +60,24 @@ const menus = [
     icon: CssIcon,
     label: 'Css',
     level: 1,
-    children: null,
+    children: [
+      {
+        id: 'css/flexbox',
+        path: '/css/flexbox',
+        icon: PrefixBorderIcon,
+        label: 'Flexbox',
+        level: 2,
+        children: null,
+      },
+      {
+        id: 'css/properties_css_for_text',
+        path: '/css/properties_css_for_text',
+        icon: PrefixBorderIcon,
+        label: 'Properties css for text',
+        level: 2,
+        children: null,
+      },
+    ],
   },
   {
     id: 'react',
@@ -84,7 +101,24 @@ const menus = [
     icon: GitIcon,
     label: 'Git',
     level: 1,
-    children: null,
+    children: [
+      {
+        id: 'git/basic_commands',
+        path: '/git/basic_commands',
+        icon: PrefixBorderIcon,
+        label: 'Các lệnh cơ bản',
+        level: 2,
+        children: null,
+      },
+      {
+        id: 'git/manipulate_directory',
+        path: '/git/manipulate_directory',
+        icon: PrefixBorderIcon,
+        label: 'Thao tác thư mục',
+        level: 2,
+        children: null,
+      },
+    ],
   },
   {
     id: 'docker',

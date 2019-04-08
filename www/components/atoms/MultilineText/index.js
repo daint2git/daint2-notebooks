@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import stripIndent from 'common-tags/lib/stripIndent'
 
-const MultipleLinesOfText = ({ children }) => {
-  const lines = children.split('\n')
+function MultilineText(props) {
+  const { children } = props
+  const lines = stripIndent`${children}`.split('\n')
   return (
-    <>
+    <React.Fragment>
       {lines.map((line, index) => (
         /* eslint-disable react/no-array-index-key */
         <React.Fragment key={`line-${index}`}>
@@ -13,12 +15,12 @@ const MultipleLinesOfText = ({ children }) => {
         </React.Fragment>
         /* eslint-enable react/no-array-index-key */
       ))}
-    </>
+    </React.Fragment>
   )
 }
 
-MultipleLinesOfText.propTypes = {
+MultilineText.propTypes = {
   children: PropTypes.string.isRequired,
 }
 
-export default MultipleLinesOfText
+export default MultilineText
