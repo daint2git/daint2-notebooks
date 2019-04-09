@@ -46,11 +46,13 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "postcss-custom-media": "^7.0.7",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "url-loader": "^1.1.2"
   },
   "scripts": {
+    "clean": "rimraf .next",
     "dev": "node server.js",
-    "build": "next build",
+    "build": "yarn clean && next build",
     "start": "NODE_ENV=production node server.js",
     "storybook": "start-storybook -p 6167 --quiet"
   }
