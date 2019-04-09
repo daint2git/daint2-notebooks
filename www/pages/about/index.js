@@ -45,7 +45,7 @@ function Content(props) {
       </Paper>
       <Spacer />
       <Paper>
-        <Heading>My Repos</Heading>
+        <Heading>My Repos (public)</Heading>
         {renderRepos}
       </Paper>
     </>

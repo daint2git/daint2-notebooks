@@ -1,32 +1,78 @@
-const express = require('express')
+const path = require('path')
+const url = require('url')
+const cluster = require('cluster')
+const numCPUs = require('os').cpus().length
+
 const next = require('next')
+const express = require('express')
 
-const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const port = process.env.PORT || 3000
 
-app.prepare().then(() => {
-  const server = express()
+// Multi-process to utilize all CPU cores.
+if (!dev && cluster.isMaster) {
+  // Fork workers.
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork()
+  }
 
-  server.get('/js', (req, res) => {
-    return app.render(req, res, '/js', req.query)
+  cluster.on('exit', (worker, code, signal) => {
+    console.error(
+      `Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`,
+    )
   })
+} else {
+  const nextApp = next({ dir: '.', dev })
+  const nextHandler = nextApp.getRequestHandler()
 
-  server.get('/html', (req, res) => {
-    return app.render(req, res, '/html', req.query)
-  })
+  nextApp.prepare().then(() => {
+    const server = express()
 
-  server.get('/css', (req, res) => {
-    return app.render(req, res, '/css', req.query)
-  })
+    if (!dev) {
+      // Enforce SSL & HSTS in production
+      server.use((req, res, next) => {
+        const proto = req.headers['x-forwarded-proto']
+        if (proto === 'https') {
+          res.set({
+            'Strict-Transport-Security': 'max-age=31557600', // one-year
+          })
+          return next()
+        }
+        res.redirect(`https://${req.headers.host}${req.url}`)
+      })
+    }
 
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
+    // Static files
+    // https://github.com/zeit/next.js/tree/4.2.3#user-content-static-file-serving-eg-images
+    server.use(
+      '/static',
+      express.static(path.join(__dirname, 'static'), {
+        maxAge: dev ? '0' : '365d',
+      }),
+    )
 
-  server.listen(port, err => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    // Example server-side routing
+    server.get('/a', (req, res) => {
+      return nextApp.render(req, res, '/b', req.query)
+    })
+
+    // Example server-side routing
+    server.get('/b', (req, res) => {
+      return nextApp.render(req, res, '/a', req.query)
+    })
+
+    // Default catch-all renders Next app
+    server.get('*', (req, res) => {
+      // res.set({
+      //   'Cache-Control': 'public, max-age=3600'
+      // });
+      const parsedUrl = url.parse(req.url, true)
+      nextHandler(req, res, parsedUrl)
+    })
+
+    server.listen(port, err => {
+      if (err) throw err
+      console.log(`Listening on http://localhost:${port}`)
+    })
   })
-})
+}
