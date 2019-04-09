@@ -57,6 +57,7 @@ Text.defaultProps = {
   align: 'left',
   color: 'dark',
   size: 'base-large',
+  hasEllipsis: false,
 }
 
 export default Text

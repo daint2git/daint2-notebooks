@@ -29,7 +29,7 @@ Heading.propTypes = {
 Heading.defaultProps = {
   component: 'h2',
   color: 'dark',
-  hasEllipsis: true,
+  hasEllipsis: false,
 }
 
 export default Heading

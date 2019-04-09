@@ -32,7 +32,7 @@ function Content(props) {
   return (
     <>
       <Paper>
-        <Heading style={{ wordBreak: 'break-word' }} hasEllipsis={false}>
+        <Heading>
           My name is Nguyen Tran Dai. I am a Front-end Web Developer.
           <br />I have a passion with front-end technologies. When I have free time, I often read,
           study and share my knowledge for everyone.

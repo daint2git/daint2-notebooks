@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { JsIcon, HtmlIcon, CssIcon } from 'components/atoms/Icon/languages'
 import StickySocialBar from 'components/molecules/StickySocialBar'
@@ -11,6 +12,12 @@ const cssModules = cssModuleNameTag(styles)
 
 const LandingPage = () => (
   <div>
+    <Head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    </Head>
     <div className={cssModules`container`}>
       <div className={cssModules`information`}>
         <h1>DaiNT2 notebooks</h1>

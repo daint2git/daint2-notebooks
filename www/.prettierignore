@@ -1,6 +1,7 @@
 build/
 node_modules/
 .next/
+*.log
+*.log
 yarn.lock
 package.json
-*.log
