@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import randomIntFromInterval from 'components/utils/math/randomIntFromInterval'
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import Button from 'components/atoms/Button'
 import Heading from 'components/atoms/Heading'
 import Spacer from 'components/atoms/Spacer'
@@ -186,7 +186,7 @@ storiesOf('FlexContainer', module)
     </>
   ))
   .add('custom', () => (
-    <LocalStateProvider
+    <StateProvider
       initialState={{
         wrap: 'nowrap',
         direction: 'row',
@@ -195,7 +195,7 @@ storiesOf('FlexContainer', module)
         number: 5,
       }}
     >
-      <LocalStateConsumer>
+      <StateConsumer>
         {({ state, setState }) => {
           return (
             <div>
@@ -209,7 +209,7 @@ storiesOf('FlexContainer', module)
                       value={item.value}
                       label={item.label}
                       checked={item.value === state.wrap}
-                      onChange={() => setState({ ...state, wrap: item.value })}
+                      onChange={() => setState({ wrap: item.value })}
                     />
                   ))}
                 </div>
@@ -223,7 +223,7 @@ storiesOf('FlexContainer', module)
                       value={item.value}
                       label={item.label}
                       checked={item.value === state.direction}
-                      onChange={() => setState({ ...state, direction: item.value })}
+                      onChange={() => setState({ direction: item.value })}
                     />
                   ))}
                 </div>
@@ -237,7 +237,7 @@ storiesOf('FlexContainer', module)
                       value={item.value}
                       label={item.label}
                       checked={item.value === state.justifyContent}
-                      onChange={() => setState({ ...state, justifyContent: item.value })}
+                      onChange={() => setState({ justifyContent: item.value })}
                     />
                   ))}
                 </div>
@@ -251,19 +251,17 @@ storiesOf('FlexContainer', module)
                       value={item.value}
                       label={item.label}
                       checked={item.value === state.alignItems}
-                      onChange={() => setState({ ...state, alignItems: item.value })}
+                      onChange={() => setState({ alignItems: item.value })}
                     />
                   ))}
                 </div>
                 <div>
-                  <Button onClick={() => setState({ ...state, number: state.number + 5 })}>
+                  <Button onClick={() => setState({ number: state.number + 5 })}>
                     Add 5 items
                   </Button>
                   <Button
                     color="danger"
-                    onClick={() =>
-                      setState({ ...state, number: state.number ? state.number - 5 : 0 })
-                    }
+                    onClick={() => setState({ number: state.number ? state.number - 5 : 0 })}
                   >
                     Remove 5 items
                   </Button>
@@ -284,6 +282,6 @@ storiesOf('FlexContainer', module)
             </div>
           )
         }}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))

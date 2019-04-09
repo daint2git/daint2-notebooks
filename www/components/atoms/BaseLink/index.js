@@ -39,7 +39,7 @@ BaseLink.propTypes = {
 }
 
 BaseLink.defaultProps = {
-  size: 'medium',
+  size: 'base-large',
   variant: 'internal',
 }
 

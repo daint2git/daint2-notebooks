@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import TitleLinksContext from 'context/TitleLinksContext'
+import SideBarContext from 'context/SideBarContext'
 import BaseLink from 'components/atoms/BaseLink'
 import Heading from 'components/atoms/Heading'
 import MenuList, { MenuItem } from 'components/molecules/MenuList'
@@ -15,8 +16,9 @@ const renderMenuItems = titles =>
 
 function RightBar() {
   const { titles } = useContext(TitleLinksContext)
+  const { opened } = useContext(SideBarContext)
   return (
-    <SideBar>
+    <SideBar opened={opened}>
       <Heading component="h3">Contents</Heading>
       <MenuList>{renderMenuItems(titles)}</MenuList>
     </SideBar>

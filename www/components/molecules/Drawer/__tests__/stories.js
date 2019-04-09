@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import Button from 'components/atoms/Button'
 import Spacer from 'components/atoms/Spacer'
 
@@ -9,8 +9,8 @@ import Drawer from '..'
 
 storiesOf('Drawer', module)
   .add('default', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
@@ -22,12 +22,12 @@ storiesOf('Drawer', module)
             </Drawer>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with scroll', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
@@ -38,12 +38,12 @@ storiesOf('Drawer', module)
             </Drawer>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with Backdrop', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: opened, setState: onOpen }) => (
           <>
             <Button onClick={() => onOpen(!opened)}>Toggle Drawer</Button>
@@ -54,6 +54,6 @@ storiesOf('Drawer', module)
             </Drawer>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))

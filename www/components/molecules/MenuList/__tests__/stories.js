@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import { JsIcon, HtmlIcon, CssIcon, CodeIcon } from 'components/atoms/Icon/languages'
 
 import MenuList, { MenuItem, MenuItemIcon, MenuItemText } from '..'
@@ -67,8 +67,8 @@ storiesOf('MenuList', module)
     </MenuList>
   ))
   .add('with menu in menu', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: hasSubMenu, setState: showSubMenu }) => (
           <MenuList>
             <MenuItem>
@@ -123,6 +123,6 @@ storiesOf('MenuList', module)
             </MenuItem>
           </MenuList>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))

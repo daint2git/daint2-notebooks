@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { DrawerProvider } from 'context/DrawerContext'
+import { SideBarProvider } from 'context/SideBarContext'
 import { TitleLinksProvider } from 'context/TitleLinksContext'
 import FlexContainer from 'components/atoms/FlexContainer'
 import Main from 'components/molecules/Main'
@@ -16,13 +17,15 @@ function PageLayout(props) {
   return (
     <DrawerProvider initialOpen={true}>
       <TitleLinksProvider>
-        <Header />
-        <FlexContainer>
-          <LeftBar />
-          <Main>{children}</Main>
-          <RightBar />
-        </FlexContainer>
-        <ScrollButton />
+        <SideBarProvider initialOpen={true}>
+          <Header />
+          <FlexContainer>
+            <LeftBar />
+            <Main>{children}</Main>
+            <RightBar />
+          </FlexContainer>
+          <ScrollButton />
+        </SideBarProvider>
       </TitleLinksProvider>
     </DrawerProvider>
   )

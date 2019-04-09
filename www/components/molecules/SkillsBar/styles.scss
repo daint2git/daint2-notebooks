@@ -1,9 +1,8 @@
 .skills {
-  width: 500px;
-  margin: 60px auto;
+  max-width: 500px;
 
   >div {
-    margin: 20px 0;
+    margin-bottom: 20px;
 
     &:hover {
       .percent {
@@ -91,6 +90,21 @@
   }
 }
 
+.webpack {
+  width: 30%;
+  animation: webpack 5s infinite;
+}
+
+@keyframes webpack {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
 .nodejs {
   width: 30%;
   animation: nodejs 5s infinite;
@@ -118,5 +132,20 @@
 
   100% {
     width: 30%;
+  }
+}
+
+.java {
+  width: 40%;
+  animation: java 5s infinite;
+}
+
+@keyframes java {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 40%;
   }
 }

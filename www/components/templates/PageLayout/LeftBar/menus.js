@@ -103,10 +103,18 @@ const menus = [
     level: 1,
     children: [
       {
-        id: 'git/basic_commands',
-        path: '/git/basic_commands',
+        id: 'git/theory',
+        path: '/git/theory',
         icon: PrefixBorderIcon,
-        label: 'Các lệnh cơ bản',
+        label: 'Lí thuyết',
+        level: 2,
+        children: null,
+      },
+      {
+        id: 'git/commands',
+        path: '/git/commands',
+        icon: PrefixBorderIcon,
+        label: 'Lệnh',
         level: 2,
         children: null,
       },
@@ -141,7 +149,7 @@ const menus = [
     path: '/about',
     icon: AboutMeIcon,
     label: 'About Me',
-    level: 1,
+    level: 2,
     children: null,
   },
 ]

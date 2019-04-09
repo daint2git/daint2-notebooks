@@ -13,7 +13,10 @@
   letter-spacing: 0.4px;
   line-height: 1.2;
   user-select: none;
-  @include ellipsis;
+
+  &[data-ellipsis='true'] {
+    @include ellipsis;
+  }
 
   /* components */
   &.h1 {

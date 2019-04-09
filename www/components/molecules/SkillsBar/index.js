@@ -11,11 +11,10 @@ const cssModules = cssModuleNameTag(styles)
 function SkillsBar() {
   return (
     <div className={cssModules`skills`}>
-      <Heading>My Skills</Heading>
       <div>
         <Heading component="h4">
           <FlexContainer vertical="between">
-            <span>JAVASCRIPT (core)</span>
+            <span>JAVASCRIPT (core, special ES6)</span>
             <span className={cssModules`percent`}>70%</span>
           </FlexContainer>
         </Heading>
@@ -59,6 +58,17 @@ function SkillsBar() {
       <div>
         <Heading component="h4">
           <FlexContainer vertical="between">
+            <span>WEBPACK, BABEL</span>
+            <span className={cssModules`percent`}>30%</span>
+          </FlexContainer>
+        </Heading>
+        <span className={cssModules`bar`}>
+          <span className={cssModules`webpack`} />
+        </span>
+      </div>
+      <div>
+        <Heading component="h4">
+          <FlexContainer vertical="between">
             <span>NODEJS</span>
             <span className={cssModules`percent`}>30%</span>
           </FlexContainer>
@@ -76,6 +86,17 @@ function SkillsBar() {
         </Heading>
         <span className={cssModules`bar`}>
           <span className={cssModules`docker`} />
+        </span>
+      </div>
+      <div>
+        <Heading component="h4">
+          <FlexContainer vertical="between">
+            <span>JAVA</span>
+            <span className={cssModules`percent`}>40%</span>
+          </FlexContainer>
+        </Heading>
+        <span className={cssModules`bar`}>
+          <span className={cssModules`java`} />
         </span>
       </div>
     </div>

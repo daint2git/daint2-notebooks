@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 
 import TabList, { Tab } from '..'
 
@@ -9,8 +9,8 @@ const TabContainer = props => <div style={{ padding: '24px' }} {...props} />
 
 storiesOf('TabList', module)
   .add('default', () => (
-    <LocalStateProvider initialState={0}>
-      <LocalStateConsumer>
+    <StateProvider initialState={0}>
+      <StateConsumer>
         {({ state: tabIndex, setState: onTabIndexChange }) => (
           <div style={{ margin: '50px' }}>
             <TabList value={tabIndex} onChange={value => onTabIndexChange(value)}>
@@ -23,12 +23,12 @@ storiesOf('TabList', module)
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
           </div>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with direction="column"', () => (
-    <LocalStateProvider initialState={0}>
-      <LocalStateConsumer>
+    <StateProvider initialState={0}>
+      <StateConsumer>
         {({ state: tabIndex, setState: onTabIndexChange }) => (
           <div style={{ display: 'flex' }}>
             <TabList
@@ -45,12 +45,12 @@ storiesOf('TabList', module)
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
           </div>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with isFullWidth', () => (
-    <LocalStateProvider initialState={0}>
-      <LocalStateConsumer>
+    <StateProvider initialState={0}>
+      <StateConsumer>
         {({ state: tabIndex, setState: onTabIndexChange }) => (
           <>
             <TabList isFullWidth value={tabIndex} onChange={value => onTabIndexChange(value)}>
@@ -63,12 +63,12 @@ storiesOf('TabList', module)
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with textColor="primary" && indicatorColor="primary"', () => (
-    <LocalStateProvider initialState={0}>
-      <LocalStateConsumer>
+    <StateProvider initialState={0}>
+      <StateConsumer>
         {({ state: tabIndex, setState: onTabIndexChange }) => (
           <>
             <TabList
@@ -86,6 +86,6 @@ storiesOf('TabList', module)
             {tabIndex === 2 && <TabContainer>Item Three</TabContainer>}
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))

@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import Button from 'components/atoms/Button'
 import Spacer from 'components/atoms/Spacer'
 import MenuList, { MenuItem } from 'components/molecules/MenuList'
@@ -10,8 +10,8 @@ import Collapse from '..'
 
 storiesOf('Collapse', module)
   .add('default', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: opened, setState: onToggle }) => (
           <>
             <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
@@ -28,12 +28,12 @@ storiesOf('Collapse', module)
             <Button color="warning">abc</Button>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with menu list', () => (
-    <LocalStateProvider initialState={false}>
-      <LocalStateConsumer>
+    <StateProvider initialState={false}>
+      <StateConsumer>
         {({ state: opened, setState: onToggle }) => (
           <>
             <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
@@ -48,12 +48,12 @@ storiesOf('Collapse', module)
             <Button color="warning">abc</Button>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('with menu list (default value is true)', () => (
-    <LocalStateProvider initialState={true}>
-      <LocalStateConsumer>
+    <StateProvider initialState={true}>
+      <StateConsumer>
         {({ state: opened, setState: onToggle }) => (
           <>
             <Button onClick={() => onToggle(!opened)}>Toggle Collapse</Button>
@@ -68,6 +68,6 @@ storiesOf('Collapse', module)
             <Button color="warning">abc</Button>
           </>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))

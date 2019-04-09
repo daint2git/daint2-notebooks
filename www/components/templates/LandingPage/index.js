@@ -23,30 +23,30 @@ const LandingPage = () => (
       </div>
     </div>
     <div id="content" className={cssModules`content`}>
-      <Link href="/js">
+      <Link href="/js/array">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <JsIcon width={75} height={75} />
             <h3>JavaScript (Js)</h3>
-            <a href="/js">Read More</a>
+            <a href="/js/array">Read More</a>
           </div>
         </div>
       </Link>
-      <Link href="/html">
+      <Link href="#">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <HtmlIcon width={75} height={75} />
             <h3>HyperText Markup Language (Html)</h3>
-            <a href="/Html">Read More</a>
+            <a href="#">Read More</a>
           </div>
         </div>
       </Link>
-      <Link href="/css">
+      <Link href="/css/flexbox">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <CssIcon width={75} height={75} />
             <h3>Cascading Style Sheets (Css)</h3>
-            <a href="/css">Read More</a>
+            <a href="/css/flexbox">Read More</a>
           </div>
         </div>
       </Link>

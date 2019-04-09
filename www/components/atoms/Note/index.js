@@ -3,25 +3,26 @@ import { COLORS, SIZES } from 'constants/global'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import MultilineText from 'components/atoms/MultilineText'
+import appendBr from 'components/utils/helpers/appendBr'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+import MultilineText from 'components/atoms/MultilineText'
 
 import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
 function Note(props) {
-  const { children, className, color, size, ...other } = props
+  const { children, className, color, size, innerHtml, ...other } = props
 
-  if (!children) {
-    return null
+  if (innerHtml) {
+    other.dangerouslySetInnerHTML = { __html: appendBr(innerHtml) }
   }
 
-  return (
-    <div className={cssModules`root ${color} ${size} ${className}`} {...other}>
-      <MultilineText>{children}</MultilineText>
-    </div>
-  )
+  if (children) {
+    other.children = <MultilineText>{children}</MultilineText>
+  }
+
+  return <div className={cssModules`root ${color} ${size} ${className}`} {...other} />
 }
 
 Note.propTypes = {
@@ -29,6 +30,7 @@ Note.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(COLORS),
   size: PropTypes.oneOf(SIZES),
+  innerHtml: PropTypes.node,
 }
 
 Note.defaultProps = {

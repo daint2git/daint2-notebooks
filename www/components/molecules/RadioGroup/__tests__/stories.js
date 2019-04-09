@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import withRepeater from 'components/utils/hocs/withRepeater'
 import Radio from 'components/atoms/Radio'
 
@@ -16,8 +16,8 @@ const data = [
 const Radios = withRepeater(Radio, 'data')
 
 storiesOf('RadioGroup', module).add('default', () => (
-  <LocalStateProvider initialState={{ value: '1' }}>
-    <LocalStateConsumer>
+  <StateProvider initialState={{ value: '1' }}>
+    <StateConsumer>
       {({ state: { value }, setState }) => (
         <RadioGroup
           name="example"
@@ -27,6 +27,6 @@ storiesOf('RadioGroup', module).add('default', () => (
           <Radios data={data} />
         </RadioGroup>
       )}
-    </LocalStateConsumer>
-  </LocalStateProvider>
+    </StateConsumer>
+  </StateProvider>
 ))

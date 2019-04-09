@@ -3,6 +3,7 @@
 .root {
   flex: 1 1 auto;
   margin: 0 auto;
+  margin-bottom: 50px;
 
   @media (--small-viewport) {
     padding-top: 64px;

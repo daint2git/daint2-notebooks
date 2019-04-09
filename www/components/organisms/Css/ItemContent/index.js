@@ -13,7 +13,7 @@ import CodeExample from 'components/organisms/CodeExample'
 import PropertyRadioGroup from 'components/organisms/Css/PropertyRadioGroup'
 
 function ItemContent(props) {
-  const { header, definition, options, output, note } = props
+  const { header, definition, options, outputStyle, output, note } = props
   const { value, onChange } = useFormInput(options[0])
 
   return (
@@ -27,7 +27,7 @@ function ItemContent(props) {
         </FlexContainer>
         <CodeExample
           language="css"
-          style={convertCssStyleToDomStyle({ [header]: value })}
+          style={{ ...convertCssStyleToDomStyle({ [header]: value }), ...outputStyle }}
           input={`
             {
               ${header}: ${value};
@@ -35,7 +35,7 @@ function ItemContent(props) {
           `}
           output={output}
         />
-        {note && <Note color="info">{note}</Note>}
+        {note && <Note color="info" innerHtml={note} />}
       </Paper>
       <Spacer />
     </>
@@ -46,6 +46,7 @@ ItemContent.propTypes = {
   header: PropTypes.string.isRequired,
   definition: PropTypes.string,
   options: PropTypes.array,
+  outputStyle: PropTypes.object,
   output: PropTypes.string,
   note: PropTypes.string,
 }

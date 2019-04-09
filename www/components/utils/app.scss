@@ -81,15 +81,15 @@
 
   mark {
     background-color: rgba(27,31,35,.05);
-    color: $black;
-    padding: .2em .4em;
+    color: inherit;
+    padding: .1em .2em;
     border-radius: 3px;
   }
 
   code {
     background-color: #f1f1f1;
     color: crimson;
-    padding: .2em .4em;
+    padding: .1em .2em;
     border-radius: 3px;
   }
 

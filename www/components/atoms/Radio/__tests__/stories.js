@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LocalStateProvider, LocalStateConsumer } from 'context/LocalStateContext'
+import { StateProvider, StateConsumer } from 'context/StateContext'
 import withRepeater from 'components/utils/hocs/withRepeater'
 import FlexContainer from 'components/atoms/FlexContainer'
 
@@ -23,8 +23,8 @@ const Radios = withRepeater(CustomRadio, 'data')
 
 storiesOf('Radio', module)
   .add('default', () => (
-    <LocalStateProvider initialState={{ checked: '1' }}>
-      <LocalStateConsumer>
+    <StateProvider initialState={{ checked: '1' }}>
+      <StateConsumer>
         {({ state: { checked }, setState }) => (
           <FlexContainer>
             <Radios
@@ -35,8 +35,8 @@ storiesOf('Radio', module)
             />
           </FlexContainer>
         )}
-      </LocalStateConsumer>
-    </LocalStateProvider>
+      </StateConsumer>
+    </StateProvider>
   ))
   .add('disabled', () => (
     <FlexContainer>

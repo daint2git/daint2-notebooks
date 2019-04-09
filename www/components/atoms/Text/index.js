@@ -3,6 +3,7 @@ import { COLORS, SIZES } from 'constants/global'
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import appendBr from 'components/utils/helpers/appendBr'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
@@ -25,7 +26,7 @@ const Text = React.forwardRef((props, ref) => {
   } = props
 
   if (innerHtml) {
-    other.dangerouslySetInnerHTML = { __html: innerHtml }
+    other.dangerouslySetInnerHTML = { __html: appendBr(innerHtml) }
   }
 
   return (
