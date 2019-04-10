@@ -41,6 +41,7 @@ BaseLink.propTypes = {
 BaseLink.defaultProps = {
   size: 'base-large',
   variant: 'internal',
+  hasEllipsis: false,
 }
 
 export default BaseLink

@@ -2,11 +2,31 @@
 @import 'components/utils/variables';
 
 .root {
-  width: 240px;
-  height: 100%;
+  position: sticky;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: $white;
   transition: transition_duration_1;
+
+  @media (--small-viewport) {
+    top: 48px;
+    margin-top: 48px;
+    height: calc(100vh - 48px);
+    width: calc(100% / 2);
+  }
+
+  @media (--medium-viewport) {
+    top: 56px;
+    margin-top: 56px;
+    height: calc(100vh - 56px);
+    width: 230px;
+  }
+
+  @media (--large-viewport) {
+    top: 64px;
+    margin-top: 64px;
+    height: calc(100vh - 64px);
+    width: 250px;
+  }
 }

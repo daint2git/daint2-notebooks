@@ -4,18 +4,12 @@ import stripIndent from 'common-tags/lib/stripIndent'
 import { highlight, languages } from 'prismjs'
 import 'prismjs/components/prism-jsx.min'
 
-import cssModuleNameTag from 'components/utils/cssModuleNameTag'
-
-import styles from './styles.scss'
-
-const cssModules = cssModuleNameTag(styles)
-
 /* eslint-disable react/no-danger */
 function CodeHighlighter(props) {
   const { children, language } = props
   const highlightedCode = highlight(stripIndent`${children}`, languages[language])
   return (
-    <div className={cssModules`root`}>
+    <div>
       <pre
         className={`language-${language}`}
         dangerouslySetInnerHTML={{ __html: highlightedCode }}

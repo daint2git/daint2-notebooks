@@ -10,6 +10,7 @@ import Paper from 'components/atoms/Paper'
 import Heading from 'components/atoms/Heading'
 import Spacer from 'components/atoms/Spacer'
 import SkillsBar from 'components/molecules/SkillsBar'
+import Article from 'components/organisms/Article'
 import PageLayout from 'components/templates/PageLayout'
 
 function Content(props) {
@@ -30,11 +31,11 @@ function Content(props) {
   ))
 
   return (
-    <>
+    <Article title="Personal Information">
       <Paper>
         <Heading>
-          My name is Nguyen Tran Dai. I am a Front-end Web Developer.
-          <br />I have a passion with front-end technologies. When I have free time, I often read,
+          My name is Nguyen Tran Dai. I am a FrontEnd Web Developer.
+          <br />I have a passion with FrontEnd technologies. When I have free time, I often read,
           study and share my knowledge for everyone.
         </Heading>
       </Paper>
@@ -48,7 +49,7 @@ function Content(props) {
         <Heading>My Repos (public)</Heading>
         {renderRepos}
       </Paper>
-    </>
+    </Article>
   )
 }
 

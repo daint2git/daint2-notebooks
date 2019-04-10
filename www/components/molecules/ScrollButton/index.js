@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 
 import arrowUp from 'components/atoms/Icon/svg/other/arrow-up.svg'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
@@ -10,13 +10,13 @@ const cssModules = cssModuleNameTag(styles)
 const ScrollButton = () => {
   const [isVisibled, setVisible] = useState(false)
 
-  function check() {
+  const check = useCallback(() => {
     setVisible(window.pageYOffset > window.innerHeight)
-  }
+  }, [])
 
-  function rollup() {
+  const rollup = useCallback(() => {
     window.scrollTo(0, 0)
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', check)
@@ -24,7 +24,7 @@ const ScrollButton = () => {
     return () => {
       window.removeEventListener('scroll', check)
     }
-  })
+  }, [check])
 
   return (
     <div className={cssModules`root`} data-visible={isVisibled} onScroll={check} onClick={rollup}>

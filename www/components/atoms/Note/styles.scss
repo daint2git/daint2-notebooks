@@ -8,10 +8,11 @@
 }
 
 .root {
-  line-height: 1.5;
+  line-height: 1.2;
   padding: 1.5rem 2rem 1.5rem 1.5rem;
   border-left-style: solid;
   border-left-width: 6px;
+  letter-spacing: 0.4px;
 
   /* colors */
   &.primary {

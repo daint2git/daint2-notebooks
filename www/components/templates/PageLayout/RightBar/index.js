@@ -9,7 +9,7 @@ import SideBar from 'components/molecules/SideBar'
 
 const renderMenuItems = titles =>
   titles.map(title => (
-    <MenuItem key={title}>
+    <MenuItem key={title} style={{ padding: '0.5rem 0' }}>
       <BaseLink href={`#${title}`}>{title}</BaseLink>
     </MenuItem>
   ))

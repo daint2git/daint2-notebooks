@@ -1,29 +1,24 @@
 import React from 'react'
 
+import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
 import FlexContainer from 'components/atoms/FlexContainer'
-import Spacer from 'components/atoms/Spacer'
 import Paper from 'components/atoms/Paper'
+import Spacer from 'components/atoms/Spacer'
 import Text from 'components/atoms/Text'
 import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
-import MenuList, { MenuItem } from 'components/molecules/MenuList'
 import CodeExample from 'components/organisms/CodeExample'
+import MenuList, { MenuItem } from 'components/molecules/MenuList'
 import Article from 'components/organisms/Article'
 import PageLayout from 'components/templates/PageLayout'
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
 
-const styles = {
-  subText: {
-    textIndent: '1rem',
-  },
-}
+const HEADERS = ['JSON là gì ?', 'Các phương thức của JSON']
 
 function Content() {
-  const headers = ['JSON là gì ?', 'Các phương thức của JSON']
-  useTitleLinksFromHeaders(headers)
+  useTitleLinksFromHeaders(HEADERS)
   return (
     <Article title="JSON">
       <Paper>
-        <AnchorLinkHeading>JSON là gì ?</AnchorLinkHeading>
+        <AnchorLinkHeading>{HEADERS[0]}</AnchorLinkHeading>
         <MenuList>
           <MenuItem>
             <Text size="large">
@@ -41,26 +36,35 @@ function Content() {
             <FlexContainer direction="column">
               <Text size="large">Các kiểu dữ liệu chính của JSON:</Text>
               <Spacer />
-              <Text style={styles.subText}>✔ string</Text>
-              <Text style={styles.subText}>✔ number (gồm số nguyên và số thực)</Text>
-              <Text style={styles.subText}>✔ boolean (true/ false)</Text>
-              <Text style={styles.subText}>✔ array</Text>
-              <Text style={styles.subText}>✔ object</Text>
-              <Text style={styles.subText}>✔ null</Text>
+              <Text style={{ paddingLeft: '1rem' }}>
+                string
+                <br />
+                number (gồm số nguyên và số thực)
+                <br />
+                boolean (true/ false)
+                <br />
+                array
+                <br />
+                object
+                <br />
+                null
+              </Text>
             </FlexContainer>
           </MenuItem>
         </MenuList>
-        <Spacer />
-        <AnchorLinkHeading>Các phương thức của JSON</AnchorLinkHeading>
+      </Paper>
+      <Spacer />
+      <Paper>
+        <AnchorLinkHeading>{HEADERS[1]}</AnchorLinkHeading>
         <MenuList>
           <MenuItem>
             <Text size="large">
-              <mark>stringify</mark> convert an object to a JSON string
+              <code>JSON.stringify</code> convert an object to a JSON string
             </Text>
           </MenuItem>
           <MenuItem>
             <Text size="large">
-              <mark>parse</mark> convert a JSON string to an object
+              <code>JSON.parse</code> convert a JSON string to an object
             </Text>
           </MenuItem>
           <CodeExample
@@ -81,8 +85,7 @@ function Content() {
 
               { name: 'cucu', weight: 5, isDead: false }
               object
-
-              `}
+            `}
           />
         </MenuList>
       </Paper>

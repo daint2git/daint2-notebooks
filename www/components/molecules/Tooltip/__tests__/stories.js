@@ -2,8 +2,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { CommentIcon } from 'components/atoms/Icon'
-import Button from 'components/atoms/Button'
 import Alert from 'components/atoms/Alert'
+import Button from 'components/atoms/Button'
 import IconButton from 'components/molecules/IconButton'
 
 import Tooltip from '..'

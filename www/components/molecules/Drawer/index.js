@@ -10,7 +10,7 @@ import styles from './styles.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Drawer = props => {
+function Drawer(props) {
   const { children, className, opened, disabledPortal, hasBackdrop, onClose, ...other } = props
 
   if (!opened) {

@@ -4,6 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import appendBr from 'components/utils/helpers/appendBr'
+import isString from 'components/utils/helpers/isString'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 import MultilineText from 'components/atoms/MultilineText'
 
@@ -19,7 +20,7 @@ function Note(props) {
   }
 
   if (children) {
-    other.children = <MultilineText>{children}</MultilineText>
+    other.children = isString(children) ? <MultilineText>{children}</MultilineText> : children
   }
 
   return <div className={cssModules`root ${color} ${size} ${className}`} {...other} />

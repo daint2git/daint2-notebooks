@@ -52,7 +52,16 @@ const menus = [
     icon: HtmlIcon,
     label: 'Html',
     level: 1,
-    children: null,
+    children: [
+      {
+        id: 'html/web_storage',
+        path: '/html/web_storage',
+        icon: PrefixBorderIcon,
+        label: 'HTML5 Web Storage',
+        level: 2,
+        children: null,
+      },
+    ],
   },
   {
     id: 'css',
@@ -62,18 +71,18 @@ const menus = [
     level: 1,
     children: [
       {
-        id: 'css/flexbox',
-        path: '/css/flexbox',
-        icon: PrefixBorderIcon,
-        label: 'Flexbox',
-        level: 2,
-        children: null,
-      },
-      {
         id: 'css/properties_css_for_text',
         path: '/css/properties_css_for_text',
         icon: PrefixBorderIcon,
         label: 'Properties css for text',
+        level: 2,
+        children: null,
+      },
+      {
+        id: 'css/flexbox',
+        path: '/css/flexbox',
+        icon: PrefixBorderIcon,
+        label: 'Flexbox',
         level: 2,
         children: null,
       },
@@ -85,7 +94,24 @@ const menus = [
     icon: ReactIcon,
     label: 'React',
     level: 1,
-    children: null,
+    children: [
+      {
+        id: 'react/controlled_uncontrolled',
+        path: '/react/controlled_uncontrolled',
+        icon: PrefixBorderIcon,
+        label: 'Controlled vs Uncontrolled',
+        level: 2,
+        children: null,
+      },
+      {
+        id: 'react/getDerivedStateFromProps_componentWillReceiveProps',
+        path: '/react/getDerivedStateFromProps_componentWillReceiveProps',
+        icon: PrefixBorderIcon,
+        label: 'getDerivedStateFromProps vs componentWillReceiveProps',
+        level: 2,
+        children: null,
+      },
+    ],
   },
   {
     id: 'redux',
@@ -93,7 +119,16 @@ const menus = [
     icon: ReduxIcon,
     label: 'Redux',
     level: 1,
-    children: null,
+    children: [
+      {
+        id: 'redux/theory',
+        path: '/redux/theory',
+        icon: PrefixBorderIcon,
+        label: 'Lí thuyết',
+        level: 2,
+        children: null,
+      },
+    ],
   },
   {
     id: 'git',
@@ -130,7 +165,7 @@ const menus = [
   },
   {
     id: 'docker',
-    path: '/docker',
+    path: '#',
     icon: DockerIcon,
     label: 'Docker',
     level: 1,
@@ -138,7 +173,7 @@ const menus = [
   },
   {
     id: 'other',
-    path: '/other',
+    path: '#',
     icon: CodeIcon,
     label: 'Other',
     level: 1,

@@ -55,16 +55,17 @@
   h1 {
     color: #f6685e;
     text-transform: uppercase;
-    font-size: 60px;
-    font-weight: 900;
-    margin-bottom: 20px;
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 2rem;
     animation: text1 3s 1;
   }
 
   p {
     color: #fff;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    word-break: break-word;
     animation: text2 6s 1;
   }
 
@@ -130,17 +131,20 @@
 
     &:nth-child(1) {
       background: linear-gradient(60deg, #26c6da, #00acc1);
-      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 172, 193, .4);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+        0 7px 10px -5px rgba(0, 172, 193, 0.4);
     }
 
     &:nth-child(2) {
       background: linear-gradient(60deg, #ffa726, #fb8c00);
-      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(255, 152, 0, .4);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+        0 7px 10px -5px rgba(255, 152, 0, 0.4);
     }
 
     &:nth-child(3) {
       background: linear-gradient(60deg, #ef5350, #e53935);
-      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+        0 7px 10px -5px rgba(244, 67, 54, 0.4);
     }
 
     @media (--medium-viewport) {

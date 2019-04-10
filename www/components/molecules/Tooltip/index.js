@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
+import toPx from 'components/utils/helpers/toPx'
 import Portal, { PortalWrapper } from 'components/atoms/Portal'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 import noop from 'components/utils/helpers/noop'
@@ -11,31 +12,37 @@ const cssModules = cssModuleNameTag(styles)
 
 const childrenRef = React.createRef()
 
-const Tooltip = props => {
+function Tooltip(props) {
   const { children, className, title, onOpen, onClose, ...other } = props
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
-  const handleEnter = event => {
-    setOpen(true)
-    onOpen(event)
-  }
+  const handleEnter = useCallback(
+    event => {
+      setOpen(true)
+      onOpen(event)
+    },
+    [onOpen],
+  )
 
-  const handleLeave = event => {
-    setOpen(false)
-    onClose(event)
-  }
+  const handleLeave = useCallback(
+    event => {
+      setOpen(false)
+      onClose(event)
+    },
+    [onClose],
+  )
 
-  const setTooltipStyle = element => {
+  const setTooltipStyle = useCallback(element => {
     if (element) {
-      const rectRootRef = childrenRef.current.getBoundingClientRect()
-      const rectTooltipRef = element.getBoundingClientRect()
+      const rectOfChildren = childrenRef.current.getBoundingClientRect()
+      const rectOfTooltip = element.getBoundingClientRect()
 
-      element.style.top = `${rectRootRef.top +
-        rectRootRef.height / 2 -
-        rectTooltipRef.height / 2}px`
-      element.style.left = `${rectRootRef.right + 15}px`
+      element.style.top = toPx(
+        rectOfChildren.top + rectOfChildren.height / 2 - rectOfTooltip.height / 2,
+      )
+      element.style.left = toPx(rectOfChildren.right + 15)
     }
-  }
+  }, [])
 
   const childrenProps = {
     ...children.props,

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 import { JsIcon, HtmlIcon, CssIcon } from 'components/atoms/Icon/languages'
-import StickySocialBar from 'components/molecules/StickySocialBar'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
+import StickySocialBar from 'components/molecules/StickySocialBar'
 
 import styles from './styles.scss'
 
@@ -22,9 +22,9 @@ const LandingPage = () => (
       <div className={cssModules`information`}>
         <h1>DaiNT2 notebooks</h1>
         <p>
-          My name is Nguyen Tran Dai. I am a Front-end Web Developer. I have a passion with
-          front-end technologies. When I have free time, I often read, study and share my knowledge
-          for everyone.
+          My name is Nguyen Tran Dai. I am a FrontEnd Web Developer. I have a passion with FrontEnd
+          technologies. When I have free time, I often read, study and share my knowledge for
+          everyone.
         </p>
         <a href="#content">Get Started</a>
       </div>
@@ -34,26 +34,26 @@ const LandingPage = () => (
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <JsIcon width={75} height={75} />
-            <h3>JavaScript (Js)</h3>
+            <h3>Js</h3>
             <a href="/js/array">Read More</a>
           </div>
         </div>
       </Link>
-      <Link href="#">
+      <Link href="/html/web_storage">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <HtmlIcon width={75} height={75} />
-            <h3>HyperText Markup Language (Html)</h3>
-            <a href="#">Read More</a>
+            <h3>Html</h3>
+            <a href="/html/web_storage">Read More</a>
           </div>
         </div>
       </Link>
-      <Link href="/css/flexbox">
+      <Link href="/css/properties_css_for_text">
         <div className={cssModules`box`}>
           <div className={cssModules`box-content`}>
             <CssIcon width={75} height={75} />
-            <h3>Cascading Style Sheets (Css)</h3>
-            <a href="/css/flexbox">Read More</a>
+            <h3>Css</h3>
+            <a href="/css/properties_css_for_text">Read More</a>
           </div>
         </div>
       </Link>
