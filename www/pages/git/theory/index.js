@@ -1,27 +1,28 @@
 import React from 'react'
 
 import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
-import Article from 'components/organisms/Article'
-import PageLayout from 'components/templates/PageLayout'
-import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
-import Text from 'components/atoms/Text'
-import Spacer from 'components/atoms/Spacer'
-import Paper from 'components/atoms/Paper'
-import CodeExample from 'components/organisms/CodeExample'
-import Heading from 'components/atoms/Heading'
-import ResponsiveImage from 'components/atoms/ResponsiveImage'
 import FlexContainer from 'components/atoms/FlexContainer'
+import Heading from 'components/atoms/Heading'
+import Paper from 'components/atoms/Paper'
+import ResponsiveImage from 'components/atoms/ResponsiveImage'
+import Spacer from 'components/atoms/Spacer'
+import Text from 'components/atoms/Text'
+import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
+import Article from 'components/organisms/Article'
+import CodeExample from 'components/organisms/CodeExample'
+import PageLayout from 'components/templates/PageLayout'
+
+const HEADERS = ['Repository', 'Branch', '3 trạng thái của Git']
 
 function Content() {
-  const headers = ['Repository', 'Branch', '3 trạng thái của Git']
-  useTitleLinksFromHeaders(headers)
+  useTitleLinksFromHeaders(HEADERS)
   return (
     <Article title="Lí thuyết">
       <Paper>
         <FlexContainer vertical="center">
           <ResponsiveImage
             src="/static/git/repository.PNG"
-            style={{ maxWidth: '600px', maxHeight: '600px' }}
+            style={{ maxWidth: '500px', maxHeight: '500px' }}
           />
         </FlexContainer>
         <AnchorLinkHeading>Repository</AnchorLinkHeading>
