@@ -47,7 +47,7 @@ const Item = ({ title, definition, examples, note }) => (
 Item.propTypes = {
   title: PropTypes.string.isRequired,
   definition: PropTypes.string,
-  examples: PropTypes.arrayOf(PropTypes.shape({ examplePropTypes })),
+  examples: PropTypes.arrayOf(PropTypes.shape(examplePropTypes)),
   note: PropTypes.string,
 }
 
