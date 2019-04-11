@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import FlexContainer from 'components/atoms/FlexContainer'
 import Paper from 'components/atoms/Paper'
 import Spacer from 'components/atoms/Spacer'
@@ -11,14 +11,14 @@ import MenuList, { MenuItem } from 'components/molecules/MenuList'
 import Article from 'components/organisms/Article'
 import PageLayout from 'components/templates/PageLayout'
 
-const HEADERS = ['JSON là gì ?', 'Các phương thức của JSON']
+const TITLES = ['JSON là gì ?', 'Các phương thức của JSON']
 
 function Content() {
-  useTitleLinksFromHeaders(HEADERS)
+  useAnchorLinks(TITLES)
   return (
     <Article title="JSON">
       <Paper>
-        <AnchorLinkHeading>{HEADERS[0]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <MenuList>
           <MenuItem>
             <Text size="large">
@@ -28,34 +28,31 @@ function Content() {
           </MenuItem>
           <MenuItem>
             <Text size="large">
-              Trong JSON, toàn bộ dữ liệu đều được coi là một array hoặc một object (là cấu trúc dữ
-              liệu dựa trên các cặp <mark>key-value</mark>)
+              Trong JSON, toàn bộ dữ liệu đều được xem như là một array hoặc một object (là cấu trúc
+              dữ liệu dựa trên các cặp <mark>key-value</mark>).
             </Text>
           </MenuItem>
           <MenuItem>
             <FlexContainer direction="column">
               <Text size="large">Các kiểu dữ liệu chính của JSON:</Text>
-              <Spacer />
-              <Text style={{ paddingLeft: '1rem' }}>
-                string
-                <br />
-                number (gồm số nguyên và số thực)
-                <br />
-                boolean (true/ false)
-                <br />
-                array
-                <br />
-                object
-                <br />
-                null
-              </Text>
+              <Text
+                style={{ paddingLeft: '1rem', paddingTop: '1rem' }}
+                innerHtml={`
+                  string
+                  number (integer and float)
+                  boolean (true / false)
+                  array
+                  object
+                  null
+                `}
+              />
             </FlexContainer>
           </MenuItem>
         </MenuList>
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[1]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
         <MenuList>
           <MenuItem>
             <Text size="large">

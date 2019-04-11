@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import Paper from 'components/atoms/Paper'
 import Spacer from 'components/atoms/Spacer'
 import Text from 'components/atoms/Text'
@@ -8,20 +8,14 @@ import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
 import Article from 'components/organisms/Article'
 import PageLayout from 'components/templates/PageLayout'
 
-const HEADERS = [
-  'Redux là gì ?',
-  'Ba nguyên tắc của redux',
-  'Các yếu tố của redux',
-  'sessionStorage',
-  'Lưu ý',
-]
+const TITLES = ['Redux là gì ?', 'Ba nguyên tắc của Redux', 'Các yếu tố của Redux']
 
 function Content() {
-  useTitleLinksFromHeaders(HEADERS)
+  useAnchorLinks(TITLES)
   return (
-    <Article title="Cơ bản">
+    <Article title="Theory">
       <Paper>
-        <AnchorLinkHeading>{HEADERS[0]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <Spacer />
         <Text size="large">
           Là một <mark>JavaScript library</mark>, Redux is a predictable state container for
@@ -30,7 +24,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[1]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
         <Spacer />
         <Text size="large">
           <strong>Single source of truth:</strong> <code>state</code> của toàn bộ ứng dụng của bạn
@@ -50,7 +44,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[2]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[2]}</AnchorLinkHeading>
         <Text size="large">
           Action
           <br />

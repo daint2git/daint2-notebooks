@@ -1,6 +1,6 @@
 const contents = [
   {
-    header: 'For Loop Shorthand',
+    title: 'For Loop Shorthand',
     definition: ``,
     examples: [
       {
@@ -17,7 +17,7 @@ const contents = [
     ],
   },
   {
-    header: 'Mandatory Parameter Shorthand',
+    title: 'Mandatory Parameter Shorthand',
     definition: ``,
     examples: [
       {
@@ -43,7 +43,7 @@ const contents = [
     ],
   },
   {
-    header: `Remove falsy`,
+    title: `Remove falsy`,
     definition: ``,
     examples: [
       {
@@ -60,7 +60,7 @@ const contents = [
     ],
   },
   {
-    header: 'Difference Two Array',
+    title: 'Difference Two Array',
     definition: ``,
     examples: [
       {
@@ -78,7 +78,7 @@ const contents = [
     ],
   },
   {
-    header: 'Remove duplicates',
+    title: 'Remove duplicates',
     definition: ``,
     examples: [
       {
@@ -101,7 +101,7 @@ const contents = [
     ],
   },
   {
-    header: 'operator !!',
+    title: 'operator !!',
     definition: ``,
     examples: [
       {

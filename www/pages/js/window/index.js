@@ -1,15 +1,16 @@
 import React from 'react'
 
 import Article from 'components/organisms/Article'
-import List from 'components/organisms/gitContent/List'
+import ArticleContent from 'components/organisms/JavaScript/ArticleContent'
 import PageLayout from 'components/templates/PageLayout'
 
 import data from './data'
 
 function Content() {
+  const { title, contents } = data
   return (
-    <Article title={data.title}>
-      <List contents={data.contents} />
+    <Article title={title}>
+      <ArticleContent contents={contents} />
     </Article>
   )
 }

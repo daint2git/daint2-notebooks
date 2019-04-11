@@ -1,11 +1,9 @@
 import React from 'react'
 
-import ListItemContent from 'components/organisms/JavaScript/ListItemContent'
+import List from 'components/organisms/jsContent/List'
 
 import contents from './contents'
 
-function Tips() {
-  return <ListItemContent contents={contents} />
-}
+const Tips = () => <List contents={contents} />
 
 export default Tips

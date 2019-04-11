@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import FlexContainer from 'components/atoms/FlexContainer'
 import Heading from 'components/atoms/Heading'
 import Paper from 'components/atoms/Paper'
@@ -12,12 +12,12 @@ import Article from 'components/organisms/Article'
 import CodeExample from 'components/organisms/CodeExample'
 import PageLayout from 'components/templates/PageLayout'
 
-const HEADERS = ['Repository', 'Branch', '3 trạng thái của Git']
+const TITLES = ['Repository', 'Branch', '3 trạng thái của Git']
 
 function Content() {
-  useTitleLinksFromHeaders(HEADERS)
+  useAnchorLinks(TITLES)
   return (
-    <Article title="Lí thuyết">
+    <Article title="Theory">
       <Paper>
         <FlexContainer vertical="center">
           <ResponsiveImage
@@ -25,7 +25,7 @@ function Content() {
             style={{ maxWidth: '500px', maxHeight: '500px' }}
           />
         </FlexContainer>
-        <AnchorLinkHeading>Repository</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <Text size="large">
           Repository (nhà kho) hay được gọi tắt là Repo đơn giản là nơi chứa/cơ sở dữ liệu
           (database) tất cả những thông tin cần thiết để duy trì và quản lý các sửa đổi và lịch sử
@@ -44,7 +44,7 @@ function Content() {
           dụng.
         </Text>
         <Spacer />
-        <AnchorLinkHeading>Branch</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
         <Text size="large">
           Branch: Là phân nhánh ghi lại luồng thay đổi của lịch sử, các hoạt động trên mỗi branch sẽ
           không ảnh hưởng lên các branch khác nên có thể tiến hành nhiều thay đổi đồng thời trên một
@@ -74,7 +74,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>3 trạng thái của Git</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[2]}</AnchorLinkHeading>
         <Text
           size="large"
           innerHtml={`

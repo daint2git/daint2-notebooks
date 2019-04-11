@@ -17,16 +17,16 @@ const DynamicComponents = {
 
 function Content() {
   const [tabIndex, setTabIndex] = useState(0)
-  const renderTabNames = tabNames.map(tabName => <Tab key={tabName}>{tabName}</Tab>)
+  const renderTabs = tabNames.map(tabName => <Tab key={tabName}>{tabName}</Tab>)
   return (
-    <Article title="Lệnh">
+    <Article title="Commands">
       <TabList
         textColor="inverse"
         indicatorColor="inverse"
         value={tabIndex}
         onChange={index => setTabIndex(index)}
       >
-        {renderTabNames}
+        {renderTabs}
       </TabList>
       <Spacer />
       {tabIndex === 0 && <DynamicComponents.Basic />}

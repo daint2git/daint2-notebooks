@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react'
 
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
 import Button from 'components/atoms/Button'
 import FlexContainer from 'components/atoms/FlexContainer'
@@ -8,10 +9,9 @@ import Heading from 'components/atoms/Heading'
 import Paper from 'components/atoms/Paper'
 import Note from 'components/atoms/Note'
 import Article from 'components/organisms/Article'
-import PropertyRadioGroup from 'components/organisms/Css/PropertyRadioGroup'
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
-import PageLayout from 'components/templates/PageLayout'
 import CodeExample from 'components/organisms/CodeExample'
+import PropertyRadioGroup from 'components/organisms/cssContent/PropertyRadioGroup'
+import PageLayout from 'components/templates/PageLayout'
 
 import { DISPLAY, DIRECTION, WRAP, JUSTIFY_CONTENT, ALIGN_ITEMS, ALIGN_CONTENT } from './constants'
 
@@ -48,20 +48,19 @@ const INITIAL_STATE = () => ({
   countItem: 5,
 })
 
+const TITLES = ['Flex container', 'Flex item']
+
 function Content() {
-  const headers = ['Flex container', 'Flex item']
-  useTitleLinksFromHeaders(headers)
+  useAnchorLinks(TITLES)
+
   const [state, setState] = useState(() => INITIAL_STATE().styles)
   const [countItem, setCountItem] = useState(() => INITIAL_STATE().countItem)
-
-  function onChange(e) {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
+  const onChange = e => setState({ ...state, [e.target.name]: e.target.value })
 
   return (
     <Article title="Flexbox">
       <Paper>
-        <AnchorLinkHeading>{headers[0]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <FlexContainer>
           <PropertyRadioGroup
             heading="display"
@@ -144,7 +143,7 @@ function Content() {
             justify-content: ${state.justifyContent};
             align-items: ${state.alignItems};
             align-content: ${state.alignContent};
-        }
+          }
         `}
           output={<Output count={countItem} />}
         />
@@ -165,7 +164,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{headers[1]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
       </Paper>
     </Article>
   )

@@ -6,7 +6,7 @@
   display: inline-block;
   width: 100%;
   letter-spacing: 0.3px;
-  line-height: 1.2;
+  line-height: 1.5;
 
   &[data-ellipsis='true'] {
     @include ellipsis;

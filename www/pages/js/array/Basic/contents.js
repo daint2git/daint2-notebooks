@@ -1,6 +1,6 @@
-const examples = [
+const contents = [
   {
-    header: 'Array.from',
+    title: 'Array.from',
     definition:
       'method creates a new, shallow-copied Array instance from an array-like or iterable object.',
     examples: [
@@ -20,7 +20,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.of',
+    title: 'Array.of',
     definition: `method creates a new Array instance with a variable number of arguments, regardless of
       number or type of the arguments.`,
     examples: [
@@ -38,7 +38,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.keys',
+    title: 'Array.keys',
     definition: `method returns a new Array Iterator object that contains the keys for each index in the array.`,
     examples: [
       {
@@ -60,7 +60,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.values',
+    title: 'Array.values',
     definition: `method returns a new Array Iterator object that contains the values for each index in the array.`,
     examples: [
       {
@@ -82,7 +82,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.entries',
+    title: 'Array.entries',
     definition: `method returns a new Array Iterator object that contains the key/value pairs for each index in the array.`,
     examples: [
       {
@@ -106,7 +106,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.find',
+    title: 'Array.find',
     definition: `method returns the value of the <mark>first element</mark> in the array that satisfies the provided testing function. Otherwise undefined is returned.`,
     examples: [
       {
@@ -130,7 +130,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.findIndex',
+    title: 'Array.findIndex',
     definition: `method returns the <mark>index</mark> of the <mark>first element</mark> in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating no element passed the test.`,
     examples: [
       {
@@ -149,7 +149,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.fill',
+    title: 'Array.fill',
     definition: `method fills all the elements of an array from a start index to an end index with a static value. The end index is not included.`,
     examples: [
       {
@@ -174,7 +174,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.copyWithin',
+    title: 'Array.copyWithin',
     definition: `method shallow copies part of an array to another location in the same array and returns it, without modifying its size.`,
     examples: [
       {
@@ -197,7 +197,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.every',
+    title: 'Array.every',
     definition: `method tests whether all elements in the array pass the test implemented by the provided function.`,
     examples: [
       {
@@ -239,7 +239,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.some',
+    title: 'Array.some',
     definition: `method tests whether at least one element in the array passes the test implemented by the provided function.`,
     examples: [
       {
@@ -281,7 +281,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.indexOf',
+    title: 'Array.indexOf',
     definition: `method returns the first index at which a given element can be found in the array, or -1 if it is not present.`,
     examples: [
       {
@@ -307,7 +307,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.shift',
+    title: 'Array.shift',
     definition: `method removes the <mark>first</mark> element from an array and returns that removed element. This method changes the length of the array.`,
     examples: [
       {
@@ -334,7 +334,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.unshift',
+    title: 'Array.unshift',
     definition: `method adds one or more elements to the beginning of an array and returns the new length of the array.`,
     examples: [
       {
@@ -355,7 +355,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.splice',
+    title: 'Array.splice',
     definition: `method changes the contents of an array by removing or replacing existing elements and/or adding new elements.`,
     examples: [
       {
@@ -379,7 +379,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.slice',
+    title: 'Array.slice',
     definition: `method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.`,
     examples: [
       {
@@ -404,7 +404,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.includes',
+    title: 'Array.includes',
     definition: `method determines whether an array includes a certain element, returning true or false as appropriate.`,
     examples: [
       {
@@ -431,7 +431,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.reduce',
+    title: 'Array.reduce',
     definition: `method executes a <mark>reducer</mark> function (that you provide) on each member of the array resulting in a single output value.`,
     examples: [
       {
@@ -455,7 +455,7 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
     ],
   },
   {
-    header: 'Array.reduceRight',
+    title: 'Array.reduceRight',
     definition: `method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.`,
     examples: [
       {
@@ -478,4 +478,4 @@ Array.from({ length: 10 }, (v, k) => k).map(k => k)
   },
 ]
 
-export default examples
+export default contents

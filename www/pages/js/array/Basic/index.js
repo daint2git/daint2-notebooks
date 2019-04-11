@@ -1,11 +1,9 @@
 import React from 'react'
 
-import ListItemContent from 'components/organisms/JavaScript/ListItemContent'
+import List from 'components/organisms/jsContent/List'
 
 import contents from './contents'
 
-function Basic() {
-  return <ListItemContent contents={contents} />
-}
+const Basic = () => <List contents={contents} />
 
 export default Basic

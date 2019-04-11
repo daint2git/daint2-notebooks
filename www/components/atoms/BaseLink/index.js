@@ -3,6 +3,7 @@ import { SIZES } from 'constants/global'
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { createAnchorId } from 'components/utils/hooks/useAnchorLinks'
 import cssModuleNameTag from 'components/utils/cssModuleNameTag'
 
 import styles from './styles.scss'
@@ -15,6 +16,10 @@ const BaseLink = React.forwardRef((props, ref) => {
   if (variant === 'external') {
     other.target = '_blank'
     other.rel = 'noreferrer noopener'
+  }
+
+  if (variant === 'anchor' && other.id) {
+    other.id = createAnchorId(other.id)
   }
 
   return (

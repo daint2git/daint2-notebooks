@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import Note from 'components/atoms/Note'
 import Paper from 'components/atoms/Paper'
 import Spacer from 'components/atoms/Spacer'
@@ -10,14 +10,14 @@ import Article from 'components/organisms/Article'
 import CodeExample from 'components/organisms/CodeExample'
 import PageLayout from 'components/templates/PageLayout'
 
-const HEADERS = ['HTML Web Storage là gì ?', 'localStorage', 'sessionStorage', 'Lưu ý']
+const TITLES = ['HTML Web Storage là gì ?', 'localStorage', 'sessionStorage', 'Lưu ý']
 
 function Content() {
-  useTitleLinksFromHeaders(HEADERS)
+  useAnchorLinks(TITLES)
   return (
     <Article title="HTML5 Web Storage">
       <Paper>
-        <AnchorLinkHeading>{HEADERS[0]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <Text size="large">
           Với lưu trữ web, các ứng dụng web có thể lưu trữ dữ liệu cục bộ trong trình duyệt của
           người dùng.
@@ -32,7 +32,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[1]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
         <Text size="large">
           Đối tượng localStorage lưu trữ dữ liệu không có ngày hết hạn.
           <br />
@@ -97,7 +97,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[2]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[2]}</AnchorLinkHeading>
         <Text size="large">
           Đối tượng sessionStorage bằng với đối tượng localStorage.
           <br />
@@ -123,7 +123,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[3]}</AnchorLinkHeading>
+        <AnchorLinkHeading>{TITLES[3]}</AnchorLinkHeading>
         <Text size="large">
           Trước khi sử dụng web storage, hãy kiểm tra trình duyệt hỗ trợ cho&nbsp;
           <code>localStorage</code> và <code>sessionStorage</code>:

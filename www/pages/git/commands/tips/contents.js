@@ -1,6 +1,6 @@
 const contents = [
   {
-    header: 'How do I discard unstaged changes in Git ?',
+    title: 'How do I discard unstaged changes in Git ?',
     examples: [
       {
         input: `
@@ -11,7 +11,7 @@ const contents = [
     ],
   },
   {
-    header: 'Revert to previous commit (after it was pushed on git)',
+    title: 'Revert to previous commit (after it was pushed on git)',
     examples: [
       {
         input: `
@@ -28,7 +28,7 @@ const contents = [
     ],
   },
   {
-    header: 'Require merge (after pull)',
+    title: 'Require merge (after pull)',
     examples: [
       {
         text: 'Steps',

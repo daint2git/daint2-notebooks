@@ -1,6 +1,6 @@
 const contents = [
   {
-    header: 'config',
+    title: 'config',
     definition: 'Cấu hình cho git',
     examples: [
       {
@@ -18,7 +18,7 @@ const contents = [
     ],
   },
   {
-    header: 'init',
+    title: 'init',
     definition: `Tạo một <mark>local repository</mark> tại <mark>working directory</mark>`,
     examples: [
       {
@@ -28,7 +28,7 @@ const contents = [
     ],
   },
   {
-    header: 'clone',
+    title: 'clone',
     definition: 'Sao chép một remote repository',
     examples: [
       {
@@ -43,7 +43,7 @@ const contents = [
     ],
   },
   {
-    header: 'branch',
+    title: 'branch',
     definition: 'Thao tác với branch',
     examples: [
       {
@@ -73,7 +73,7 @@ const contents = [
     `,
   },
   {
-    header: 'checkout',
+    title: 'checkout',
     definition: 'Chuyển đổi branch',
     examples: [
       {
@@ -87,7 +87,7 @@ const contents = [
     ],
   },
   {
-    header: 'merge',
+    title: 'merge',
     definition: 'Hợp nhất branch',
     examples: [
       {
@@ -102,7 +102,7 @@ const contents = [
     `,
   },
   {
-    header: 'fetch',
+    title: 'fetch',
     definition: `
     Tiến hành kéo các thay đổi từ trên <mark>remote server</mark> về <mark>remote local</mark>
     Không tự động <mark>merge</mark>
@@ -119,7 +119,7 @@ const contents = [
     ],
   },
   {
-    header: 'pull',
+    title: 'pull',
     definition: `
     Tiến hành kéo các thay đổi từ trên <mark>remote server</mark> về <mark>remote local</mark>
     Tự động <mark>merge</mark> các thay đổi đó ngay
@@ -139,7 +139,7 @@ const contents = [
     `,
   },
   {
-    header: 'status',
+    title: 'status',
     definition: 'Liệt kê trạng thái của các file tại <mark>working directory</mark>',
     examples: [
       {
@@ -149,7 +149,7 @@ const contents = [
     ],
   },
   {
-    header: 'add',
+    title: 'add',
     definition: 'Thêm một hay nhiều file đến <mark>staging</mark>',
     examples: [
       {
@@ -167,7 +167,7 @@ const contents = [
     ],
   },
   {
-    header: 'commit',
+    title: 'commit',
     definition: 'Tạo một commit',
     examples: [
       {
@@ -181,7 +181,7 @@ const contents = [
     ],
   },
   {
-    header: 'log',
+    title: 'log',
     definition: 'Xem lịch sử commit',
     examples: [
       {
@@ -199,7 +199,7 @@ const contents = [
     ],
   },
   {
-    header: 'show',
+    title: 'show',
     definition: 'Xem nội dung của một commit được chỉ định',
     examples: [
       {
@@ -209,7 +209,7 @@ const contents = [
     ],
   },
   {
-    header: 'push',
+    title: 'push',
     definition: `Đẩy các <mark>commit</mark> (Gửi các thay đổi) đến <mark>branch được chỉ định</mark>`,
     examples: [
       {
@@ -223,7 +223,7 @@ const contents = [
     ],
   },
   {
-    header: 'reset',
+    title: 'reset',
     definition: 'Trở về trạng thái được chỉ định',
     examples: [
       {
@@ -257,7 +257,7 @@ const contents = [
     ],
   },
   {
-    header: 'clean',
+    title: 'clean',
     definition: '',
     examples: [
       {
@@ -272,7 +272,7 @@ const contents = [
     ],
   },
   {
-    header: 'stash',
+    title: 'stash',
     definition:
       'Được sử dụng khi muốn lưu lại các thay đổi nhưng chưa commit, thường rất hữu dụng khi bạn muốn đổi sang 1 branch khác mà lại đang làm dang dở ở branch hiện tại.',
     examples: [
@@ -300,7 +300,7 @@ const contents = [
     ],
   },
   {
-    header: 'remote',
+    title: 'remote',
     definition: 'Thao tác với remote',
     examples: [
       {

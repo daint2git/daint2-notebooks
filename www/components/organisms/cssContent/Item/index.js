@@ -10,27 +10,28 @@ import Spacer from 'components/atoms/Spacer'
 import Text from 'components/atoms/Text'
 import AnchorLinkHeading from 'components/molecules/AnchorLinkHeading'
 import CodeExample from 'components/organisms/CodeExample'
-import PropertyRadioGroup from 'components/organisms/Css/PropertyRadioGroup'
 
-function ItemContent(props) {
-  const { header, definition, options, outputStyle, output, note } = props
+import PropertyRadioGroup from '../PropertyRadioGroup'
+
+function Item(props) {
+  const { title, definition, options, output, outputStyle, note } = props
   const { value, onChange } = useFormInput(options[0])
 
   return (
     <>
       <Paper>
-        <AnchorLinkHeading>{header}</AnchorLinkHeading>
+        <AnchorLinkHeading>{title}</AnchorLinkHeading>
         {definition && <Text size="x-large" innerHtml={definition} />}
         <Spacer />
         <FlexContainer>
-          <PropertyRadioGroup name={header} value={value} onChange={onChange} data={options} />
+          <PropertyRadioGroup name={title} value={value} onChange={onChange} data={options} />
         </FlexContainer>
         <CodeExample
           language="css"
-          style={{ ...convertCssStyleToDomStyle({ [header]: value }), ...outputStyle }}
+          style={{ ...convertCssStyleToDomStyle({ [title]: value }), ...outputStyle }}
           input={`
             {
-              ${header}: ${value};
+              ${title}: ${value};
             }
           `}
           output={output}
@@ -42,8 +43,8 @@ function ItemContent(props) {
   )
 }
 
-ItemContent.propTypes = {
-  header: PropTypes.string.isRequired,
+Item.propTypes = {
+  title: PropTypes.string.isRequired,
   definition: PropTypes.string,
   options: PropTypes.array,
   outputStyle: PropTypes.object,
@@ -51,8 +52,8 @@ ItemContent.propTypes = {
   note: PropTypes.string,
 }
 
-ItemContent.defaultProps = {
+Item.defaultProps = {
   output: 'This is some text. This is some text.',
 }
 
-export default ItemContent
+export default Item

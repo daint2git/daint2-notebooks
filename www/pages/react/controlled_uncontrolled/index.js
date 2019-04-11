@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useTitleLinksFromHeaders from 'components/utils/hooks/useTitleLinksFromHeaders'
+import useAnchorLinks from 'components/utils/hooks/useAnchorLinks'
 import Paper from 'components/atoms/Paper'
 import Spacer from 'components/atoms/Spacer'
 import Text from 'components/atoms/Text'
@@ -9,15 +9,14 @@ import Article from 'components/organisms/Article'
 import CodeExample from 'components/organisms/CodeExample'
 import PageLayout from 'components/templates/PageLayout'
 
-const HEADERS = ['Controlled components', 'Uncontrolled components']
+const TITLES = ['Controlled components', 'Uncontrolled components']
 
 function Content() {
-  useTitleLinksFromHeaders(HEADERS)
+  useAnchorLinks(TITLES)
   return (
     <Article title="Controlled components vs Uncontrolled components">
       <Paper>
-        <AnchorLinkHeading>{HEADERS[0]}</AnchorLinkHeading>
-        <Spacer />
+        <AnchorLinkHeading>{TITLES[0]}</AnchorLinkHeading>
         <Text size="large">
           Form data is handled by a <mark>React component</mark> (recommend)
         </Text>
@@ -44,8 +43,7 @@ function Content() {
       </Paper>
       <Spacer />
       <Paper>
-        <AnchorLinkHeading>{HEADERS[1]}</AnchorLinkHeading>
-        <Spacer />
+        <AnchorLinkHeading>{TITLES[1]}</AnchorLinkHeading>
         <Text size="large">
           Form data is handled by the <mark>DOM</mark> itself
         </Text>
