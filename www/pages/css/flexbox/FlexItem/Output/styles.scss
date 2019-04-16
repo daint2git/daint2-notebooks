@@ -1,0 +1,24 @@
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+
+.container {
+  border: 1px dashed;
+
+  .item {
+    padding: 20px;
+    border: 1px solid $white;
+    font-size: $fs_large;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(4) {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:nth-child(3) {
+      background-color: $warning;
+      color: $black;
+    }
+  }
+}

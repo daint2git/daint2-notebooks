@@ -1,3 +1,12 @@
+const TITLES = [
+  'display',
+  'flex-direction',
+  'flex-wrap',
+  'justify-content',
+  'align-items',
+  'align-content',
+]
+
 const DISPLAY = {
   definition: ``,
   options: [
@@ -178,4 +187,4 @@ const ALIGN_CONTENT = {
   tip: `Use the <code>justify-content</code> property to align the items on the main-axis (horizontally).`,
 }
 
-export { DISPLAY, DIRECTION, WRAP, JUSTIFY_CONTENT, ALIGN_ITEMS, ALIGN_CONTENT }
+export { TITLES, DISPLAY, DIRECTION, WRAP, JUSTIFY_CONTENT, ALIGN_ITEMS, ALIGN_CONTENT }
