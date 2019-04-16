@@ -8,7 +8,7 @@ export default function convertDomStyleToCssStyle(styles) {
   const result = Object.keys(styles).reduce((result, key) => {
     const length = key.toString().length
     let replacedProperty = ''
-    for (let i = 0; i < length; i + 1) {
+    for (let i = 0; i < length; i++) {
       const current = key.charAt(i)
       if (current === current.toUpperCase()) {
         replacedProperty += `-${current.toLowerCase()}`
