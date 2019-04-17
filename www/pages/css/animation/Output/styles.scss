@@ -1,0 +1,23 @@
+@import 'components/utils/colors';
+@import 'components/utils/variables';
+
+.output {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background-color: $primary;
+  color: $white;
+  font-size: $fs_base_large;
+  padding: 10px;
+  animation: animate 4s infinite;
+}
+
+@keyframes animate {
+  from {
+    left: 0px;
+  }
+
+  to {
+    left: 150px;
+  }
+}

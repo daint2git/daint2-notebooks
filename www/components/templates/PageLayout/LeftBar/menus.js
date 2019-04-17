@@ -86,6 +86,14 @@ const menus = [
         level: 2,
         children: null,
       },
+      {
+        id: 'css/animation',
+        path: '/css/animation',
+        icon: PrefixBorderIcon,
+        label: 'Animation',
+        level: 2,
+        children: null,
+      },
     ],
   },
   {

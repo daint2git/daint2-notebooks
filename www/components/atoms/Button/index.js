@@ -63,7 +63,7 @@ const Button = React.forwardRef((props, outerRef) => {
       }}
       {...other}
     >
-      <span>{children}</span>
+      <span className={cssModules`content`}>{children}</span>
       <RippleAnimation {...ripple} />
     </Component>
   )
