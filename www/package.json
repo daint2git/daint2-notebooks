@@ -44,6 +44,8 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.5",
     "postcss-custom-media": "^7.0.7",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
@@ -55,5 +57,16 @@
     "build": "yarn clean && next build",
     "start": "NODE_ENV=production node server.js",
     "storybook": "start-storybook -p 6167 --quiet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 100 --semi false --single-quote --trailing-comma all --write",
+      "git add"
+    ]
   }
 }

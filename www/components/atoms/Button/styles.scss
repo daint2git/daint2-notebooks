@@ -1,5 +1,6 @@
 @import 'components/utils/colors';
 @import 'components/utils/variables';
+@import 'components/utils/mixins';
 
 @mixin btnColor($initialColor, $hoverColor, $textColor: $white) {
   border-color: $initialColor;
@@ -254,7 +255,7 @@
 
   .content {
     width: 100%;
-    display: flex;
+    @include centering;
   }
 
   .animation {
